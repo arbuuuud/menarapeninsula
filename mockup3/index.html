@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menara Peninsula Hotel Jakarta | Cinematic Luxury & Corporate Excellence</title>
+    
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/svg+xml" href="https://www.menarapeninsula.com/wp-content/themes/pro-theme-crystal/css/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.menarapeninsula.com/wp-content/uploads/sites/29/fb_favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.menarapeninsula.com/wp-content/uploads/sites/29/fb_favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="https://www.menarapeninsula.com/wp-content/uploads/sites/29/fb_favicon/favicon.ico">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Google Fonts: Playfair Display (Serif/Luxury) & Inter (Sans-Serif/Clean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config Customizations for Rp 100M Official Identity Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        peninsula: {
+                            50: '#f4f6fa',    /* Alabaster background with soft blue undertone */
+                            100: '#e8ecf5',   /* Soft grey blue */
+                            200: '#c5d0e6',
+                            300: '#9cb1d4',
+                            400: '#6f8ebd',
+                            500: '#1a2e60',   /* OFFICIAL LOGO COLOR: Deep Peninsula Navy Blue */
+                            600: '#15254e',
+                            700: '#0e1a38',
+                            800: '#0a1024',
+                            900: '#050712',
+                        },
+                        amber: {
+                            400: '#d4af37',   /* Metallic Gold accent for premium contrast */
+                            500: '#c59b27',
+                            600: '#a57a1d',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+        
+        /* Smooth Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f4f6fa;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1a2e60;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c59b27;
+        }
+
+        .gold-border-glow-light {
+            box-shadow: 0 4px 20px rgba(26, 46, 96, 0.04);
+            border: 1px solid rgba(26, 46, 96, 0.08);
+        }
+
+        .gold-border-glow-light:hover {
+            box-shadow: 0 10px 30px rgba(26, 46, 96, 0.08);
+            border-color: rgba(26, 46, 96, 0.25);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(5, 7, 18, 0.4) 0%, rgba(5, 7, 18, 0.7) 60%, rgba(5, 7, 18, 0.9) 100%);
+        }
+    </style>
+</head>
+<body class="bg-peninsula-50 text-neutral-800 font-sans antialiased" x-data="{ mobileMenuOpen: false, rfpModalOpen: false, activeRoomIndex: 0, rfpStep: 1 }">
+
+    <!-- ==================== HEADER (OFFICIAL LIGHT BRAND DOCK) ==================== -->
+    <header class="fixed top-0 left-0 w-full z-50 border-b border-neutral-200/50 bg-white/95 backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 h-24 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 transition-transform duration-300 hover:scale-[1.02]">
+                <!-- Using original official logo -->
+                <img src="https://www.menarapeninsula.com/wp-content/uploads/sites/29/2023/12/LOGO-MPH-2018.png" 
+                     alt="Menara Peninsula Logo" 
+                     class="h-14 w-auto object-contain">
+            </a>
+
+            <!-- Premium Minimalist Navigation -->
+            <nav class="hidden lg:flex items-center space-x-10 text-xs font-bold tracking-[0.25em] uppercase text-peninsula-500">
+                <a href="#hotel-story" class="hover:text-amber-500 transition-colors relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-amber-500 after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300">The Hotel</a>
+                <a href="#rooms-section" class="hover:text-amber-500 transition-colors relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-amber-500 after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300">Rooms & Suites</a>
+                <a href="#dining-section" class="hover:text-amber-500 transition-colors relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-amber-500 after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300">Gastronomy</a>
+                <a href="#mice-section" class="hover:text-amber-500 transition-colors relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-amber-500 after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300">MICE & Weddings</a>
+                <a href="#offers-section" class="hover:text-amber-500 transition-colors relative after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-amber-500 after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300">Offers</a>
+            </nav>
+
+            <!-- Book Direct Button -->
+            <div class="hidden lg:flex items-center">
+                <a href="#booking-widget-anchor" class="bg-peninsula-500 hover:bg-amber-500 text-white px-8 py-3.5 font-bold tracking-[0.2em] uppercase text-[10px] transition-all hover:-translate-y-0.5 duration-300 shadow-md shadow-peninsula-500/10">
+                    Book Direct
+                </a>
+            </div>
+
+            <!-- Mobile Burger -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden text-peninsula-500 hover:text-amber-500 focus:outline-none">
+                <i class="fa-solid fa-bars-staggered text-2xl" x-show="!mobileMenuOpen"></i>
+                <i class="fa-solid fa-xmark text-2xl" x-show="mobileMenuOpen" x-cloak></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div x-show="mobileMenuOpen" x-transition class="lg:hidden bg-white px-6 py-8 border-b border-neutral-200 space-y-4" x-cloak>
+            <a href="#hotel-story" @click="mobileMenuOpen = false" class="block text-sm font-bold tracking-wider text-peninsula-500 hover:text-amber-500 uppercase">The Hotel</a>
+            <a href="#rooms-section" @click="mobileMenuOpen = false" class="block text-sm font-bold tracking-wider text-peninsula-500 hover:text-amber-500 uppercase">Rooms & Suites</a>
+            <a href="#dining-section" @click="mobileMenuOpen = false" class="block text-sm font-bold tracking-wider text-peninsula-500 hover:text-amber-500 uppercase">Gastronomy</a>
+            <a href="#mice-section" @click="mobileMenuOpen = false" class="block text-sm font-bold tracking-wider text-peninsula-500 hover:text-amber-500 uppercase">MICE & Weddings</a>
+            <a href="#offers-section" @click="mobileMenuOpen = false" class="block text-sm font-bold tracking-wider text-peninsula-500 hover:text-amber-500 uppercase">Offers</a>
+            <a href="#booking-widget-anchor" @click="mobileMenuOpen = false" class="block text-center bg-peninsula-500 text-white py-4 font-bold uppercase text-xs tracking-widest mt-6">
+                Book Direct
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO: IMMERSIVE FULL SCREEN VISUAL ==================== -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden bg-peninsula-900">
+        <!-- Cinematic Daylight Visual Banner -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://www.menarapeninsula.com/wp-content/uploads/sites/29/2026/03/Menara-Peninsula_399-HDR-2.v2.jpg" 
+                 alt="Daylight Hotel Interior Lobby" 
+                 class="w-full h-full object-cover filter brightness-[0.7] contrast-[1.05] scale-100 transition-transform duration-1000">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <!-- Center Luxury Content (Light text on high contrast dark visual) -->
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto space-y-6 mt-16">
+            <span class="text-amber-400 font-bold tracking-[0.6em] uppercase text-xs">JAKARTA BUSINESS CLASS ICON</span>
+            <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-light text-white leading-none tracking-wide">
+                Where Executive Caliber <br>
+                <span class="italic font-light text-amber-300">Meets Prestige</span>
+            </h1>
+            <div class="w-20 h-[2px] bg-amber-400/30 mx-auto my-8"></div>
+            <p class="text-gray-300 text-sm sm:text-base md:text-lg font-light max-w-3xl mx-auto leading-relaxed tracking-wider">
+                Experience premium 4-star hospitality positioned optimally at the Slipi intersection, ensuring high logistics efficiency for your metropolitan business goals.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 pt-6">
+                <a href="#rooms-section" class="bg-peninsula-500 hover:bg-amber-500 text-white px-10 py-4 font-bold tracking-[0.2em] uppercase text-xs transition-all duration-300 shadow-md shadow-peninsula-500/10">
+                    Explore Suites
+                </a>
+                <button @click="rfpModalOpen = true" class="border border-white/20 hover:border-amber-400 hover:text-amber-300 text-white px-10 py-4 font-bold tracking-[0.2em] uppercase text-xs transition-all duration-300">
+                    Request Proposals (RFP)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BOOKING BAR (INTEGRATED INTERACTIVE COMPONENT - LIGHT MODE) ==================== -->
+    <div id="booking-widget-anchor" class="relative z-20 max-w-7xl mx-auto px-6 -mt-16 sm:-mt-24">
+        <div class="bg-white border border-neutral-200/80 shadow-2xl p-8 lg:p-10 rounded-none" 
+             x-data="{ 
+                checkin: '', 
+                checkout: '', 
+                adults: 1, 
+                children: 0, 
+                promoCode: '',
+                submitBooking() {
+                    if(!this.checkin || !this.checkout) {
+                        alert('Please select both check-in and check-out dates.');
+                        return;
+                    }
+                    const baseUrl = 'https://booking.menarapeninsula.com/reserve/';
+                    const params = new URLSearchParams({
+                        checkin: this.checkin,
+                        checkout: this.checkout,
+                        adults: this.adults.toString(),
+                        children: this.children.toString(),
+                        hotel_code: 'MPJ11410'
+                    });
+                    if (this.promoCode) {
+                        params.append('promo', this.promoCode);
+                    }
+                    window.open(`${baseUrl}?${params.toString()}`, '_blank');
+                }
+             }">
+            <form @submit.prevent="submitBooking" class="grid grid-cols-1 md:grid-cols-5 gap-8 items-end">
+                <div class="border-b md:border-b-0 md:border-r border-neutral-200 pb-4 md:pb-0 md:pr-6">
+                    <label class="block text-[10px] font-bold tracking-[0.2em] uppercase text-peninsula-500 mb-2">Check In</label>
+                    <input type="date" x-model="checkin" class="w-full bg-transparent text-neutral-900 text-sm focus:outline-none cursor-pointer">
+                </div>
+
+                <div class="border-b md:border-b-0 md:border-r border-neutral-200 pb-4 md:pb-0 md:pr-6">
+                    <label class="block text-[10px] font-bold tracking-[0.2em] uppercase text-peninsula-500 mb-2">Check Out</label>
+                    <input type="date" x-model="checkout" class="w-full bg-transparent text-neutral-900 text-sm focus:outline-none cursor-pointer">
+                </div>
+
+                <div class="border-b md:border-b-0 md:border-r border-neutral-200 pb-4 md:pb-0 md:pr-6">
+                    <label class="block text-[10px] font-bold tracking-[0.2em] uppercase text-peninsula-500 mb-2">Guests & Rooms</label>
+                    <select x-model="adults" class="w-full bg-transparent text-neutral-900 text-sm focus:outline-none cursor-pointer">
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                    </select>
+                </div>
+
+                <div class="pb-4 md:pb-0 md:pr-6">
+                    <label class="block text-[10px] font-bold tracking-[0.2em] uppercase text-peninsula-500 mb-2">Promo Code</label>
+                    <input type="text" x-model="promoCode" placeholder="Enter Code" class="w-full bg-transparent text-neutral-900 text-sm focus:outline-none placeholder-neutral-400">
+                </div>
+
+                <div>
+                    <button type="submit" class="w-full bg-peninsula-500 hover:bg-amber-500 text-white py-4 font-bold tracking-[0.2em] uppercase text-xs transition-colors duration-300 shadow-md shadow-peninsula-500/10">
+                        Check Availability
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-6 flex flex-wrap gap-6 justify-between items-center text-[10px] text-neutral-500 border-t border-neutral-100 pt-6">
+                <span class="flex items-center"><i class="fa-solid fa-shield-halved text-peninsula-500 mr-2"></i> Best Direct Booking Rate Guaranteed</span>
+                <span class="flex items-center"><i class="fa-solid fa-mug-saucer text-peninsula-500 mr-2"></i> Complimentary Buffet Breakfast Included</span>
+                <span class="flex items-center"><i class="fa-solid fa-calendar-check text-peninsula-500 mr-2"></i> Flexible Reservation Modifications</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HOTEL STORY / HERO OVERVIEW ==================== -->
+    <section id="hotel-story" class="py-32 max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <!-- Left: Editorial Content -->
+            <div class="lg:col-span-6 space-y-8">
+                <span class="text-peninsula-500 font-bold tracking-[0.4em] uppercase text-xs">HERITAGE OF COMFORT</span>
+                <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-neutral-900 font-light leading-tight">
+                    Strategic Focus, <span class="italic font-light text-amber-600">Luxurious Rest</span>
+                </h2>
+                <div class="w-16 h-[2px] bg-peninsula-500/20"></div>
+                <div class="space-y-6 text-neutral-600 font-light leading-relaxed text-sm sm:text-base">
+                    <p>
+                        Standing tall at the boundary of West and Central Jakarta, Menara Peninsula Hotel is more than a destination; it's a strategic corporate gateway. Located next to Palmerah station and offering direct exit pathways to the primary metropolitan toll grid, it is engineered for guests who value logistical efficiency.
+                    </p>
+                    <p>
+                        With 380 premium rooms, modern banquet halls, and dedicated meeting support, we configure our services to suit your executive needs while delivering standard hospitality.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Grid of Premium Visual Assets -->
+            <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                <img src="https://www.menarapeninsula.com/wp-content/uploads/sites/29/2026/03/Menara-Peninsula_399-HDR-2.v2.jpg" 
+                     alt="Executive Suite Room" class="w-full h-80 object-cover shadow-xl border border-neutral-200/55 hover:scale-[1.02] transition-transform duration-500">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" 
+                     alt="Outdoor Pool" class="w-full h-80 object-cover shadow-xl border border-neutral-200/55 hover:scale-[1.02] transition-transform duration-500 mt-8">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ROOMS DECK (INTERACTIVE SELECTION SHOWCASE - LIGHT MODE) ==================== -->
+    <section id="rooms-section" class="py-32 bg-white border-y border-neutral-200/60">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-baseline mb-20">
+                <div class="space-y-2">
+                    <span class="text-peninsula-500 font-bold tracking-[0.4em] uppercase text-xs">ACCOMMODATIONS</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-neutral-900 font-light">Accommodations</h2>
+                </div>
+                <div class="flex space-x-4 mt-6 md:mt-0">
+                    <button @click="activeRoomIndex = activeRoomIndex === 0 ? 2 : activeRoomIndex - 1" class="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center hover:border-peninsula-500 hover:text-peninsula-500 transition-colors">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button @click="activeRoomIndex = activeRoomIndex === 2 ? 0 : activeRoomIndex + 1" class="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center hover:border-peninsula-500 hover:text-peninsula-500 transition-colors">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Room Slider Component (Simulated in HTML/Alpine) -->
+            <div class="relative overflow-hidden">
+                <!-- Deluxe Room -->
+                <div x-show="activeRoomIndex === 0" x-transition class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 h-[450px] overflow-hidden shadow-2xl border border-neutral-200/40">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Deluxe Room" class="w-full h-full object-cover">
+                    </div>
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-peninsula-500 font-semibold tracking-wider text-xs">Mulai IDR 650,000 / Malam</span>
+                        <h3 class="font-serif text-3xl sm:text-4xl text-neutral-900 font-light">Deluxe Room</h3>
+                        <p class="text-neutral-600 text-sm font-light leading-relaxed">
+                            A beautifully styled 32m² guest room offering a choice between a Deluxe Double or Twin beds. Outfitted with high-speed internet connectivity, dedicated workspace, and executive comfort.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-xs text-neutral-500 pt-6 border-t border-neutral-100">
+                            <span><i class="fa-solid fa-vector-square text-peninsula-500 mr-2"></i> 32 Square Meters</span>
+                            <span><i class="fa-solid fa-bed text-peninsula-500 mr-2"></i> King or Twin Beds</span>
+                            <span><i class="fa-solid fa-wifi text-peninsula-500 mr-2"></i> Complimentary Wi-Fi</span>
+                            <span><i class="fa-solid fa-tv text-peninsula-500 mr-2"></i> Interactive Smart TV</span>
+                        </div>
+                        <div class="pt-6">
+                            <a href="#booking-widget-anchor" class="bg-peninsula-500 hover:bg-amber-500 text-white px-8 py-3.5 font-bold tracking-widest text-xs uppercase transition-colors shadow-md shadow-peninsula-500/10">Book Deluxe Room</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Executive Club Room -->
+                <div x-show="activeRoomIndex === 1" x-transition x-cloak class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 h-[450px] overflow-hidden shadow-2xl border border-neutral-200/40">
+                        <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Executive Club Room" class="w-full h-full object-cover">
+                    </div>
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-peninsula-500 font-semibold tracking-wider text-xs">Mulai IDR 950,000 / Malam</span>
+                        <h3 class="font-serif text-3xl sm:text-4xl text-neutral-900 font-light">Executive Club Room</h3>
+                        <p class="text-neutral-600 text-sm font-light leading-relaxed">
+                            Designed for senior professionals, offering access to high-floor room layouts and Executive Lounge services. Includes afternoon high-tea, laundry vouchers, and business support.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-xs text-neutral-500 pt-6 border-t border-neutral-100">
+                            <span><i class="fa-solid fa-vector-square text-peninsula-500 mr-2"></i> 38 Square Meters</span>
+                            <span><i class="fa-solid fa-couch text-peninsula-500 mr-2"></i> Executive Lounge access</span>
+                            <span><i class="fa-solid fa-mug-hot text-peninsula-500 mr-2"></i> Complimentary High Tea</span>
+                            <span><i class="fa-solid fa-shirt text-peninsula-500 mr-2"></i> Free Ironing Services</span>
+                        </div>
+                        <div class="pt-6">
+                            <a href="#booking-widget-anchor" class="bg-peninsula-500 hover:bg-amber-500 text-white px-8 py-3.5 font-bold tracking-widest text-xs uppercase transition-colors shadow-md shadow-peninsula-500/10">Book Executive Club</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peninsula Suite -->
+                <div x-show="activeRoomIndex === 2" x-transition x-cloak class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 h-[450px] overflow-hidden shadow-2xl border border-neutral-200/40">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Peninsula Suite" class="w-full h-full object-cover">
+                    </div>
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-peninsula-500 font-semibold tracking-wider text-xs">Mulai IDR 1,800,000 / Malam</span>
+                        <h3 class="font-serif text-3xl sm:text-4xl text-neutral-900 font-light">Peninsula Suite</h3>
+                        <p class="text-neutral-600 text-sm font-light leading-relaxed">
+                            Indulge in absolute luxury with a private master bedroom, separate executive dining and living spaces, and an exquisite private jacuzzi bathtub with panoramic city vistas.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-xs text-neutral-500 pt-6 border-t border-neutral-100">
+                            <span><i class="fa-solid fa-vector-square text-peninsula-500 mr-2"></i> 70 Square Meters</span>
+                            <span><i class="fa-solid fa-bath text-peninsula-500 mr-2"></i> Private Jacuzzi Bath</span>
+                            <span><i class="fa-solid fa-couch text-peninsula-500 mr-2"></i> Separate Dining Area</span>
+                            <span><i class="fa-solid fa-glasses text-peninsula-500 mr-2"></i> Custom Butler Service</span>
+                        </div>
+                        <div class="pt-6">
+                            <a href="#booking-widget-anchor" class="bg-peninsula-500 hover:bg-amber-500 text-white px-8 py-3.5 font-bold tracking-widest text-xs uppercase transition-colors shadow-md shadow-peninsula-500/10">Book Peninsula Suite</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GASTRONOMY (TABS SHOWCASE - LIGHT MODE) ==================== -->
+    <section id="dining-section" class="py-32 max-w-7xl mx-auto px-6 sm:px-8" x-data="{ activeDining: 'kafe' }">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="text-peninsula-500 font-bold tracking-[0.4em] uppercase text-xs block">GASTRONOMY</span>
+            <h2 class="font-serif text-4xl sm:text-5xl text-neutral-900 font-light mt-2">Culinary Spaces</h2>
+            <div class="w-16 h-[2px] bg-peninsula-500/20 mx-auto my-6"></div>
+            <p class="text-neutral-600 font-light text-sm sm:text-base">Indulge in culinary spaces highlighting authentic Indonesian recipes alongside global fine dining standards.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Left Side: Choice Navigation -->
+            <div class="lg:col-span-4 space-y-4">
+                <button @click="activeDining = 'kafe'" 
+                        :class="activeDining === 'kafe' ? 'bg-peninsula-500 text-white border-peninsula-500' : 'bg-white text-neutral-700 border-neutral-200'"
+                        class="w-full text-left border p-6 font-semibold text-xs tracking-widest uppercase transition-all duration-300 flex justify-between items-center shadow-sm">
+                    <span>Kafe Peninsula</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                
+                <button @click="activeDining = 'lounge'" 
+                        :class="activeDining === 'lounge' ? 'bg-peninsula-500 text-white border-peninsula-500' : 'bg-white text-neutral-700 border-neutral-200'"
+                        class="w-full text-left border p-6 font-semibold text-xs tracking-widest uppercase transition-all duration-300 flex justify-between items-center shadow-sm">
+                    <span>Rumah Rum & Lounge</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Right Side: Presentation -->
+            <div class="lg:col-span-8 bg-white border border-neutral-200 shadow-xl p-8">
+                <!-- Kafe Peninsula -->
+                <div x-show="activeDining === 'kafe'" class="space-y-6" x-transition>
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Kafe Peninsula Buffet" class="w-full h-80 object-cover shadow-sm">
+                    <h3 class="font-serif text-2xl text-neutral-900 font-light">Kafe Peninsula</h3>
+                    <p class="text-neutral-600 text-sm font-light leading-relaxed">
+                        Features complete breakfast buffet options, alongside Western and Asian a la carte recipes. Savor local traditional delicacies prepared by our master chefs.
+                    </p>
+                    <div class="flex items-center space-x-6 text-xs text-neutral-500 pt-6 border-t border-neutral-100">
+                        <span><i class="fa-regular fa-clock text-peninsula-500 mr-2"></i> Open Daily: 06:00 AM - 11:00 PM</span>
+                        <span><i class="fa-solid fa-chair text-peninsula-500 mr-2"></i> 180 Seating Capacity</span>
+                    </div>
+                </div>
+
+                <!-- Lounge -->
+                <div x-show="activeDining === 'lounge'" class="space-y-6" x-transition x-cloak>
+                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Rumah Rum Lounge" class="w-full h-80 object-cover shadow-sm">
+                    <h3 class="font-serif text-2xl text-neutral-900 font-light">Rumah Rum & Lounge</h3>
+                    <p class="text-neutral-600 text-sm font-light leading-relaxed">
+                        The ultimate business networking venue. Enjoy fine local coffees, signature liquors, mocktails, and cocktails accompanied by soft live music on select weekdays.
+                    </p>
+                    <div class="flex items-center space-x-6 text-xs text-neutral-500 pt-6 border-t border-neutral-100">
+                        <span><i class="fa-regular fa-clock text-peninsula-500 mr-2"></i> Open Daily: 12:00 PM - 01:00 AM</span>
+                        <span><i class="fa-solid fa-music text-peninsula-500 mr-2"></i> Acoustic Sessions Wed & Fri</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MICE & WEDDINGS (LIGHT BROCHURE LAYOUT) ==================== -->
+    <section id="mice-section" class="py-32 bg-white border-y border-neutral-200/60" x-data="{ venueFilter: 'all' }">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-peninsula-500 font-bold tracking-[0.4em] uppercase text-xs block">MICE SERVICES</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-neutral-900 font-light mt-2">Elite Business Meetings</h2>
+                <div class="w-16 h-[1px] bg-peninsula-500/20 mx-auto my-6"></div>
+                <p class="text-neutral-600 font-light text-sm sm:text-base">Providing extensive meeting spaces with 12 adaptable conference suites, smart screens, and catering solutions.</p>
+            </div>
+
+            <!-- Interative Venue Deck -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Ballroom -->
+                <div class="border border-neutral-200 bg-white p-6 flex flex-col justify-between hover:border-peninsula-500 transition-colors duration-300 shadow-sm hover:shadow-md">
+                    <div class="space-y-6">
+                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=600&q=80" 
+                             alt="Grand Ballroom Setup" class="w-full h-48 object-cover">
+                        <h4 class="font-serif text-2xl text-neutral-900 font-light">Grand Ballroom</h4>
+                        <p class="text-neutral-600 text-xs font-light leading-relaxed">Perfect layout for wedding celebrations, corporate banquets, and annual seminars. Seat configurations adaptable up to 350 seated guests.</p>
+                    </div>
+                    <button @click="rfpModalOpen = true" class="mt-8 w-full border border-peninsula-500/40 text-peninsula-500 hover:bg-peninsula-500 hover:text-white py-3 text-xs font-bold uppercase tracking-widest transition-all">
+                        Request Quote
+                    </button>
+                </div>
+
+                <!-- Classroom Seminar -->
+                <div class="border border-neutral-200 bg-white p-6 flex flex-col justify-between hover:border-peninsula-500 transition-colors duration-300 shadow-sm hover:shadow-md">
+                    <div class="space-y-6">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" 
+                             alt="Classroom Seminar Setup" class="w-full h-48 object-cover">
+                        <h4 class="font-serif text-2xl text-neutral-900 font-light">Classroom & Seminar</h4>
+                        <p class="text-neutral-600 text-xs font-light leading-relaxed">Designed for training modules, workshops, and business keynotes. Outfitted with high-speed internet and media infrastructure.</p>
+                    </div>
+                    <button @click="rfpModalOpen = true" class="mt-8 w-full border border-peninsula-500/40 text-peninsula-500 hover:bg-peninsula-500 hover:text-white py-3 text-xs font-bold uppercase tracking-widest transition-all">
+                        Request Quote
+                    </button>
+                </div>
+
+                <!-- Boardroom -->
+                <div class="border border-neutral-200 bg-white p-6 flex flex-col justify-between hover:border-peninsula-500 transition-colors duration-300 shadow-sm hover:shadow-md">
+                    <div class="space-y-6">
+                        <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=600&q=80" 
+                             alt="Executive Boardroom Setup" class="w-full h-48 object-cover">
+                        <h4 class="font-serif text-2xl text-neutral-900 font-light">Executive Boardroom</h4>
+                        <p class="text-neutral-600 text-xs font-light leading-relaxed">Engineered for executive meetings, negotiations, and summits. Includes high-definition digital smart displays.</p>
+                    </div>
+                    <button @click="rfpModalOpen = true" class="mt-8 w-full border border-peninsula-500/40 text-peninsula-500 hover:bg-peninsula-500 hover:text-white py-3 text-xs font-bold uppercase tracking-widest transition-all">
+                        Request Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXCLUSIVE PRIVILEGES & OFFERS (LIGHT CARDS) ==================== -->
+    <section id="offers-section" class="py-32 max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <span class="text-peninsula-500 font-bold tracking-[0.4em] uppercase text-xs block">EXCLUSIVE PROMO</span>
+            <h2 class="font-serif text-4xl sm:text-5xl text-neutral-900 font-light mt-2">Bespoke Offers</h2>
+            <div class="w-16 h-[2px] bg-peninsula-500/20 mx-auto my-6"></div>
+            <p class="text-neutral-600 font-light text-sm sm:text-base">Pesan kamar Anda langsung melalui website ini dan gunakan kode promo khusus untuk mendapatkan diskon tambahan dan keuntungan ekstra.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Promo 1 -->
+            <div class="border border-neutral-200 bg-white p-8 flex flex-col justify-between h-[300px] hover:border-peninsula-500/40 transition-all duration-300 shadow-sm hover:shadow-lg">
+                <div class="space-y-4">
+                    <span class="text-[10px] tracking-widest font-bold text-peninsula-500 uppercase">PROMO KODE: WEEKEND15</span>
+                    <h3 class="font-serif text-2xl text-neutral-900 font-semibold">Weekend Escape Special</h3>
+                    <p class="text-neutral-600 text-xs font-light leading-relaxed">
+                        Nikmati diskon 15% untuk masa inap dari hari Jumat hingga Minggu. Termasuk sarapan pagi gratis untuk dua orang.
+                    </p>
+                </div>
+                <div class="flex justify-between items-center border-t border-neutral-100 pt-6">
+                    <span class="text-xs text-neutral-500">Valid Friday - Sunday</span>
+                    <a href="#booking-widget-anchor" class="bg-peninsula-500 hover:bg-amber-500 text-white px-6 py-2.5 font-bold uppercase text-[10px] tracking-wider transition-colors duration-300 shadow-sm shadow-peninsula-500/10">Apply</a>
+                </div>
+            </div>
+
+            <!-- Promo 2 -->
+            <div class="border border-neutral-200 bg-white p-8 flex flex-col justify-between h-[300px] hover:border-peninsula-500/40 transition-all duration-300 shadow-sm hover:shadow-lg">
+                <div class="space-y-4">
+                    <span class="text-[10px] tracking-widest font-bold text-peninsula-500 uppercase">PROMO KODE: CORPMICE</span>
+                    <h3 class="font-serif text-2xl text-neutral-900 font-semibold">Corporate Business Package</h3>
+                    <p class="text-neutral-600 text-xs font-light leading-relaxed">
+                        Solusi lengkap perjalanan bisnis Anda. Termasuk sarapan, laundry gratis, dan diskon 10% sewa ruang rapat.
+                    </p>
+                </div>
+                <div class="flex justify-between items-center border-t border-neutral-100 pt-6">
+                    <span class="text-xs text-neutral-500">Valid on Weekdays</span>
+                    <a href="#booking-widget-anchor" class="bg-peninsula-500 hover:bg-amber-500 text-white px-6 py-2.5 font-bold uppercase text-[10px] tracking-wider transition-colors duration-300 shadow-sm shadow-peninsula-500/10">Apply</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SANCTUARIES / SPA / WELLNESS (LIGHT CARDS) ==================== -->
+    <section class="py-32 bg-white border-t border-neutral-200/60">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-peninsula-500 font-bold tracking-[0.4em] uppercase text-xs block">LEISURE AMENITIES</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-neutral-900 font-light mt-2">Executive Well-Being</h2>
+                <div class="w-16 h-[2px] bg-peninsula-500/20 mx-auto my-6"></div>
+                <p class="text-neutral-600 font-light text-sm sm:text-base">Sanctuaries constructed to maintain fitness limits, alleviate corporate fatigue, and ensure ultimate physical rest.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Facility 1 -->
+                <div class="border border-neutral-200 p-8 text-center bg-peninsula-50 space-y-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-peninsula-500/10 flex items-center justify-center mx-auto rounded-none">
+                        <i class="fa-solid fa-water text-xl text-peninsula-500"></i>
+                    </div>
+                    <h3 class="font-serif text-lg text-neutral-900 font-semibold">Outdoor Pool</h3>
+                    <p class="text-neutral-500 text-xs font-light">Spacious tropical-themed outdoor pool surrounded by palm tree decks.</p>
+                </div>
+
+                <!-- Facility 2 -->
+                <div class="border border-neutral-200 p-8 text-center bg-peninsula-50 space-y-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-peninsula-500/10 flex items-center justify-center mx-auto rounded-none">
+                        <i class="fa-solid fa-dumbbell text-xl text-peninsula-500"></i>
+                    </div>
+                    <h3 class="font-serif text-lg text-neutral-900 font-semibold">Fitness Center</h3>
+                    <p class="text-neutral-500 text-xs font-light">Equipped with professional-grade cardiovascular systems and strength conditioning machinery.</p>
+                </div>
+
+                <!-- Facility 3 -->
+                <div class="border border-neutral-200 p-8 text-center bg-peninsula-50 space-y-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-peninsula-500/10 flex items-center justify-center mx-auto rounded-none">
+                        <i class="fa-solid fa-spa text-xl text-peninsula-500"></i>
+                    </div>
+                    <h3 class="font-serif text-lg text-neutral-900 font-semibold">Spa & Sauna</h3>
+                    <p class="text-neutral-500 text-xs font-light">Deep tissue massage therapies, hydrotherapy pools, and steam rooms.</p>
+                </div>
+
+                <!-- Facility 4 -->
+                <div class="border border-neutral-200 p-8 text-center bg-peninsula-50 space-y-4 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-peninsula-500/10 flex items-center justify-center mx-auto rounded-none">
+                        <i class="fa-solid fa-square-parking text-xl text-peninsula-500"></i>
+                    </div>
+                    <h3 class="font-serif text-lg text-neutral-900 font-semibold">Valet Parking</h3>
+                    <p class="text-neutral-500 text-xs font-light">Highly secure parking structures with dedicated automated valet service desks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER DECK ==================== -->
+    <section class="py-24 max-w-5xl mx-auto px-6 text-center">
+        <div class="border border-neutral-200 bg-white p-8 md:p-16 shadow-lg">
+            <h3 class="font-serif text-3xl text-neutral-900 font-light mb-4">The Peninsula Club</h3>
+            <p class="text-neutral-500 text-sm font-light max-w-xl mx-auto mb-8 font-light">Receive notifications of exclusive room packages, seasonal events, and corporate MICE special rates delivered directly to your inbox.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Your business email" class="flex-grow bg-peninsula-50 border border-neutral-200 px-5 py-3.5 text-sm focus:outline-none focus:border-peninsula-500 text-neutral-800" required>
+                <button type="submit" class="bg-peninsula-500 hover:bg-amber-500 text-white px-8 py-3.5 font-bold tracking-widest text-xs uppercase transition-colors duration-300 shadow-md shadow-peninsula-500/20">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER (ELEGANT DARK ANCHOR) ==================== -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-20 text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <!-- Brand -->
+            <div class="space-y-6">
+                <img src="https://www.menarapeninsula.com/wp-content/uploads/sites/29/2023/12/LOGO-MPH-2018-inversed.png" 
+                     alt="Menara Peninsula Logo" 
+                     class="h-12 w-auto object-contain">
+                <p class="text-xs font-light leading-relaxed text-gray-500">
+                    An established 4-star business class sanctuary situated dynamically on the West Jakarta border. Committed to high efficiency and luxuriously warm hospitality.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-amber-400"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-amber-400"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-amber-400"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                </div>
+            </div>
+
+            <!-- Directory -->
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-wider text-xs">Directory</h4>
+                <ul class="space-y-2 text-xs font-light">
+                    <li><a href="#hotel-story" class="hover:text-amber-400 transition-colors">The Hotel</a></li>
+                    <li><a href="#rooms-section" class="hover:text-amber-400 transition-colors">Rooms & Suites</a></li>
+                    <li><a href="#dining-section" class="hover:text-amber-400 transition-colors">Gastronomy</a></li>
+                    <li><a href="#mice-section" class="hover:text-amber-400 transition-colors">Meetings & Events</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-wider text-xs">Reach Us</h4>
+                <ul class="space-y-2 text-xs font-light text-gray-500">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-location-dot text-amber-500 mr-2 mt-0.5"></i>
+                        <span>Jl. Letnan Jenderal S. Parman No.78, Slipi, West Jakarta 11410, Indonesia</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-phone text-amber-500 mr-2"></i>
+                        <span>+62-21-5350888</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-envelope text-amber-500 mr-2"></i>
+                        <span>reservation@menarapeninsula.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Location Map Mock -->
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-wider text-xs">Location Map</h4>
+                <p class="text-xs font-light">5 minutes from Palmerah commuter station, adjacent to inner-city toll gateways.</p>
+                <div class="h-28 border border-white/5 bg-neutral-900 flex items-center justify-center text-xs text-amber-500 font-serif">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i> Google Maps Location
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 border-t border-neutral-900 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-light">
+            <p>&copy; 2026 Menara Peninsula Hotel Jakarta. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-amber-500 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-amber-500 transition-colors">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING BOOK NOW MOBILE ACTION (LIGHT MODE) ==================== -->
+    <div class="lg:hidden fixed bottom-0 left-0 w-full z-40 bg-white border-t border-neutral-200 px-6 py-4 flex justify-between items-center shadow-2xl">
+        <div class="flex flex-col">
+            <span class="text-[9px] uppercase tracking-wider text-neutral-500">Rates From</span>
+            <span class="text-sm font-bold text-amber-500">IDR 650,000<span class="text-[10px] font-normal text-neutral-500">/night</span></span>
+        </div>
+        <a href="#booking-widget-anchor" class="bg-peninsula-500 text-white px-6 py-3 font-bold uppercase text-xs tracking-widest transition-colors duration-300">
+            Book Now
+        </a>
+    </div>
+
+    <!-- ==================== REQUEST FOR PROPOSAL (RFP) STEP-BY-STEP MODAL ==================== -->
+    <div x-show="rfpModalOpen" class="fixed inset-0 z-50 flex items-center justify-center px-4" x-cloak x-transition>
+        <div class="absolute inset-0 bg-neutral-950/60 backdrop-blur-sm" @click="rfpModalOpen = false"></div>
+        
+        <div class="relative bg-white border border-neutral-200 w-full max-w-2xl rounded-none overflow-hidden shadow-2xl z-10" 
+             x-data="{ 
+                nama: '', 
+                email: '', 
+                tipeEvent: 'meeting', 
+                tamu: '', 
+                tanggal: '',
+                submitForm() {
+                    alert('Thank you! Your event proposal request has been received. Our sales representative will contact you within 24 hours.');
+                    rfpStep = 1;
+                    rfpModalOpen = false;
+                }
+             }">
+            <!-- Header -->
+            <div class="bg-peninsula-50 border-b border-neutral-100 p-6 flex justify-between items-center">
+                <h3 class="font-serif text-xl text-neutral-900 font-semibold">Request for Event Proposal (RFP)</h3>
+                <button @click="rfpModalOpen = false" class="text-neutral-500 hover:text-neutral-900"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            
+            <!-- Progress -->
+            <div class="bg-neutral-100 h-[2px] w-full flex">
+                <div class="bg-[#1a2e60] h-full transition-all duration-300" :style="`width: ${rfpStep * 33.3}%`"></div>
+            </div>
+
+            <!-- Form Body -->
+            <form @submit.prevent="submitForm" class="p-6 space-y-6">
+                <!-- Step 1 -->
+                <div x-show="rfpStep === 1" class="space-y-4" x-transition>
+                    <h4 class="text-xs font-bold tracking-[0.2em] uppercase text-peninsula-500">Step 1: Contact Details</h4>
+                    <div>
+                        <label class="block text-[10px] tracking-wider uppercase text-neutral-500 mb-1.5">Full Name / Corporate Name</label>
+                        <input type="text" x-model="nama" required class="w-full bg-[#FAF8F5] border border-neutral-200 py-3 px-4 text-sm text-neutral-900 focus:outline-none focus:border-peninsula-500" placeholder="e.g. PT. Maju Bersama / Budi Santoso">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] tracking-wider uppercase text-neutral-500 mb-1.5">Business Email Address</label>
+                        <input type="email" x-model="email" required class="w-full bg-[#FAF8F5] border border-neutral-200 py-3 px-4 text-sm text-neutral-900 focus:outline-none focus:border-peninsula-500" placeholder="e.g. budi@company.com">
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div x-show="rfpStep === 2" class="space-y-4" x-transition x-cloak>
+                    <h4 class="text-xs font-bold tracking-[0.2em] uppercase text-peninsula-500">Step 2: Event Parameters</h4>
+                    <div>
+                        <label class="block text-[10px] tracking-wider uppercase text-neutral-500 mb-1.5">Event Type</label>
+                        <select x-model="tipeEvent" class="w-full bg-[#FAF8F5] border border-neutral-200 py-3 px-4 text-sm text-neutral-900 focus:outline-none focus:border-peninsula-500">
+                            <option value="meeting">Corporate Conference / Seminar</option>
+                            <option value="wedding">Wedding Ceremony / Reception</option>
+                            <option value="banquet">Gala Dinner / Celebration</option>
+                            <option value="exhibition">Exhibition / Tradeshow</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[10px] tracking-wider uppercase text-neutral-500 mb-1.5">Expected Guests</label>
+                            <input type="number" x-model="tamu" required class="w-full bg-[#FAF8F5] border border-neutral-200 py-3 px-4 text-sm text-neutral-900 focus:outline-none focus:border-peninsula-500" placeholder="e.g. 50">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] tracking-wider uppercase text-neutral-500 mb-1.5">Target Date</label>
+                            <input type="date" x-model="tanggal" required class="w-full bg-[#FAF8F5] border border-neutral-200 py-3 px-4 text-sm text-neutral-900 focus:outline-none focus:border-peninsula-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div x-show="rfpStep === 3" class="space-y-4" x-transition x-cloak>
+                    <h4 class="text-xs font-bold tracking-[0.2em] uppercase text-peninsula-500">Step 3: Verification & Send</h4>
+                    <div class="bg-neutral-50 border border-neutral-200 p-4 space-y-2 text-sm text-neutral-700">
+                        <p><strong>Organizer:</strong> <span x-text="nama"></span></p>
+                        <p><strong>Email:</strong> <span x-text="email"></span></p>
+                        <p><strong>Type:</strong> <span class="capitalize" x-text="tipeEvent"></span></p>
+                        <p><strong>Attendance:</strong> <span x-text="tamu"></span> attendees</p>
+                        <p><strong>Date:</strong> <span x-text="tanggal"></span></p>
+                    </div>
+                    <p class="text-[10px] text-gray-500 italic">By sending this inquiry, you confirm processing of personal data for reservation follow-up services.</p>
+                </div>
+
+                <!-- Footer Navigation Buttons -->
+                <div class="flex justify-between items-center border-t border-neutral-200 pt-6">
+                    <button type="button" 
+                            x-show="rfpStep > 1" 
+                            @click="rfpStep--" 
+                            class="bg-[#FAF8F5] hover:bg-neutral-100 border border-neutral-200 text-neutral-800 px-5 py-2.5 font-bold text-xs uppercase tracking-wider transition-colors">
+                        Back
+                    </button>
+                    <span x-show="rfpStep === 1"></span>
+                    
+                    <button type="button" 
+                            x-show="rfpStep < 3" 
+                            @click="if(rfpStep === 1 && (!nama || !email)) { alert('Please fill in contact information.'); return; } if(rfpStep === 2 && (!tamu || !tanggal)) { alert('Please define event parameters.'); return; } rfpStep++" 
+                            class="bg-[#1a2e60] hover:bg-amber-500 text-white px-6 py-2.5 font-bold text-xs uppercase tracking-wider transition-colors">
+                        Next
+                    </button>
+                    
+                    <button type="submit" 
+                            x-show="rfpStep === 3" 
+                            class="bg-[#1a2e60] hover:bg-amber-500 text-white px-6 py-2.5 font-bold text-xs uppercase tracking-wider transition-colors">
+                        Submit RFP
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

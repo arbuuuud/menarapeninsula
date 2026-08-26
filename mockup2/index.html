@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menara Peninsula Hotel Jakarta | Cinematic Luxury & Corporate Excellence</title>
+    
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/svg+xml" href="https://www.menarapeninsula.com/wp-content/themes/pro-theme-crystal/css/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.menarapeninsula.com/wp-content/uploads/sites/29/fb_favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.menarapeninsula.com/wp-content/uploads/sites/29/fb_favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="https://www.menarapeninsula.com/wp-content/uploads/sites/29/fb_favicon/favicon.ico">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond (High-end Luxury Serif) & DM Sans (Clean Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#faf8f2',
+                            100: '#f2ebd9',
+                            200: '#e5d7b5',
+                            300: '#d4bd8a',
+                            400: '#c5a564',
+                            500: '#b88d44',
+                            600: '#9d7134',
+                            700: '#7f582b',
+                            800: '#674625',
+                            900: '#4f351f',
+                        },
+                        obsidian: {
+                            950: '#07080a',
+                            900: '#0d0f12',
+                            800: '#15181e',
+                            700: '#1f242b',
+                            600: '#2b313b',
+                            500: '#464e5c',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"DM Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(7, 8, 10, 0.4) 0%, rgba(7, 8, 10, 0.9) 100%);
+        }
+        .fine-line {
+            border-color: rgba(197, 165, 100, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-obsidian-950 text-gray-300 font-sans antialiased" x-data="{ mobileMenuOpen: false, rfpModalOpen: false }">
+
+    <!-- ==================== HEADER & NAV (MINIMALIST OBSIDIAN) ==================== -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-obsidian-950/80 backdrop-blur-md border-b border-obsidian-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center">
+                <img src="https://www.menarapeninsula.com/wp-content/uploads/sites/29/2023/12/LOGO-MPH-2018-inversed.png" 
+                     alt="Menara Peninsula Logo" 
+                     class="h-14 w-auto object-contain">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex space-x-10 text-xs font-semibold tracking-[0.2em] uppercase text-gray-400">
+                <a href="#about" class="hover:text-gold-300 transition-colors">The Hotel</a>
+                <a href="#rooms" class="hover:text-gold-300 transition-colors">Rooms & Suites</a>
+                <a href="#dining" class="hover:text-gold-300 transition-colors">Gastronomy</a>
+                <a href="#mice-wedding" class="hover:text-gold-300 transition-colors">Meetings & Events</a>
+                <a href="#offers" class="hover:text-gold-300 transition-colors">Exclusive Offers</a>
+            </nav>
+
+            <!-- CTA -->
+            <div class="hidden lg:flex items-center">
+                <a href="#booking-section" class="border border-gold-400/40 hover:border-gold-400 text-gold-300 hover:text-white px-6 py-3 rounded-none font-bold tracking-[0.2em] uppercase text-[10px] transition-all duration-300">
+                    Book Your Stay
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars-staggered text-2xl" x-show="!mobileMenuOpen"></i>
+                <i class="fa-solid fa-xmark text-2xl" x-show="mobileMenuOpen" x-cloak></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="lg:hidden bg-obsidian-900 border-b border-obsidian-800 px-6 py-8 space-y-4" x-cloak>
+            <a href="#about" @click="mobileMenuOpen = false" class="block text-sm font-semibold tracking-wider text-gray-300 hover:text-gold-400 uppercase">The Hotel</a>
+            <a href="#rooms" @click="mobileMenuOpen = false" class="block text-sm font-semibold tracking-wider text-gray-300 hover:text-gold-400 uppercase">Rooms & Suites</a>
+            <a href="#dining" @click="mobileMenuOpen = false" class="block text-sm font-semibold tracking-wider text-gray-300 hover:text-gold-400 uppercase">Gastronomy</a>
+            <a href="#mice-wedding" @click="mobileMenuOpen = false" class="block text-sm font-semibold tracking-wider text-gray-300 hover:text-gold-400 uppercase">Meetings & Events</a>
+            <a href="#offers" @click="mobileMenuOpen = false" class="block text-sm font-semibold tracking-wider text-gray-300 hover:text-gold-400 uppercase">Exclusive Offers</a>
+            <a href="#booking-section" @click="mobileMenuOpen = false" class="block text-center border border-gold-400 text-gold-400 py-3 rounded-none font-bold uppercase text-xs tracking-widest mt-6">
+                Book Your Stay
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION (FULL SCREEN CINEMATIC VISUAL) ==================== -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Full Bleed Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://www.menarapeninsula.com/wp-content/uploads/sites/29/2026/05/MPH-BUILDING-NIGHT.jpg-1.jpeg" 
+                 alt="Menara Peninsula Cinematic Exterior" 
+                 class="w-full h-full object-cover filter brightness-[0.5] scale-100 transition-transform duration-1000">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <!-- Central Luxury Copy -->
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-24 space-y-6">
+            <span class="text-gold-400 font-medium tracking-[0.6em] uppercase text-xs block">ESTABLISHED BUSINESS CLASS</span>
+            <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-light text-white tracking-wide leading-none">
+                Refined Luxury in <br>
+                <span class="italic font-light text-gold-200">The Heart of West Jakarta</span>
+            </h1>
+            <div class="w-16 h-[1px] bg-gold-400/40 mx-auto my-8"></div>
+            <p class="text-gray-400 text-sm sm:text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed tracking-wide">
+                Where elite corporate convenience integrates seamlessly with warm, timeless Indonesian hospitality. Ideally located at Slipi intersection.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 pt-6">
+                <a href="#rooms" class="bg-gold-500 hover:bg-gold-600 text-obsidian-950 px-8 py-4 rounded-none font-bold tracking-[0.2em] uppercase text-xs transition-all duration-300">
+                    Explore Accommodations
+                </a>
+                <button @click="rfpModalOpen = true" class="border border-white/20 hover:border-gold-400 hover:text-gold-300 text-white px-8 py-4 rounded-none font-bold tracking-[0.2em] uppercase text-xs transition-all duration-300">
+                    Request Proposal (RFP)
+                </button>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center">
+            <span class="text-[9px] tracking-[0.4em] uppercase text-gold-400/70 mb-2">Discover More</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-gold-400/80 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- ==================== SLEEK MODULAR BOOKING BAR ==================== -->
+    <div id="booking-section" class="relative z-20 max-w-7xl mx-auto px-4 -mt-12 sm:-mt-16">
+        <div class="bg-obsidian-900 border border-gold-400/10 shadow-2xl p-8"
+             x-data="{ 
+                checkin: '', 
+                checkout: '', 
+                adults: 1, 
+                children: 0, 
+                promoCode: '',
+                submitBooking() {
+                    if(!this.checkin || !this.checkout) {
+                        alert('Please select check-in and check-out dates.');
+                        return;
+                    }
+                    const baseUrl = 'https://booking.menarapeninsula.com/reserve/';
+                    const params = new URLSearchParams({
+                        checkin: this.checkin,
+                        checkout: this.checkout,
+                        adults: this.adults.toString(),
+                        children: this.children.toString(),
+                        hotel_code: 'MPJ11410'
+                    });
+                    if (this.promoCode) {
+                        params.append('promo', this.promoCode);
+                    }
+                    window.open(`${baseUrl}?${params.toString()}`, '_blank');
+                }
+             }">
+            <form @submit.prevent="submitBooking" class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+                <!-- Check-in -->
+                <div class="border-b md:border-b-0 md:border-r fine-line pb-4 md:pb-0 md:pr-6">
+                    <label class="block text-[10px] font-bold tracking-[0.2em] uppercase text-gold-400 mb-2">Arrival Date</label>
+                    <input type="date" x-model="checkin" class="w-full bg-transparent text-white text-sm focus:outline-none">
+                </div>
+
+                <!-- Check-out -->
+                <div class="border-b md:border-b-0 md:border-r fine-line pb-4 md:pb-0 md:pr-6">
+                    <label class="block text-[10px] font-bold tracking-[0.2em] uppercase text-gold-400 mb-2">Departure Date</label>
+                    <input type="date" x-model="checkout" class="w-full bg-transparent text-white text-sm focus:outline-none">
+                </div>
+
+                <!-- Guests -->
+                <div class="border-b md:border-b-0 md:border-r fine-line pb-4 md:pb-0 md:pr-6">
+                    <label class="block text-[10px] font-bold tracking-[0.2em] uppercase text-gold-400 mb-2">Guests & Rooms</label>
+                    <select x-model="adults" class="w-full bg-transparent text-white text-sm focus:outline-none cursor-pointer">
+                        <option value="1" class="bg-obsidian-900 text-white">1 Guest</option>
+                        <option value="2" class="bg-obsidian-900 text-white">2 Guests</option>
+                        <option value="3" class="bg-obsidian-900 text-white">3 Guests</option>
+                        <option value="4" class="bg-obsidian-900 text-white">4 Guests</option>
+                    </select>
+                </div>
+
+                <!-- Promo Code -->
+                <div class="pb-4 md:pb-0 md:pr-6">
+                    <label class="block text-[10px] font-bold tracking-[0.2em] uppercase text-gold-400 mb-2">Promo Code</label>
+                    <input type="text" x-model="promoCode" placeholder="Enter Code" class="w-full bg-transparent text-white text-sm focus:outline-none placeholder-gray-600">
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit" class="w-full bg-gold-400 hover:bg-gold-500 text-obsidian-950 py-4 font-bold tracking-[0.2em] uppercase text-xs transition-colors duration-300">
+                        Check Rates
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== THE HOTEL / STORYTELLING ==================== -->
+    <section id="about" class="py-32 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <!-- Left Side: Editorial Storytelling -->
+            <div class="lg:col-span-7 space-y-8">
+                <span class="text-gold-400 font-medium tracking-[0.4em] uppercase text-xs block">INTRODUCING MENARA PENINSULA</span>
+                <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-light leading-tight">
+                    Where Executive Class Meets <span class="italic font-light text-gold-200">Indonesian Hospitality</span>
+                </h2>
+                <div class="w-12 h-[1px] bg-gold-400/40"></div>
+                <div class="space-y-6 text-gray-400 font-light leading-relaxed text-sm sm:text-base">
+                    <p>
+                        Majestically situated on the strategic boundaries of West and Central Jakarta, Menara Peninsula Hotel serves as a crucial junction of accessibility and executive productivity. With easy transit routes toward the Gatot Subroto business avenue and the international gateway at Soekarno-Hatta International Airport, your logistics remain effortless.
+                    </p>
+                    <p>
+                        Boasting 380 rooms and suites curated to guarantee premium rest, a versatile collection of 12+ corporate meeting spaces, and state-of-the-art dining and wellness hubs, we ensure that every expectation of the modern international business traveler is exceeded with absolute grace.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Side: Dual High-End Visual Cards -->
+            <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+                <div class="border border-gold-400/10 p-4 bg-obsidian-900">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://www.menarapeninsula.com/wp-content/uploads/sites/29/2026/03/Menara-Peninsula_399-HDR-2.v2.jpg" 
+                             alt="Premium Room Setup" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <span class="text-[10px] tracking-[0.2em] uppercase text-gold-400 font-bold block mt-4 mb-1">BUSINESS SANCTUARIES</span>
+                    <span class="text-sm text-white font-medium">380 Refined Rooms & Suites</span>
+                </div>
+                
+                <div class="border border-gold-400/10 p-4 bg-obsidian-900">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" 
+                             alt="Luxury Pool Deck" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <span class="text-[10px] tracking-[0.2em] uppercase text-gold-400 font-bold block mt-4 mb-1">URBAN LEISURE</span>
+                    <span class="text-sm text-white font-medium">Tropical Pool & Wellness Deck</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ROOMS & SUITES (LARGE EDITORIAL SLIDES) ==================== -->
+    <section id="rooms" class="py-32 bg-obsidian-900 border-y border-obsidian-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-baseline mb-20">
+                <div class="space-y-2">
+                    <span class="text-gold-400 font-medium tracking-[0.4em] uppercase text-xs block">PRIVATE DOMAIN</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-white font-light">Accommodations</h2>
+                </div>
+                <a href="#booking-section" class="text-xs font-bold tracking-[0.2em] text-gold-400 hover:text-white uppercase transition-colors duration-300 mt-4 md:mt-0">Compare All Room Categories &rarr;</a>
+            </div>
+
+            <!-- Large Editorial Rooms Block -->
+            <div class="space-y-16">
+                <!-- Room 1: Deluxe Room -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-b fine-line pb-16">
+                    <div class="lg:col-span-7 h-[400px] overflow-hidden bg-obsidian-950">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Deluxe Room" class="w-full h-full object-cover hover:scale-105 transition-all duration-1000">
+                    </div>
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="font-serif text-3xl text-white font-light">Deluxe Room</h3>
+                            <span class="text-xs font-bold text-gold-400 tracking-wider">From IDR 650,000 / Night</span>
+                        </div>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Curated 32m² of corporate quietude. Seamlessly blends premium bedding layouts (King or Twin) with a comfortable working desk and panoramic city vistas.
+                        </p>
+                        <ul class="grid grid-cols-2 gap-4 text-xs text-gray-500 pt-6 border-t fine-line">
+                            <li><i class="fa-solid fa-vector-square text-gold-500 mr-2"></i> 32 Square Meters</li>
+                            <li><i class="fa-solid fa-wifi text-gold-500 mr-2"></i> High Speed Wi-Fi</li>
+                            <li><i class="fa-solid fa-bed text-gold-500 mr-2"></i> King or Twin Beds</li>
+                            <li><i class="fa-solid fa-tv text-gold-500 mr-2"></i> Interactive Smart TV</li>
+                        </ul>
+                        <div class="pt-6">
+                            <a href="#booking-section" class="inline-block bg-gold-400 hover:bg-gold-500 text-obsidian-950 px-6 py-3 font-semibold tracking-wider text-xs uppercase transition-colors">Reserve This Sanctuary</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 2: Executive Club Room -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-b fine-line pb-16">
+                    <div class="lg:col-span-7 lg:order-2 h-[400px] overflow-hidden bg-obsidian-950">
+                        <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Executive Club Room" class="w-full h-full object-cover hover:scale-105 transition-all duration-1000">
+                    </div>
+                    <div class="lg:col-span-5 lg:order-1 space-y-6">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="font-serif text-3xl text-white font-light">Executive Club Room</h3>
+                            <span class="text-xs font-bold text-gold-400 tracking-wider">From IDR 950,000 / Night</span>
+                        </div>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Elevate your stay on the premium floors. Includes complete access to the Executive Lounge for private breakfasts, evening hors d’oeuvres, and boardroom utility.
+                        </p>
+                        <ul class="grid grid-cols-2 gap-4 text-xs text-gray-500 pt-6 border-t fine-line">
+                            <li><i class="fa-solid fa-vector-square text-gold-500 mr-2"></i> 38 Square Meters</li>
+                            <li><i class="fa-solid fa-couch text-gold-500 mr-2"></i> Executive Lounge Access</li>
+                            <li><i class="fa-solid fa-mug-hot text-gold-500 mr-2"></i> Afternoon High Tea</li>
+                            <li><i class="fa-solid fa-shirt text-gold-500 mr-2"></i> Complimentary Pressing</li>
+                        </ul>
+                        <div class="pt-6">
+                            <a href="#booking-section" class="inline-block bg-gold-400 hover:bg-gold-500 text-obsidian-950 px-6 py-3 font-semibold tracking-wider text-xs uppercase transition-colors">Reserve This Sanctuary</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 3: Peninsula Suite -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-8">
+                    <div class="lg:col-span-7 h-[400px] overflow-hidden bg-obsidian-950">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Peninsula Suite" class="w-full h-full object-cover hover:scale-105 transition-all duration-1000">
+                    </div>
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="font-serif text-3xl text-white font-light">Peninsula Suite</h3>
+                            <span class="text-xs font-bold text-gold-400 tracking-wider">From IDR 1,800,000 / Night</span>
+                        </div>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            The pinnacle of luxury corporate residency. Features a private master bedroom, separate executive dining and living spaces, and an exquisite private jacuzzi tub.
+                        </p>
+                        <ul class="grid grid-cols-2 gap-4 text-xs text-gray-500 pt-6 border-t fine-line">
+                            <li><i class="fa-solid fa-vector-square text-gold-500 mr-2"></i> 70 Square Meters</li>
+                            <li><i class="fa-solid fa-bath text-gold-500 mr-2"></i> Private Jacuzzi Bath</li>
+                            <li><i class="fa-solid fa-couch text-gold-500 mr-2"></i> Separate Dining Area</li>
+                            <li><i class="fa-solid fa-glasses text-gold-500 mr-2"></i> Personalized Butler Service</li>
+                        </ul>
+                        <div class="pt-6">
+                            <a href="#booking-section" class="inline-block bg-gold-400 hover:bg-gold-500 text-obsidian-950 px-6 py-3 font-semibold tracking-wider text-xs uppercase transition-colors">Reserve This Sanctuary</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GASTRONOMY (HIGH CONTRAST OVERLAPS) ==================== -->
+    <section id="dining" class="py-32 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-24">
+            <span class="text-gold-400 font-medium tracking-[0.4em] uppercase text-xs block">FINE DINING DESCENT</span>
+            <h2 class="font-serif text-4xl sm:text-5xl text-white font-light mt-2">Gastronomic Horizons</h2>
+            <div class="w-12 h-[1px] bg-gold-400/40 mx-auto my-6"></div>
+            <p class="text-gray-400 font-light text-sm sm:text-base">Experience curated dining outlets highlighting international culinary standards alongside rich local heritage recipes.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Restaurant 1 -->
+            <div class="border border-gold-400/10 bg-obsidian-900 p-8 space-y-6">
+                <div class="h-80 overflow-hidden bg-obsidian-950">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" 
+                         alt="Kafe Peninsula" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="space-y-4">
+                    <span class="text-[10px] tracking-[0.2em] font-bold text-gold-400 uppercase">ALL-DAY GASTRONOMY & BUFFET</span>
+                    <h3 class="font-serif text-3xl text-white font-semibold">Kafe Peninsula</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        Features highly comprehensive breakfast, lunch, and dinner selections. Enjoy artisanal local Indonesian recipes prepared alongside classic international favorites.
+                    </p>
+                    <div class="flex items-center space-x-6 text-xs text-gray-500 pt-6 border-t fine-line">
+                        <span><i class="fa-regular fa-clock text-gold-500 mr-2"></i> 06:00 AM - 11:00 PM</span>
+                        <span><i class="fa-solid fa-chair text-gold-500 mr-2"></i> 180 Seating Capacity</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant 2 -->
+            <div class="border border-gold-400/10 bg-obsidian-900 p-8 space-y-6">
+                <div class="h-80 overflow-hidden bg-obsidian-950">
+                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80" 
+                         alt="Rumah Rum & Lounge" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="space-y-4">
+                    <span class="text-[10px] tracking-[0.2em] font-bold text-gold-400 uppercase">PREMIUM BAR & LOUNGE</span>
+                    <h3 class="font-serif text-3xl text-white font-semibold">Rumah Rum & Lounge</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        The ultimate business networking retreat. Relish signature premium liquors, cocktails, fine local coffees, and acoustic setups on select midweek evenings.
+                    </p>
+                    <div class="flex items-center space-x-6 text-xs text-gray-500 pt-6 border-t fine-line">
+                        <span><i class="fa-regular fa-clock text-gold-500 mr-2"></i> 12:00 PM - 01:00 AM</span>
+                        <span><i class="fa-solid fa-music text-gold-500 mr-2"></i> Live Acoustic Staged Weekly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MICE & WEDDINGS (BROCHURE STYLE CAPACITY CALCULATOR) ==================== -->
+    <section id="mice-wedding" class="py-32 bg-obsidian-900 border-y border-obsidian-800" x-data="{ activeVenue: 'ballroom' }">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-24">
+                <span class="text-gold-400 font-medium tracking-[0.4em] uppercase text-xs block">CORPORATE EVENT HUB</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-white font-light mt-2">Meetings, Incentives, Conferences & Exhibitions</h2>
+                <div class="w-12 h-[1px] bg-gold-400/40 mx-auto my-6"></div>
+                <p class="text-gray-400 font-light text-sm sm:text-base">Providing premier hosting capabilities in West Jakarta with 12 versatile event rooms and professional support teams.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <!-- Left: Interactive Brochure Selector -->
+                <div class="lg:col-span-4 space-y-4">
+                    <h3 class="font-serif text-2xl text-white font-light mb-6">Select Venue Type</h3>
+                    
+                    <button @click="activeVenue = 'ballroom'" 
+                            :class="activeVenue === 'ballroom' ? 'bg-gold-500 text-obsidian-950 border-gold-500' : 'bg-transparent text-gray-400 border-gold-400/20'"
+                            class="w-full text-left border p-4 font-semibold text-xs tracking-wider uppercase transition-all duration-300 flex justify-between items-center">
+                        <span>The Grand Ballroom</span>
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </button>
+
+                    <button @click="activeVenue = 'classroom'" 
+                            :class="activeVenue === 'classroom' ? 'bg-gold-500 text-obsidian-950 border-gold-500' : 'bg-transparent text-gray-400 border-gold-400/20'"
+                            class="w-full text-left border p-4 font-semibold text-xs tracking-wider uppercase transition-all duration-300 flex justify-between items-center">
+                        <span>Seminar / Classroom Rooms</span>
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </button>
+
+                    <button @click="activeVenue = 'boardroom'" 
+                            :class="activeVenue === 'boardroom' ? 'bg-gold-500 text-obsidian-950 border-gold-500' : 'bg-transparent text-gray-400 border-gold-400/20'"
+                            class="w-full text-left border p-4 font-semibold text-xs tracking-wider uppercase transition-all duration-300 flex justify-between items-center">
+                        <span>Executive Boardrooms</span>
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </button>
+
+                    <div class="pt-6">
+                        <button @click="rfpModalOpen = true" class="w-full border border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-obsidian-950 py-4 font-bold tracking-widest text-xs uppercase transition-colors duration-300">
+                            Request Proposals
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: Active Capacity Panel -->
+                <div class="lg:col-span-8 border border-gold-400/10 p-8 bg-obsidian-950 flex flex-col justify-between">
+                    <!-- Grand Ballroom -->
+                    <div x-show="activeVenue === 'ballroom'" class="space-y-6" x-transition>
+                        <div class="h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=80" 
+                                 alt="Grand Ballroom Setup" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-serif text-2xl text-white font-light">Grand Ballroom</h4>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Exquisitely designed layout for premium corporate banquets, high-attendance award distributions, or romantic wedding gala celebrations. Features direct ballroom entrance logistics.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t fine-line text-xs text-gray-400">
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Max Capacity</span>
+                                <span class="text-sm font-bold text-white">350 Guests Seated</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Catering</span>
+                                <span class="text-sm font-bold text-white">Custom Fine Menus</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Tech Outfitting</span>
+                                <span class="text-sm font-bold text-white">DMX Mood Lightings</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Sound Outlets</span>
+                                <span class="text-sm font-bold text-white">Hi-Fi PA System</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Classroom Seminar -->
+                    <div x-show="activeVenue === 'classroom'" class="space-y-6" x-transition x-cloak>
+                        <div class="h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80" 
+                                 alt="Classroom Setup" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-serif text-2xl text-white font-light">Classroom & Seminar Layouts</h4>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Organized spaces built for corporate employee education, national symposiums, and press announcement events. Equipped with power outlets at every desk slot.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t fine-line text-xs text-gray-400">
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Max Capacity</span>
+                                <span class="text-sm font-bold text-white">150 Guests Seated</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Projectors</span>
+                                <span class="text-sm font-bold text-white">HD Digital System</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Logistics</span>
+                                <span class="text-sm font-bold text-white">Stationery Packages</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Internet</span>
+                                <span class="text-sm font-bold text-white">Dedicated Bandwidth</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Boardrooms -->
+                    <div x-show="activeVenue === 'boardroom'" class="space-y-6" x-transition x-cloak>
+                        <div class="h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1200&q=80" 
+                                 alt="Boardroom Setup" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-serif text-2xl text-white font-light">Executive Boardrooms</h4>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Strictly customized for executive council directives, critical negotiations, and confidential corporate treaties. Outfitted with high-definition video conferencing technologies.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t fine-line text-xs text-gray-400">
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Max Capacity</span>
+                                <span class="text-sm font-bold text-white">40 Guests Seated</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Conferencing</span>
+                                <span class="text-sm font-bold text-white">Smart Zoom/AirPlay</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Layout</span>
+                                <span class="text-sm font-bold text-white">U-Shape / Boardroom</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-600 uppercase tracking-widest mb-1">Beverages</span>
+                                <span class="text-sm font-bold text-white">Espresso stations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXCLUSIVE PRIVILEGES & OFFERS ==================== -->
+    <section id="offers" class="py-32 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-24">
+            <span class="text-gold-400 font-medium tracking-[0.4em] uppercase text-xs block">BENEFICIAL SELECTIONS</span>
+            <h2 class="font-serif text-4xl sm:text-5xl text-white font-light mt-2">Exclusive Offers</h2>
+            <div class="w-12 h-[1px] bg-gold-400/40 mx-auto my-6"></div>
+            <p class="text-gray-400 font-light text-sm sm:text-base">Unlock premium discounts, complimentary upgrades, and flexible checkout dates when choosing direct bookings.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Card 1 -->
+            <div class="border border-gold-400/10 bg-obsidian-900 p-8 flex flex-col justify-between h-[320px]">
+                <div class="space-y-4">
+                    <span class="text-[10px] tracking-[0.2em] font-bold text-gold-400 uppercase">PROMO CODE: WEEKEND15</span>
+                    <h3 class="font-serif text-2xl text-white font-semibold">Weekend Escape Specials</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        Book weekend dates (Friday to Sunday) and claim an immediate 15% discount. Complimented with full buffet breakfast vouchers for 2.
+                    </p>
+                </div>
+                <div class="flex justify-between items-center border-t fine-line pt-6">
+                    <span class="text-xs text-gray-500">Valid Friday - Sunday</span>
+                    <a href="#booking-section" class="bg-gold-400 hover:bg-gold-500 text-obsidian-950 px-6 py-2.5 font-bold uppercase text-[10px] tracking-wider transition-colors duration-300">Book Direct</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="border border-gold-400/10 bg-obsidian-900 p-8 flex flex-col justify-between h-[320px]">
+                <div class="space-y-4">
+                    <span class="text-[10px] tracking-[0.2em] font-bold text-gold-400 uppercase">PROMO CODE: CORPMICE</span>
+                    <h3 class="font-serif text-2xl text-white font-semibold">Corporate Stays & Business Bundles</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        Tailored specifically for individual executives. Includes complimentary laundry collections, flexible checking dates, and meeting lounge entries.
+                    </p>
+                </div>
+                <div class="flex justify-between items-center border-t fine-line pt-6">
+                    <span class="text-xs text-gray-500">Valid on All Weekdays</span>
+                    <a href="#booking-section" class="bg-gold-400 hover:bg-gold-500 text-obsidian-950 px-6 py-2.5 font-bold uppercase text-[10px] tracking-wider transition-colors duration-300">Book Direct</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SANCTUARIES / SPA / WELLNESS ==================== -->
+    <section class="py-32 bg-obsidian-900 border-t border-obsidian-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-24">
+                <span class="text-gold-400 font-medium tracking-[0.4em] uppercase text-xs block">LEISURE AMENITIES</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-white font-light mt-2">Executive Well-Being</h2>
+                <div class="w-12 h-[1px] bg-gold-400/40 mx-auto my-6"></div>
+                <p class="text-gray-400 font-light text-sm sm:text-base">Sanctuaries constructed to maintain fitness limits, alleviate corporate fatigue, and ensure ultimate physical rest.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Facility 1 -->
+                <div class="border border-gold-400/10 p-8 text-center bg-obsidian-950 space-y-4">
+                    <div class="w-12 h-12 rounded-none bg-gold-500/10 flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-water text-xl text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-lg text-white font-semibold">Outdoor Pool</h3>
+                    <p class="text-gray-500 text-xs font-light">Spacious tropical-themed outdoor pool surrounded by palm tree decks.</p>
+                </div>
+
+                <!-- Facility 2 -->
+                <div class="border border-gold-400/10 p-8 text-center bg-obsidian-950 space-y-4">
+                    <div class="w-12 h-12 rounded-none bg-gold-500/10 flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-dumbbell text-xl text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-lg text-white font-semibold">Fitness Center</h3>
+                    <p class="text-gray-500 text-xs font-light">Equipped with professional-grade cardiovascular systems and strength conditioning machinery.</p>
+                </div>
+
+                <!-- Facility 3 -->
+                <div class="border border-gold-400/10 p-8 text-center bg-obsidian-950 space-y-4">
+                    <div class="w-12 h-12 rounded-none bg-gold-500/10 flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-spa text-xl text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-lg text-white font-semibold">Spa & Sauna</h3>
+                    <p class="text-gray-500 text-xs font-light">Deep tissue massage therapies, hydrotherapy pools, and steam rooms.</p>
+                </div>
+
+                <!-- Facility 4 -->
+                <div class="border border-gold-400/10 p-8 text-center bg-obsidian-950 space-y-4">
+                    <div class="w-12 h-12 rounded-none bg-gold-500/10 flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-square-parking text-xl text-gold-400"></i>
+                    </div>
+                    <h3 class="font-serif text-lg text-white font-semibold">Valet Parking</h3>
+                    <p class="text-gray-500 text-xs font-light">Highly secure parking structures with dedicated automated valet service desks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER DECK ==================== -->
+    <section class="py-24 max-w-5xl mx-auto px-6 text-center">
+        <div class="border border-gold-400/10 bg-obsidian-900 p-8 md:p-16">
+            <h3 class="font-serif text-3xl text-white font-light mb-4">The Peninsula Club</h3>
+            <p class="text-gray-400 text-sm font-light max-w-xl mx-auto mb-8">Receive notifications of exclusive room packages, seasonal events, and corporate MICE special rates delivered directly to your inbox.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Your business email" class="flex-grow bg-obsidian-950 border border-gold-400/10 px-5 py-3.5 text-sm focus:outline-none focus:border-gold-400 text-white" required>
+                <button type="submit" class="bg-gold-400 hover:bg-gold-500 text-obsidian-950 px-8 py-3.5 font-bold tracking-widest text-xs uppercase transition-colors duration-300">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-obsidian-950 border-t border-obsidian-900 py-20 text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <!-- Brand -->
+            <div class="space-y-6">
+                <img src="https://www.menarapeninsula.com/wp-content/uploads/sites/29/2023/12/LOGO-MPH-2018-inversed.png" 
+                     alt="Menara Peninsula Logo" 
+                     class="h-12 w-auto object-contain">
+                <p class="text-xs font-light leading-relaxed text-gray-500">
+                    An established 4-star business class sanctuary situated dynamically on the West Jakarta border. Committed to high efficiency and luxuriously warm hospitality.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-gold-400"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gold-400"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gold-400"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                </div>
+            </div>
+
+            <!-- Directory -->
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-wider text-xs">Directory</h4>
+                <ul class="space-y-2 text-xs font-light">
+                    <li><a href="#about" class="hover:text-gold-400 transition-colors">The Hotel</a></li>
+                    <li><a href="#rooms" class="hover:text-gold-400 transition-colors">Rooms & Suites</a></li>
+                    <li><a href="#dining" class="hover:text-gold-400 transition-colors">Gastronomy</a></li>
+                    <li><a href="#mice-wedding" class="hover:text-gold-400 transition-colors">Meetings & Events</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-wider text-xs">Reach Us</h4>
+                <ul class="space-y-2 text-xs font-light text-gray-500">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-location-dot text-gold-500 mr-2 mt-0.5"></i>
+                        <span>Jl. Letnan Jenderal S. Parman No.78, Slipi, West Jakarta 11410, Indonesia</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-phone text-gold-500 mr-2"></i>
+                        <span>+62-21-5350888</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-envelope text-gold-500 mr-2"></i>
+                        <span>reservation@menarapeninsula.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Location Map Mock -->
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-wider text-xs">Location Map</h4>
+                <p class="text-xs font-light">5 minutes from Palmerah commuter station, adjacent to inner-city toll gateways.</p>
+                <div class="h-28 border border-gold-400/10 bg-obsidian-900 flex items-center justify-center text-xs text-gold-400 font-serif">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i> Google Maps Location
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 border-t border-obsidian-900 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-light">
+            <p>&copy; 2026 Menara Peninsula Hotel Jakarta. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-gold-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gold-400 transition-colors">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING BOOK NOW MOBILE ACTION ==================== -->
+    <div class="lg:hidden fixed bottom-0 left-0 w-full z-40 bg-obsidian-950 border-t border-obsidian-900 px-6 py-4 flex justify-between items-center shadow-2xl">
+        <div class="flex flex-col">
+            <span class="text-[9px] uppercase tracking-wider text-gray-500">Rates From</span>
+            <span class="text-sm font-bold text-gold-400">IDR 650,000<span class="text-[10px] font-normal text-gray-500">/night</span></span>
+        </div>
+        <a href="#booking-section" class="bg-gold-500 text-obsidian-950 px-6 py-3 font-bold uppercase text-xs tracking-widest transition-colors duration-300">
+            Book Now
+        </a>
+    </div>
+
+    <!-- ==================== REQUEST FOR PROPOSAL (RFP) STEP-BY-STEP MODAL ==================== -->
+    <div x-show="rfpModalOpen" class="fixed inset-0 z-50 flex items-center justify-center px-4" x-cloak x-transition>
+        <div class="absolute inset-0 bg-obsidian-950/80 backdrop-blur-sm" @click="rfpModalOpen = false"></div>
+        
+        <div class="relative bg-obsidian-900 border border-gold-400/10 w-full max-w-2xl overflow-hidden shadow-2xl z-10" 
+             x-data="{ 
+                step: 1, 
+                nama: '', 
+                email: '', 
+                tipeEvent: 'meeting', 
+                tamu: '', 
+                tanggal: '',
+                submitForm() {
+                    alert('Thank you! Your event proposal request has been received. Our sales representative will contact you within 24 hours.');
+                    this.step = 1;
+                    rfpModalOpen = false;
+                }
+             }">
+            <!-- Header -->
+            <div class="bg-obsidian-950 border-b border-obsidian-800 p-6 flex justify-between items-center">
+                <h3 class="font-serif text-xl text-white font-semibold">Request for Event Proposal (RFP)</h3>
+                <button @click="rfpModalOpen = false" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            
+            <!-- Progress -->
+            <div class="bg-obsidian-950 h-[2px] w-full flex">
+                <div class="bg-gold-400 h-full transition-all duration-300" :style="`width: ${step * 33.3}%`"></div>
+            </div>
+
+            <!-- Form Body -->
+            <form @submit.prevent="submitForm" class="p-6 space-y-6">
+                <!-- Step 1 -->
+                <div x-show="step === 1" class="space-y-4" x-transition>
+                    <h4 class="text-xs font-bold tracking-[0.2em] uppercase text-gold-400">Step 1: Contact Details</h4>
+                    <div>
+                        <label class="block text-[10px] tracking-wider uppercase text-gray-500 mb-1.5">Full Name / Corporate Name</label>
+                        <input type="text" x-model="nama" required class="w-full bg-obsidian-950 border border-gold-400/10 py-3 px-4 text-sm text-white focus:outline-none focus:border-gold-400" placeholder="e.g. PT. Maju Bersama / Budi Santoso">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] tracking-wider uppercase text-gray-500 mb-1.5">Business Email Address</label>
+                        <input type="email" x-model="email" required class="w-full bg-obsidian-950 border border-gold-400/10 py-3 px-4 text-sm text-white focus:outline-none focus:border-gold-400" placeholder="e.g. budi@company.com">
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div x-show="step === 2" class="space-y-4" x-transition x-cloak>
+                    <h4 class="text-xs font-bold tracking-[0.2em] uppercase text-gold-400">Step 2: Event Parameters</h4>
+                    <div>
+                        <label class="block text-[10px] tracking-wider uppercase text-gray-500 mb-1.5">Event Type</label>
+                        <select x-model="tipeEvent" class="w-full bg-obsidian-950 border border-gold-400/10 py-3 px-4 text-sm text-white focus:outline-none focus:border-gold-400">
+                            <option value="meeting" class="bg-obsidian-900">Corporate Conference / Seminar</option>
+                            <option value="wedding" class="bg-obsidian-900">Wedding Ceremony / Reception</option>
+                            <option value="banquet" class="bg-obsidian-900">Gala Dinner / Celebration</option>
+                            <option value="exhibition" class="bg-obsidian-900">Exhibition / Tradeshow</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[10px] tracking-wider uppercase text-gray-500 mb-1.5">Expected Guests</label>
+                            <input type="number" x-model="tamu" required class="w-full bg-obsidian-950 border border-gold-400/10 py-3 px-4 text-sm text-white focus:outline-none focus:border-gold-400" placeholder="e.g. 50">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] tracking-wider uppercase text-gray-500 mb-1.5">Target Date</label>
+                            <input type="date" x-model="tanggal" required class="w-full bg-obsidian-950 border border-gold-400/10 py-3 px-4 text-sm text-white focus:outline-none focus:border-gold-400">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div x-show="step === 3" class="space-y-4" x-transition x-cloak>
+                    <h4 class="text-xs font-bold tracking-[0.2em] uppercase text-gold-400">Step 3: Verification & Send</h4>
+                    <div class="bg-obsidian-950 border border-gold-400/10 p-4 space-y-2 text-sm text-gray-300">
+                        <p><strong>Organizer:</strong> <span x-text="nama"></span></p>
+                        <p><strong>Email:</strong> <span x-text="email"></span></p>
+                        <p><strong>Type:</strong> <span class="capitalize" x-text="tipeEvent"></span></p>
+                        <p><strong>Attendance:</strong> <span x-text="tamu"></span> attendees</p>
+                        <p><strong>Date:</strong> <span x-text="tanggal"></span></p>
+                    </div>
+                    <p class="text-[10px] text-gray-600 italic">By sending this inquiry, you confirm processing of personal data for reservation follow-up services.</p>
+                </div>
+
+                <!-- Footer Navigation Buttons -->
+                <div class="flex justify-between items-center border-t border-obsidian-800 pt-6">
+                    <button type="button" 
+                            x-show="step > 1" 
+                            @click="step--" 
+                            class="bg-obsidian-950 hover:bg-obsidian-800 text-white px-5 py-2.5 font-bold text-xs uppercase tracking-wider transition-colors">
+                        Back
+                    </button>
+                    <span x-show="step === 1"></span>
+                    
+                    <button type="button" 
+                            x-show="step < 3" 
+                            @click="if(step === 1 && (!nama || !email)) { alert('Please fill in contact information.'); return; } if(step === 2 && (!tamu || !tanggal)) { alert('Please define event parameters.'); return; } step++" 
+                            class="bg-gold-400 hover:bg-gold-500 text-obsidian-950 px-6 py-2.5 font-bold text-xs uppercase tracking-wider transition-colors">
+                        Next
+                    </button>
+                    
+                    <button type="submit" 
+                            x-show="step === 3" 
+                            class="bg-gold-400 hover:bg-gold-500 text-obsidian-950 px-6 py-2.5 font-bold text-xs uppercase tracking-wider transition-colors">
+                        Submit RFP
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

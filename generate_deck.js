@@ -1,5 +1,4 @@
 const pptxgen = require('pptxgenjs');
-const fs = require('fs');
 
 async function createDeck() {
   const pres = new pptxgen();
@@ -11,16 +10,14 @@ async function createDeck() {
   // --- BRAND COLOR PALETTE ---
   const DARK_BG = '0A0E17';       // Deep Midnight Luxury Blue/Black
   const CARD_BG = '141C2B';       // Premium Navy Container
-  const ACCENT_CARD = '1A2436';   // Slightly lighter navy
   const GOLD = 'D4AF37';          // Premium Champagne Gold
   const GOLD_LIGHT = 'E6CA65';    // Light Gold
   const TEXT_WHITE = 'FFFFFF';    // High Contrast White
   const TEXT_MUTED = '94A3B8';    // Slate Gray 400
   const TEXT_SUBTLE = '64748B';   // Slate Gray 500
   const BORDER_COLOR = '243247';  // Dark borders
-  const GREEN_ACCENT = '10B981';  // Emerald Green for ROI
+  const GREEN_ACCENT = '10B981';  // Emerald Green for Value Creation
 
-  // Helper function to set slide dark background & subtle branding
   function applyBaseSlide(slide, categoryTitle) {
     slide.background = { color: DARK_BG };
 
@@ -30,7 +27,6 @@ async function createDeck() {
       fill: { color: GOLD }, line: { color: GOLD }
     });
 
-    // Header category tag if given
     if (categoryTitle) {
       slide.addText(categoryTitle.toUpperCase(), {
         x: 0.8, y: 0.35, w: 8.4, h: 0.25,
@@ -39,7 +35,6 @@ async function createDeck() {
       });
     }
 
-    // Bottom subtle footer
     slide.addText('JOURNEYON × MENARA PENINSULA HOTEL JAKARTA | CONFIDENTIAL', {
       x: 0.8, y: 5.25, w: 6.5, h: 0.25,
       fontSize: 8, color: TEXT_SUBTLE, fontFace: 'Helvetica'
@@ -53,7 +48,6 @@ async function createDeck() {
     const slide = pres.addSlide();
     slide.background = { color: DARK_BG };
 
-    // Decorative geometric accents
     slide.addShape(pres.ShapeType.rect, {
       x: 0, y: 0, w: 0.15, h: 5.625,
       fill: { color: GOLD }, line: { color: GOLD }
@@ -81,13 +75,11 @@ async function createDeck() {
       fontSize: 13, color: GOLD_LIGHT, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
     });
 
-    // Divider line
     slide.addShape(pres.ShapeType.line, {
       x: 0.8, y: 3.65, w: 8.4, h: 0,
       line: { color: BORDER_COLOR, width: 1 }
     });
 
-    // Metadata Columns
     slide.addText('TARGET AUDIENCE:\nBoard of Management\nGeneral Manager & DOSM', {
       x: 0.8, y: 3.85, w: 2.8, h: 0.8,
       fontSize: 10, color: TEXT_MUTED, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
@@ -121,7 +113,6 @@ async function createDeck() {
       fontSize: 22, bold: true, color: TEXT_WHITE, fontFace: 'Georgia'
     });
 
-    // Card 1: Old Reality
     slide.addShape(pres.ShapeType.roundRect, {
       x: 0.8, y: 1.3, w: 4.0, h: 3.65, r: 0.1,
       fill: { color: CARD_BG }, line: { color: BORDER_COLOR, width: 1 }
@@ -145,7 +136,6 @@ async function createDeck() {
       }
     );
 
-    // Card 2: New AI-First Reality
     slide.addShape(pres.ShapeType.roundRect, {
       x: 5.2, y: 1.3, w: 4.0, h: 3.65, r: 0.1,
       fill: { color: CARD_BG }, line: { color: GOLD, width: 1.5 }
@@ -183,7 +173,6 @@ async function createDeck() {
       fontSize: 22, bold: true, color: TEXT_WHITE, fontFace: 'Georgia'
     });
 
-    // 4 Asset Stat Boxes across the top
     const stats = [
       { num: '380', label: 'Business Rooms', sub: '8 distinct categories' },
       { num: '735 sqm', label: 'Cengkeh Ballroom', sub: 'Column-free, 1,200 pax' },
@@ -211,7 +200,6 @@ async function createDeck() {
       });
     });
 
-    // Friction Analysis Box
     slide.addShape(pres.ShapeType.roundRect, {
       x: 0.8, y: 2.6, w: 8.4, h: 2.4, r: 0.1,
       fill: { color: CARD_BG }, line: { color: 'F59E0B', width: 1 }
@@ -224,7 +212,7 @@ async function createDeck() {
 
     slide.addText(
       '1. Legacy Web Architecture: Slow load speeds and lower Core Web Vitals increase mobile bounce rates.\n' +
-      '2. Unstructured Data Silos: High-value specs (ballroom dimensions, meeting packages IDR 450k-550k/pax, Platinum Wedding IDR 140M) remain trapped in PDFs and raw text.\n' +
+      '2. Unstructured Data Silos: High-value specs (ballroom dimensions, meeting capacities, wedding amenities) remain trapped in PDFs and raw text.\n' +
       '3. AI Crawler Invisibility: Bot crawlers (GPTBot, PerplexityBot) cannot reliably parse real-time rates or event capacities.\n' +
       '4. Booking Leakage: Direct website visitors experience high friction, defaulting back to booking via 3rd-party OTAs.',
       {
@@ -246,7 +234,6 @@ async function createDeck() {
       fontSize: 22, bold: true, color: TEXT_WHITE, fontFace: 'Georgia'
     });
 
-    // 3 Solution Pillars Columns
     const pillars = [
       {
         title: 'NEXT-GEN WEBSITE',
@@ -324,8 +311,6 @@ async function createDeck() {
       fontSize: 22, bold: true, color: TEXT_WHITE, fontFace: 'Georgia'
     });
 
-    // Dual Engineering Framework: Two Large Columns
-    // Left: Human Experience
     slide.addShape(pres.ShapeType.roundRect, {
       x: 0.8, y: 1.3, w: 4.0, h: 3.65, r: 0.1,
       fill: { color: CARD_BG }, line: { color: BORDER_COLOR, width: 1 }
@@ -349,7 +334,6 @@ async function createDeck() {
       }
     );
 
-    // Right: Machine Readability
     slide.addShape(pres.ShapeType.roundRect, {
       x: 5.2, y: 1.3, w: 4.0, h: 3.65, r: 0.1,
       fill: { color: CARD_BG }, line: { color: GOLD, width: 1.5 }
@@ -451,7 +435,6 @@ async function createDeck() {
       fontSize: 22, bold: true, color: TEXT_WHITE, fontFace: 'Georgia'
     });
 
-    // Left Column: Room Strategy & Categories
     slide.addShape(pres.ShapeType.roundRect, {
       x: 0.8, y: 1.3, w: 4.4, h: 3.65, r: 0.1,
       fill: { color: CARD_BG }, line: { color: BORDER_COLOR, width: 1 }
@@ -476,12 +459,11 @@ async function createDeck() {
       fontSize: 8.8, color: TEXT_MUTED, fontFace: 'Helvetica', lineSpacingMultiple: 1.15
     });
 
-    slide.addText('Direct Value Add: Airport Transfer (IDR 380k net), Best Rate Guarantee, and 24/7 Room Service.', {
+    slide.addText('Direct Value Add: Airport Transfer service, Best Rate Guarantee, and 24/7 Room Service.', {
       x: 1.0, y: 4.25, w: 4.0, h: 0.5,
       fontSize: 8.5, italic: true, color: GOLD_LIGHT, fontFace: 'Helvetica'
     });
 
-    // Right Column: Real-World Search Prompt Simulation
     slide.addShape(pres.ShapeType.roundRect, {
       x: 5.4, y: 1.3, w: 3.8, h: 3.65, r: 0.1,
       fill: { color: '0D1524' }, line: { color: GOLD, width: 1.5 }
@@ -531,8 +513,6 @@ async function createDeck() {
       fontSize: 22, bold: true, color: TEXT_WHITE, fontFace: 'Georgia'
     });
 
-    // 2 Big Cards: Left MICE, Right Weddings
-    // Left: Corporate MICE
     slide.addShape(pres.ShapeType.roundRect, {
       x: 0.8, y: 1.3, w: 4.0, h: 3.65, r: 0.1,
       fill: { color: CARD_BG }, line: { color: BORDER_COLOR, width: 1 }
@@ -543,10 +523,10 @@ async function createDeck() {
     });
     slide.addText(
       '• Cengkeh Grand Ballroom: 735 sqm, column-free, 7-8m high ceiling, up to 1,200 standing guests.\n\n' +
-      '• Halfday Meeting Package: IDR 450,000 net/pax\n' +
-      '  (1 coffee break with 3 snacks, 1 lunch/dinner, 4h venue)\n\n' +
-      '• Fullday Meeting Package: IDR 550,000 net/pax\n' +
-      '  (2 coffee breaks with snacks, 1 lunch/dinner, 8h venue)\n\n' +
+      '• Halfday Meeting Package:\n' +
+      '  Includes 1 coffee break with 3 snacks, 1 lunch/dinner, 4-hour venue usage.\n\n' +
+      '• Fullday Meeting Package:\n' +
+      '  Includes 2 coffee breaks with snacks, 1 lunch/dinner, 8-hour venue usage.\n\n' +
       '• 15 - 20 Modular Breakout Suites: Kunir, Dlima, Jasmine equipped with smart screens & PA systems.',
       {
         x: 1.0, y: 1.9, w: 3.6, h: 2.8,
@@ -554,7 +534,6 @@ async function createDeck() {
       }
     );
 
-    // Right: Luxury Wedding Packages
     slide.addShape(pres.ShapeType.roundRect, {
       x: 5.2, y: 1.3, w: 4.0, h: 3.65, r: 0.1,
       fill: { color: CARD_BG }, line: { color: GOLD, width: 1.5 }
@@ -564,11 +543,12 @@ async function createDeck() {
       fontSize: 12, bold: true, color: GOLD, fontFace: 'Helvetica'
     });
     slide.addText(
-      '• Platinum Wedding Package: IDR 140,000,000 Net\n' +
-      '  (400 buffet orders, Junior Suite + 6 Deluxe rooms for family, 120-min Artha Spa, 1st Anniversary voucher)\n\n' +
-      '• Diamond Wedding Package: IDR 114,000,000 Net\n' +
-      '  (300 buffet orders, Junior Suite + 4 Deluxe rooms, 90-min bridal spa, food tasting for 6 persons)\n\n' +
-      '• Wedding Blessing & Akad: Intimate 6-hour venue rental with dedicated hospitality suite and catering.',
+      '• Platinum Wedding Package:\n' +
+      '  Includes 400 buffet orders, Junior Suite + 6 Deluxe rooms for family, 120-min Artha Spa, 1st Anniversary voucher.\n\n' +
+      '• Diamond Wedding Package:\n' +
+      '  Includes 300 buffet orders, Junior Suite + 4 Deluxe rooms, bridal spa treatment, food tasting for 6 persons.\n\n' +
+      '• Wedding Blessing & Akad:\n' +
+      '  Intimate 6-hour venue rental with dedicated hospitality suite and catering.',
       {
         x: 5.4, y: 1.9, w: 3.6, h: 2.8,
         fontSize: 9.5, color: TEXT_MUTED, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
@@ -702,19 +682,17 @@ async function createDeck() {
   }
 
   // ==========================================
-  // SLIDE 11: PROJECTED ROI & BUSINESS IMPACT
+  // SLIDE 11: VALUE CREATION & COMMERCIAL LOGIC
   // ==========================================
   {
     const slide = pres.addSlide();
-    applyBaseSlide(slide, 'Commercial Returns | Projected ROI');
+    applyBaseSlide(slide, 'Commercial Returns | Value Creation');
 
-    slide.addText('Measurable Savings & Bottom-Line Growth', {
+    slide.addText('Value Creation & Commercial Logic', {
       x: 0.8, y: 0.65, w: 8.4, h: 0.5,
       fontSize: 22, bold: true, color: TEXT_WHITE, fontFace: 'Georgia'
     });
 
-    // 2 Major ROI Columns
-    // Left: Commission Savings
     slide.addShape(pres.ShapeType.roundRect, {
       x: 0.8, y: 1.3, w: 4.0, h: 3.65, r: 0.1,
       fill: { color: CARD_BG }, line: { color: GREEN_ACCENT, width: 1.5 }
@@ -723,29 +701,25 @@ async function createDeck() {
       x: 1.0, y: 1.5, w: 3.6, h: 0.3,
       fontSize: 12, bold: true, color: GREEN_ACCENT, fontFace: 'Helvetica'
     });
-    slide.addText('Direct Booking Channel Shift Calculation', {
+    slide.addText('Direct Booking Channel Shift Logic', {
       x: 1.0, y: 1.8, w: 3.6, h: 0.25,
       fontSize: 9.5, color: TEXT_MUTED, fontFace: 'Helvetica'
     });
 
-    slide.addText('IDR 345,600,000 / Year', {
+    slide.addText('+18% to 20% Net Margin', {
       x: 1.0, y: 2.15, w: 3.6, h: 0.45,
       fontSize: 20, bold: true, color: GREEN_ACCENT, fontFace: 'Georgia'
     });
     slide.addText(
-      '• Average OTA Commission: 18%\n\n' +
-      '• Shifting only 200 room nights/month to direct booking (assumed rate IDR 800,000 net):\n' +
-      '  - Monthly Direct Revenue: IDR 160,000,000\n' +
-      '  - Monthly Commission Saved: ~IDR 28,800,000\n' +
-      '  - Annual Commission Recaptured: ~IDR 345,600,000\n\n' +
-      '• Permanent Direct Equity: Guests become owned direct hotel contacts for future stays.',
+      '• Current Industry Reality: Online Travel Agencies claim 18% to 20% commission on gross booking revenue.\n\n' +
+      '• Shifting high-intent direct bookings away from OTAs immediately yields a 18% to 20% net margin expansion per room night for the property.\n\n' +
+      '• Direct Guest Ownership: Corporate travelers booking directly become owned first-party contacts for repeat business, eliminating recurring customer acquisition costs (CAC).',
       {
         x: 1.0, y: 2.7, w: 3.6, h: 2.1,
-        fontSize: 9, color: TEXT_WHITE, fontFace: 'Helvetica', lineSpacingMultiple: 1.15
+        fontSize: 9, color: TEXT_WHITE, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
       }
     );
 
-    // Right: High-Ticket Event Gains
     slide.addShape(pres.ShapeType.roundRect, {
       x: 5.2, y: 1.3, w: 4.0, h: 3.65, r: 0.1,
       fill: { color: CARD_BG }, line: { color: GOLD, width: 1.5 }
@@ -759,87 +733,77 @@ async function createDeck() {
       fontSize: 9.5, color: TEXT_MUTED, fontFace: 'Helvetica'
     });
 
-    slide.addText('+1 Event Offsets Full Cost', {
+    slide.addText('Self-Funding Digital Upgrade', {
       x: 5.4, y: 2.15, w: 3.6, h: 0.45,
       fontSize: 20, bold: true, color: GOLD, fontFace: 'Georgia'
     });
     slide.addText(
-      '• Closing just 1 additional Platinum Wedding (IDR 140M) or 2 corporate conferences per quarter fully offsets digital development costs.\n\n' +
+      '• High Commercial Leverage: Adding just 1 additional signature wedding or a pair of corporate full-day conferences per quarter entirely self-funds the digital upgrade.\n\n' +
       '• Direct Inquiries: Planners bypass aggregators and deal straight with the hotel sales team.\n\n' +
-      '• First-Mover Brand Dominance: Establishes Menara Peninsula as the premier tech-forward hotel destination in West Jakarta before competitors react.',
+      '• First-Mover Market Leadership: Establishes Menara Peninsula as the premier AI-dominant hotel destination in Jakarta before regional competitors adapt.',
       {
         x: 5.4, y: 2.7, w: 3.6, h: 2.1,
-        fontSize: 9, color: TEXT_WHITE, fontFace: 'Helvetica', lineSpacingMultiple: 1.15
+        fontSize: 9, color: TEXT_WHITE, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
       }
     );
   }
 
   // ==========================================
-  // SLIDE 12: PARTNERSHIP & INVESTMENT TIERS
+  // SLIDE 12: PARTNERSHIP FRAMEWORK & SERVICE SCOPE
   // ==========================================
   {
     const slide = pres.addSlide();
-    applyBaseSlide(slide, 'Commercial Partnership | Investment Tiers');
+    applyBaseSlide(slide, 'Partnership Models | Service Scope');
 
     slide.addText('Scalable Partnership Engagement Models', {
       x: 0.8, y: 0.65, w: 8.4, h: 0.5,
       fontSize: 22, bold: true, color: TEXT_WHITE, fontFace: 'Georgia'
     });
 
-    // 2 Tier Cards
-    // Tier 1
-    slide.addShape(pres.ShapeType.roundRect, {
-      x: 0.8, y: 1.3, w: 4.0, h: 3.65, r: 0.1,
-      fill: { color: CARD_BG }, line: { color: BORDER_COLOR, width: 1 }
-    });
-    slide.addText('TIER 1: AISO ESSENTIALS', {
-      x: 1.0, y: 1.5, w: 3.6, h: 0.3,
-      fontSize: 12, bold: true, color: TEXT_WHITE, fontFace: 'Helvetica'
-    });
-    slide.addText('Technical & Automated Indexing Foundation', {
-      x: 1.0, y: 1.8, w: 3.6, h: 0.25,
-      fontSize: 9.5, italic: true, color: GOLD_LIGHT, fontFace: 'Helvetica'
-    });
-    slide.addText(
-      '• Full Schema.org JSON-LD suite injection\n' +
-      '• Standardized /llms.txt & crawler directives\n' +
-      '• IndexNow real-time protocol integration\n' +
-      '• Google Free Booking Links configuration\n' +
-      '• Quarterly AI Visibility & Audit Reports\n\n' +
-      'Best Suited For: Properties seeking rapid technical AI compliance with minimal development footprint.\n\n' +
-      'Model: Monthly Retainer (Low touch, fast setup).',
+    const frameworks = [
       {
-        x: 1.0, y: 2.15, w: 3.6, h: 2.6,
-        fontSize: 9.5, color: TEXT_MUTED, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
+        name: 'FRAMEWORK A: AISO ESSENTIALS',
+        sub: 'Discovery & Indexing Foundation',
+        desc: '• Full Schema.org JSON-LD suite injection\n• Standardized /llms.txt & crawler directives\n• IndexNow real-time protocol integration\n• Google Free Booking Links configuration\n• Quarterly AI Visibility & Audit Reports\n\nFocus: Rapid AI discovery compliance for existing infrastructure.\n\nStructure: Technical Governance Retainer'
+      },
+      {
+        name: 'FRAMEWORK B: NEXT-GEN WEB + AISO',
+        sub: 'RECOMMENDED FLAGSHIP',
+        desc: '• Full Next-Gen Website Development (Headless, 95+ Core Web Vitals, luxury UI/UX)\n• Complete Framework A AISO Architecture\n• Embedded JourneyOn 24/7 AI Booking Assistant\n• Interactive MICE & Wedding RFP Generator\n• Reputation Sync & AI Review Assistant\n• Monthly AI Share-of-Voice Tracking\n\nStructure: Turnkey Deployment + Retainer'
+      },
+      {
+        name: 'FRAMEWORK C: REVENUE PARTNERSHIP',
+        sub: 'Shared-Success Model',
+        desc: '• Full Scope of Framework B included\n• JourneyOn AI WhatsApp Reservation Bot\n• Continuous Conversion Rate Optimization (CRO)\n• Dedicated Review Sentiment Automation\n• Performance-aligned direct revenue sharing\n\nStructure: Subsidized Setup + Success Share\n\n*Details itemized in Commercial Quotation'
       }
-    );
+    ];
 
-    // Tier 2 (Featured)
-    slide.addShape(pres.ShapeType.roundRect, {
-      x: 5.2, y: 1.3, w: 4.0, h: 3.65, r: 0.1,
-      fill: { color: CARD_BG }, line: { color: GOLD, width: 2 }
+    frameworks.forEach((fw, idx) => {
+      const xPos = 0.8 + idx * 2.9;
+      slide.addShape(pres.ShapeType.roundRect, {
+        x: xPos, y: 1.3, w: 2.65, h: 3.65, r: 0.1,
+        fill: { color: CARD_BG }, line: { color: idx === 1 ? GOLD : BORDER_COLOR, width: idx === 1 ? 2 : 1 }
+      });
+
+      slide.addText(fw.name, {
+        x: xPos + 0.12, y: 1.45, w: 2.41, h: 0.35,
+        fontSize: 10, bold: true, color: idx === 1 ? GOLD : TEXT_WHITE, fontFace: 'Helvetica'
+      });
+      slide.addText(fw.sub, {
+        x: xPos + 0.12, y: 1.8, w: 2.41, h: 0.25,
+        fontSize: 8.5, bold: true, color: idx === 1 ? '10B981' : GOLD_LIGHT, fontFace: 'Helvetica'
+      });
+
+      slide.addShape(pres.ShapeType.line, {
+        x: xPos + 0.12, y: 2.1, w: 2.41, h: 0,
+        line: { color: BORDER_COLOR, width: 1 }
+      });
+
+      slide.addText(fw.desc, {
+        x: xPos + 0.12, y: 2.2, w: 2.41, h: 2.65,
+        fontSize: 8.5, color: TEXT_MUTED, fontFace: 'Helvetica', lineSpacingMultiple: 1.15
+      });
     });
-    slide.addText('TIER 2: NEXT-GEN WEB + AISO FULL SUITE', {
-      x: 5.4, y: 1.5, w: 3.6, h: 0.3,
-      fontSize: 12, bold: true, color: GOLD, fontFace: 'Helvetica'
-    });
-    slide.addText('RECOMMENDED FOR MENARA PENINSULA', {
-      x: 5.4, y: 1.8, w: 3.6, h: 0.25,
-      fontSize: 9.5, bold: true, color: '10B981', fontFace: 'Helvetica'
-    });
-    slide.addText(
-      '• Full Next-Gen Website Development (Headless, 95+ Core Web Vitals, luxury custom UX)\n' +
-      '• Complete Tier 1 AISO Architecture + Continuous Tuning\n' +
-      '• Embedded JourneyOn 24/7 AI Booking Assistant\n' +
-      '• Interactive MICE & Wedding RFP Generator\n' +
-      '• Multi-Platform Reputation Aggregator & AI Review Assistant\n' +
-      '• Monthly Dedicated AI Share-of-Voice & Competitor Tracking\n\n' +
-      'Model: Development + Retainer / Performance Hybrid.',
-      {
-        x: 5.4, y: 2.15, w: 3.6, h: 2.6,
-        fontSize: 9.5, color: TEXT_WHITE, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
-      }
-    );
   }
 
   // ==========================================
@@ -855,46 +819,46 @@ async function createDeck() {
     });
 
     const ctaSteps = [
-      { step: 'STEP 1', title: 'Strategic Approval', desc: 'Approve the 90-day pilot project agreement for Menara Peninsula Hotel.' },
-      { step: 'STEP 2', title: 'Technical Kickoff', desc: '1-week alignment with IT & marketing teams to verify assets & booking feeds.' },
-      { step: 'STEP 3', title: 'Launch & Dominate', desc: 'Deploy next-gen web platform, index data in global LLMs, & track direct conversions.' }
+      { step: 'STEP 1', title: 'Strategic Endorsement', desc: 'Approve the 90-day Website & AISO Initiative framework for Menara Peninsula Hotel.' },
+      { step: 'STEP 2', title: 'Review Commercial Quotation', desc: 'Examine the itemized investment tiers and payment milestones in the accompanying Commercial Quotation document.' },
+      { step: 'STEP 3', title: 'Technical Kickoff & Alignment', desc: 'Convene a 1-week alignment session between Menara Peninsula leadership and the JourneyOn technical team.' },
+      { step: 'STEP 4', title: 'Launch, Dominate & Convert', desc: 'Deploy next-gen web platform, index property assets into global LLMs, & track direct conversion growth.' }
     ];
 
     ctaSteps.forEach((cs, i) => {
-      const yPos = 1.35 + i * 1.05;
+      const yPos = 1.3 + i * 0.8;
       slide.addShape(pres.ShapeType.roundRect, {
-        x: 0.8, y: yPos, w: 8.4, h: 0.9, r: 0.08,
+        x: 0.8, y: yPos, w: 8.4, h: 0.7, r: 0.08,
         fill: { color: CARD_BG }, line: { color: BORDER_COLOR, width: 1 }
       });
 
       slide.addText(cs.step, {
-        x: 1.0, y: yPos + 0.28, w: 1.2, h: 0.35,
-        fontSize: 12, bold: true, color: GOLD, fontFace: 'Georgia'
+        x: 1.0, y: yPos + 0.2, w: 1.2, h: 0.3,
+        fontSize: 11, bold: true, color: GOLD, fontFace: 'Georgia'
       });
       slide.addText(cs.title, {
-        x: 2.3, y: yPos + 0.15, w: 6.7, h: 0.3,
-        fontSize: 12, bold: true, color: TEXT_WHITE, fontFace: 'Helvetica'
+        x: 2.3, y: yPos + 0.1, w: 6.7, h: 0.25,
+        fontSize: 11, bold: true, color: TEXT_WHITE, fontFace: 'Helvetica'
       });
       slide.addText(cs.desc, {
-        x: 2.3, y: yPos + 0.45, w: 6.7, h: 0.35,
-        fontSize: 9.5, color: TEXT_MUTED, fontFace: 'Helvetica'
+        x: 2.3, y: yPos + 0.35, w: 6.7, h: 0.25,
+        fontSize: 8.8, color: TEXT_MUTED, fontFace: 'Helvetica'
       });
     });
 
-    // Contact Footer Card
     slide.addShape(pres.ShapeType.roundRect, {
-      x: 0.8, y: 4.6, w: 8.4, h: 0.65, r: 0.08,
+      x: 0.8, y: 4.65, w: 8.4, h: 0.6, r: 0.08,
       fill: { color: '1E293B' }, line: { color: GOLD, width: 1 }
     });
     slide.addText('CONTACT US: partnership@journeyon.id  |  tech@journeyon.id  |  https://journeyon.id/', {
-      x: 0.8, y: 4.75, w: 8.4, h: 0.3,
+      x: 0.8, y: 4.8, w: 8.4, h: 0.3,
       fontSize: 10, bold: true, color: GOLD, align: 'center', fontFace: 'Helvetica'
     });
   }
 
   const outputPath = 'PITCH_DECK_MENARA_PENINSULA_AISO.pptx';
   await pres.writeFile({ fileName: outputPath });
-  console.log('Successfully generated PPTX:', outputPath);
+  console.log('Successfully regenerated PPTX without pricing numbers:', outputPath);
 }
 
 createDeck().catch(console.error);

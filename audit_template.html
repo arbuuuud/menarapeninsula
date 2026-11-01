@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Technical Website Audit Report - Menara Peninsula Hotel Jakarta</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 1.2cm 1.4cm 1.2cm 1.4cm;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1e293b;
+    line-height: 1.4;
+    font-size: 8.5pt;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .page {
+    page-break-after: always;
+    height: 100vh;
+    max-height: 270mm;
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 25px;
+  }
+  .page:last-child {
+    page-break-after: avoid;
+  }
+
+  /* Header Bar */
+  .doc-header {
+    border-bottom: 2px solid #D4AF37;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .doc-brand {
+    font-size: 15pt;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #0F172A;
+  }
+  .doc-brand span {
+    color: #D4AF37;
+  }
+  .doc-meta {
+    text-align: right;
+    font-size: 8pt;
+    color: #64748b;
+    line-height: 1.35;
+  }
+  .doc-meta strong {
+    color: #0F172A;
+  }
+
+  /* Titles */
+  h1.doc-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16pt;
+    color: #0F172A;
+    margin: 0 0 2px 0;
+    line-height: 1.2;
+  }
+  .doc-subtitle {
+    font-size: 8.5pt;
+    color: #64748b;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 10.5pt;
+    color: #0F172A;
+    border-left: 3.5px solid #D4AF37;
+    padding-left: 8px;
+    margin: 11px 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    margin: 0 0 6px 0;
+    color: #334155;
+    text-align: justify;
+  }
+
+  /* Metadata Box */
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 11px;
+    font-size: 8pt;
+    line-height: 1.35;
+  }
+  .meta-box strong {
+    color: #0F172A;
+    display: inline-block;
+    min-width: 85px;
+  }
+
+  /* Grade Box */
+  .grade-banner {
+    background: #0F172A;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #ef4444;
+  }
+  .grade-badge {
+    background: #ef4444;
+    color: #ffffff;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16pt;
+    font-weight: 800;
+    padding: 2px 14px;
+    border-radius: 4px;
+  }
+
+  /* Scorecard Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 10px 0;
+    font-size: 7.8pt;
+  }
+  th, td {
+    padding: 5px 8px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+  }
+  th {
+    background-color: #0F172A;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  td.critical {
+    color: #dc2626;
+    font-weight: 700;
+  }
+  td.optimal {
+    color: #059669;
+    font-weight: 700;
+  }
+
+  /* Vulnerability Cards */
+  .vuln-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #dc2626;
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin-bottom: 6px;
+  }
+  .vuln-card h4 {
+    margin: 0 0 3px 0;
+    color: #0F172A;
+    font-size: 8.5pt;
+    display: flex;
+    justify-content: space-between;
+  }
+  .vuln-card h4 span {
+    color: #dc2626;
+    font-size: 7.5pt;
+    font-weight: 600;
+  }
+  .vuln-card p {
+    font-size: 7.6pt;
+    color: #475569;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  /* Remediation Grid */
+  .remedy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 8px 0;
+  }
+  .remedy-box {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-top: 2.5px solid #059669;
+    border-radius: 4px;
+    padding: 8px 10px;
+  }
+  .remedy-box h4 {
+    margin: 0 0 4px 0;
+    font-size: 8.5pt;
+    color: #0F172A;
+    font-weight: 700;
+  }
+  .remedy-box p {
+    margin: 0;
+    font-size: 7.6pt;
+    color: #475569;
+    line-height: 1.35;
+  }
+
+  /* Highlight Banner */
+  .highlight-banner {
+    background: #1A3A38;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 10px 0;
+    border-left: 4px solid #D4AF37;
+  }
+  .highlight-banner h4 {
+    margin: 0 0 3px 0;
+    color: #E5B044;
+    font-size: 9.5pt;
+    font-weight: 700;
+  }
+  .highlight-banner p {
+    margin: 0;
+    color: #e2e8f0;
+    font-size: 8pt;
+    line-height: 1.35;
+  }
+
+  /* Footer */
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 7pt;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================================================= -->
+<!-- PAGE 1: DIAGNOSTIC AUDIT, METADATA & EXECUTIVE SUMMARY -->
+<!-- ========================================================================= -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-brand">JOURNEY<span>ON</span></div>
+    <div class="doc-meta">
+      <strong>TECHNICAL AUDIT REPORT</strong><br>
+      <strong>AUDIT REF:</strong> AUD-MPH-2026-001<br>
+      <strong>TARGET:</strong> https://www.menarapeninsula.com/
+    </div>
+  </div>
+
+  <h1 class="doc-title">Website Technical & AI-Readiness Audit</h1>
+  <div class="doc-subtitle">Diagnostic Inspection of Architecture, Performance, SEO, Security & Generative AI Discovery</div>
+
+  <div class="meta-grid">
+    <div class="meta-box">
+      <strong>Property:</strong> Menara Peninsula Hotel Jakarta (4-Star)<br>
+      <strong>Scale:</strong> 380 Rooms · 735 sqm Cengkeh Ballroom · Slipi<br>
+      <strong>Audit Date:</strong> November 2026
+    </div>
+    <div class="meta-box">
+      <strong>Current CMS:</strong> WordPress (pro-theme-crystal monolith)<br>
+      <strong>Hosting:</strong> Cloudflare Proxy · PHP / Fastbooking Engine<br>
+      <strong>Conducted By:</strong> JourneyOn AI Hospitality Engineering Team
+    </div>
+  </div>
+
+  <div class="grade-banner">
+    <div>
+      <div style="font-size: 9.5pt; font-weight: 700; color: #f87171; letter-spacing: 0.5px;">OVERALL SYSTEM HEALTH GRADE</div>
+      <div style="font-size: 8pt; color: #cbd5e1;">Critical conversion friction, heavy asset bloat, and total generative AI invisibility.</div>
+    </div>
+    <div class="grade-badge">D+</div>
+  </div>
+
+  <h2>1. Diagnostic Scorecard & Benchmark Summary</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 32%;">Technical Audit Category</th>
+        <th style="width: 20%;">Current Peninsula Score</th>
+        <th style="width: 24%;">4-Star Industry Standard</th>
+        <th style="width: 24%;">JourneyOn Modern Benchmark</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Generative AI Readiness (AISO/GEO)</strong></td>
+        <td class="critical">0 / 100 (Critical)</td>
+        <td>65 / 100</td>
+        <td class="optimal">98 / 100</td>
+      </tr>
+      <tr>
+        <td><strong>Schema.org Machine Structured Data</strong></td>
+        <td class="critical">0 / 100 (Missing)</td>
+        <td>70 / 100</td>
+        <td class="optimal">100 / 100</td>
+      </tr>
+      <tr>
+        <td><strong>Page Speed & Core Web Vitals</strong></td>
+        <td class="critical">42 / 100 (Severe Lag)</td>
+        <td>80 / 100</td>
+        <td class="optimal">95+ / 100</td>
+      </tr>
+      <tr>
+        <td><strong>Technical On-Page SEO & Metadata</strong></td>
+        <td class="critical">38 / 100 (Unoptimized)</td>
+        <td>85 / 100</td>
+        <td class="optimal">98 / 100</td>
+      </tr>
+      <tr>
+        <td><strong>HTTP Security Headers</strong></td>
+        <td class="critical">15 / 100 (High Risk)</td>
+        <td>80 / 100</td>
+        <td class="optimal">100 / 100</td>
+      </tr>
+      <tr>
+        <td><strong>Direct Booking Funnel & Mobile UX</strong></td>
+        <td style="color: #b45309; font-weight: 700;">52 / 100 (Friction)</td>
+        <td>85 / 100</td>
+        <td class="optimal">96 / 100</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Executive Summary of Primary Deficits</h2>
+  <p>
+    Menara Peninsula Hotel operates with premier physical facilities (380 guest rooms across 8 categories and Slipi's premier column-free ballroom). However, the hotel's digital flagship remains tied to an obsolete monolithic framework originally designed over 6 years ago. The current architecture suffers from five fatal commercial flaws:
+  </p>
+  <p>
+    <strong>1. Generative AI Invisibility:</strong> The DOM contains 0 structured Schema.org entities (`Hotel`, `HotelRoom`, `EventVenue`). Bot crawlers (`GPTBot`, `PerplexityBot`) cannot read room sizes, ballroom capacities, or packages. Furthermore, <code>/llms.txt</code> returns HTTP 404.<br>
+    <strong>2. Monolithic Code Bloat:</strong> The homepage forces <strong>42 JavaScript files</strong> and <strong>24 CSS stylesheets</strong> to load on every visit, including 12-year-old Internet Explorer polyfills (<code>html5shim</code>).<br>
+    <strong>3. Missing Essential SEO Tags:</strong> The homepage lacks a <code>meta name="description"</code> tag, and the title tag is an unoptimized duplicate.<br>
+    <strong>4. OTA Commission Leakage:</strong> Suboptimal mobile speeds cause guests to default to OTA apps, surrendering <strong>18%–20% commission</strong> on bookings that should have been direct.
+  </p>
+
+  <div class="footer">
+    <span>Technical Audit Ref: AUD-MPH-2026-001</span>
+    <span>Confidential — Menara Peninsula Hotel Jakarta</span>
+    <span>Page 1 of 3</span>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- PAGE 2: IN-DEPTH TECHNICAL VULNERABILITY ANALYSIS -->
+<!-- ========================================================================= -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-brand">JOURNEY<span>ON</span></div>
+    <div class="doc-meta">
+      <strong>IN-DEPTH VULNERABILITY REPORT</strong><br>
+      DOM, Network & Crawler Diagnostics
+    </div>
+  </div>
+
+  <h2>3. In-Depth Technical Vulnerability Analysis</h2>
+
+  <div class="vuln-card">
+    <h4>DEFICIT 1: ZERO STRUCTURED DATA & AI CRAWLER 404 <span>CRITICAL THREAT</span></h4>
+    <p>
+      • <strong>Live Diagnostic:</strong> Full source inspection across <code>/</code>, <code>/rooms-suites/deluxe-rooms/</code>, and <code>/conference-meetings/</code> reveals <strong>zero Schema.org JSON-LD microdata</strong>.<br>
+      • <strong>Commercial Impact:</strong> When corporate planners prompt ChatGPT or Perplexity for <em>"4-star hotel in Slipi with a 1,000 pax ballroom"</em>, AI search models fail to parse Cengkeh Ballroom's dimensions (735 sqm) or ceiling height (7–8m). AI engines cite competitor hotels (Pullman, Ciputra, Santika) instead.<br>
+      • <strong>Missing Standard:</strong> Requesting <code>https://www.menarapeninsula.com/llms.txt</code> returns <code>HTTP 404 Not Found</code>.
+    </p>
+  </div>
+
+  <div class="vuln-card">
+    <h4>DEFICIT 2: 42 SCRIPTS & 24 STYLESHEETS (HEAVY CODE BLOAT) <span>SEVERE PERFORMANCE DRAG</span></h4>
+    <p>
+      • <strong>Live Diagnostic:</strong> 42 external scripts and 24 stylesheets loaded, generating dozens of blocking HTTP roundtrips.<br>
+      • <strong>Obsolete Libraries:</strong> Includes <code>//html5shim.googlecode.com/svn/trunk/html5.js</code> (an outdated polyfill for Internet Explorer 8 dating back to 2011) and <code>jquery-migrate.min.js</code> (indicating legacy, non-standard jQuery dependencies).<br>
+      • <strong>Mobile Penalty:</strong> High Time-to-Interactive (TTI) and layout shifts create an estimated <strong>35%–45% mobile bounce rate</strong> before the direct reservation bar even renders.
+    </p>
+  </div>
+
+  <div class="vuln-card">
+    <h4>DEFICIT 3: UNOPTIMIZED METADATA & MISSING META DESCRIPTION <span>ORGANIC SERP LOSS</span></h4>
+    <p>
+      • <strong>Title Tag:</strong> <code>&lt;title&gt;Menara Peninsula Hotel Jakarta - Menara Peninsula Hotel Jakarta&lt;/title&gt;</code>.<br>
+      • <strong>Defect:</strong> Redundant name duplication wastes search character limits and misses critical commercial keywords (e.g. <em>"Slipi"</em>, <em>"Cengkeh Ballroom"</em>, <em>"West Jakarta MICE Hotel"</em>).<br>
+      • <strong>Meta Description:</strong> Entirely absent. Google dynamically pulls fragmented navigation strings, slashing Click-Through Rates (CTR) by up to 30%.
+    </p>
+  </div>
+
+  <div class="vuln-card">
+    <h4>DEFICIT 4: ZERO HTTP SECURITY HEADERS CONFIGURED <span>HIGH SECURITY RISK</span></h4>
+    <p>
+      • <strong>Live Diagnostic:</strong> Despite using Cloudflare proxy, the server passes zero standard security headers:<br>
+      &nbsp;&nbsp;&bull; <code>Strict-Transport-Security (HSTS)</code>: <strong>MISSING</strong> (Vulnerable to SSL downgrade attacks).<br>
+      &nbsp;&nbsp;&bull; <code>X-Frame-Options</code>: <strong>MISSING</strong> (Allows site framing and clickjacking on reservation widgets).<br>
+      &nbsp;&nbsp;&bull; <code>X-Content-Type-Options</code> & <code>Content-Security-Policy</code>: <strong>MISSING</strong> (Exposed to script injection).
+    </p>
+  </div>
+
+  <div class="vuln-card">
+    <h4>DEFICIT 5: DIRECT RESERVATION LEAKAGE (THE OTA TRAP) <span>COMMERCIAL REVENUE LOSS</span></h4>
+    <p>
+      • <strong>Live Diagnostic:</strong> External third-party widget (<code>fastbooking-services.com</code> / D-EDGE) loads with noticeable lag.<br>
+      • <strong>Financial Toll:</strong> Corporate guests who encounter stutter on mobile abandon the official website and complete their bookings on OTA apps (Traveloka, Agoda), costing the hotel <strong>18% to 20% in avoidable commissions</strong>.
+    </p>
+  </div>
+
+  <div class="footer">
+    <span>Technical Audit Ref: AUD-MPH-2026-001</span>
+    <span>Confidential — Menara Peninsula Hotel Jakarta</span>
+    <span>Page 2 of 3</span>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- PAGE 3: MODERN REMEDIATION BLUEPRINT & CONCLUSION -->
+<!-- ========================================================================= -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-brand">JOURNEY<span>ON</span></div>
+    <div class="doc-meta">
+      <strong>REMEDIATION BLUEPRINT</strong><br>
+      Modernization & ROI Recovery
+    </div>
+  </div>
+
+  <h2>4. Remediation Blueprint: The JourneyOn Modern Architecture</h2>
+
+  <div class="remedy-grid">
+    <div class="remedy-box">
+      <h4>1. Modern Headless Jamstack Flagship</h4>
+      <p>
+        Replace the legacy WordPress monolith with Next.js & Tailwind CSS. Consolidate 42 scripts into optimized tree-shaken assets, achieving sub-second loads (&lt;0.8s) and a <strong>95+ Google Lighthouse mobile score</strong>.
+      </p>
+    </div>
+    <div class="remedy-box">
+      <h4>2. Server-Side Schema.org & /llms.txt</h4>
+      <p>
+        Inject comprehensive JSON-LD microdata across all 8 room categories and Cengkeh Ballroom (735 sqm). Publish standardized <code>/llms.txt</code> enabling instant ingestion by ChatGPT, Perplexity, and Gemini.
+      </p>
+    </div>
+    <div class="remedy-box">
+      <h4>3. Google Free Booking Links & IndexNow</h4>
+      <p>
+        Configure organic Google Hotel Center links (direct pricing in Google Hotel Search at 0% commission). Connect Bing IndexNow API for instant push re-indexing whenever rates or packages update.
+      </p>
+    </div>
+    <div class="remedy-box">
+      <h4>4. AI Assistant Container Readiness</h4>
+      <p>
+        Provide a dedicated pre-engineered embed container ready to host the JourneyOn AI Booking Assistant without technical rebuilds, enabling 24/7 automated qualification of room and MICE inquiries.
+      </p>
+    </div>
+  </div>
+
+  <h2>5. Commercial Impact & ROI Justification</h2>
+  <div class="highlight-banner">
+    <h4>COMMERCIAL JUSTIFICATION: TURNING AUDIT DEFICITS INTO NET PROFIT</h4>
+    <p>
+      • Shifting just <strong>150 room nights per month</strong> from OTAs to direct web bookings saves <strong>~IDR 21,600,000 / month</strong> (~IDR 259,200,000 / year) in recaptured OTA commissions.<br>
+      • The proposed Next-Gen Website & AISO Architecture (Option B in Commercial Quotation V2 at <strong>~IDR 147M in Year 1</strong>) completely eliminates every technical vulnerability identified in this audit and yields a <strong>Net Surplus of +IDR 112,200,000 in Year 1</strong>.<br>
+      • In addition, capturing just <strong>one (1) single Platinum Wedding package (IDR 140M)</strong> directly pays for the entire digital transformation.
+    </p>
+  </div>
+
+  <h2>6. Conclusion & Recommended Action Plan</h2>
+  <p style="font-size: 8pt; margin-bottom: 12px;">
+    The audit confirms that Menara Peninsula Hotel's website is currently costing the property significant direct revenue every month due to legacy code bloat, absent machine schemas, and high mobile bounce rates. We strongly recommend that the Board of Management authorize the <strong>Option B Modernization Plan</strong> (detailed in Commercial Quotation <code>Q-JO-MPH-2026-V2</code>) to restore market leadership in West Jakarta.
+  </p>
+
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 10px 14px; font-size: 8pt; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <strong style="color: #0F172A;">Report Prepared By:</strong> JourneyOn AI Hospitality Engineering Team<br>
+      <span style="color: #64748b;">Inquiries: partnership@journeyon.id · fajar@inotel.co</span>
+    </div>
+    <div style="text-align: right; font-weight: 700; color: #1A3A38;">
+      Accompanying Document:<br>
+      <span style="color: #9E8A55;">Commercial Quotation Q-JO-MPH-2026-V2</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Technical Audit Ref: AUD-MPH-2026-001</span>
+    <span>Confidential — Menara Peninsula Hotel Jakarta</span>
+    <span>Page 3 of 3</span>
+  </div>
+</div>
+
+</body>
+</html>

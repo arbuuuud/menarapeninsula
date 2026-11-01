@@ -21,7 +21,6 @@ async function createDeck() {
   function applyBaseSlide(slide, categoryTitle) {
     slide.background = { color: DARK_BG };
 
-    // Top gold subtle accent line
     slide.addShape(pres.ShapeType.rect, {
       x: 0, y: 0, w: 10, h: 0.05,
       fill: { color: GOLD }, line: { color: GOLD }
@@ -64,7 +63,7 @@ async function createDeck() {
       align: 'center', charSpacing: 2, fontFace: 'Helvetica'
     });
 
-    slide.addText('DOMINATING THE AI SEARCH &\nDIRECT BOOKING REVOLUTION', {
+    slide.addText('DOMINATING THE AI SEARCH &\nDIRECT DISCOVERY REVOLUTION', {
       x: 0.8, y: 1.35, w: 8.4, h: 1.4,
       fontSize: 32, bold: true, color: TEXT_WHITE,
       fontFace: 'Georgia', lineSpacingMultiple: 1.15
@@ -95,7 +94,7 @@ async function createDeck() {
       fontSize: 10, color: TEXT_MUTED, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
     });
 
-    slide.addText('TAGLINE: "From AI Discovery to Ultra-Fast Direct Conversion — Zero OTA Commissions."', {
+    slide.addText('TAGLINE: "From Generative AI Discovery to High-Converting Web Architecture — Zero OTA Commissions."', {
       x: 0.8, y: 4.85, w: 8.4, h: 0.3,
       fontSize: 10, italic: true, color: GOLD, fontFace: 'Georgia'
     });
@@ -214,7 +213,7 @@ async function createDeck() {
       '1. Legacy Web Architecture: Slow load speeds and lower Core Web Vitals increase mobile bounce rates.\n' +
       '2. Unstructured Data Silos: High-value specs (ballroom dimensions, meeting capacities, wedding amenities) remain trapped in PDFs and raw text.\n' +
       '3. AI Crawler Invisibility: Bot crawlers (GPTBot, PerplexityBot) cannot reliably parse real-time rates or event capacities.\n' +
-      '4. Booking Leakage: Direct website visitors experience high friction, defaulting back to booking via 3rd-party OTAs.',
+      '4. Conversion Gap: Direct website visitors experience high friction, defaulting back to booking via 3rd-party OTAs.',
       {
         x: 1.1, y: 3.1, w: 7.8, h: 1.7,
         fontSize: 10, color: TEXT_MUTED, fontFace: 'Helvetica', lineSpacingMultiple: 1.3
@@ -227,9 +226,9 @@ async function createDeck() {
   // ==========================================
   {
     const slide = pres.addSlide();
-    applyBaseSlide(slide, 'Integrated Ecosystem');
+    applyBaseSlide(slide, 'Integrated Solution Scope');
 
-    slide.addText('Next-Gen Web Development + Hospitality AI Ecosystem', {
+    slide.addText('Next-Gen Web Development + Generative Search Optimization', {
       x: 0.8, y: 0.65, w: 8.4, h: 0.5,
       fontSize: 22, bold: true, color: TEXT_WHITE, fontFace: 'Georgia'
     });
@@ -258,14 +257,14 @@ async function createDeck() {
         ]
       },
       {
-        title: 'AI BOOKING ASSISTANT',
-        subtitle: 'The Direct Closing Engine',
+        title: 'INTEGRATION READINESS',
+        subtitle: 'AI Assistant Container',
         points: [
-          '24/7 conversational sales agent',
-          'Direct rate checks in seconds',
-          'Instant MICE proposal calculator',
-          'Wedding inquiry lead routing',
-          'Zero OTA commissions paid'
+          'Pre-engineered embed slot',
+          'Seamless API webhook compatibility',
+          'Ready for AI Booking Assistant',
+          'Direct PMS/Channel Manager bridge',
+          'Zero technical rebuild required'
         ]
       }
     ];
@@ -327,7 +326,7 @@ async function createDeck() {
       '• Sub-second Load Times: Ultra-lightweight headless architecture ensures 95+ Core Web Vitals on mobile.\n\n' +
       '• Immersive 8-Room Gallery: Visual showcase for Deluxe, Studio, Junior Suites, and Floor 23 Club Lounge.\n\n' +
       '• Interactive MICE Configurator: Dynamic tabs for Classroom (Kunir), Banquet (Ballroom), Theatre, & Boardroom.\n\n' +
-      '• Seamless Direct Booking Widget: Sticky, user-friendly reservation bar with live room availability & promo codes.',
+      '• Seamless Direct Booking Bar: User-friendly reservation widget with instant room availability and promo codes.',
       {
         x: 1.0, y: 2.2, w: 3.6, h: 2.5,
         fontSize: 9.5, color: TEXT_WHITE, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
@@ -347,9 +346,9 @@ async function createDeck() {
       fontSize: 9.5, color: TEXT_MUTED, fontFace: 'Helvetica'
     });
     slide.addText(
-      '• Native Schema.org SSR: Structured data injected on server-side render, eliminating crawler JavaScript execution lag.\n\n' +
-      '• Standardized /llms.txt: Condensed markdown factsheets enabling AI bots to parse the entire hotel in 5 milliseconds.\n\n' +
-      '• Open Entity Endpoints: Secure read-only feeds providing live pricing, amenities, and policies directly to AI engines.\n\n' +
+      '• Native Schema.org SSR: Structured data injected on server-side render, eliminating crawler JavaScript lag.\n\n' +
+      '• Standardized /llms.txt: Condensed markdown factsheets enabling AI bots to parse the hotel in 5 milliseconds.\n\n' +
+      '• Open Headless Endpoints: Ready to host the JourneyOn AI Booking Assistant widget without technical rebuilds.\n\n' +
       '• IndexNow Automated Webhooks: Instant ping to Bing & Copilot whenever rooms, promos, or wedding tiers update.',
       {
         x: 5.4, y: 2.2, w: 3.6, h: 2.5,
@@ -572,8 +571,8 @@ async function createDeck() {
       { step: '01', title: 'AI DISCOVERY', desc: 'Planner queries ChatGPT, Perplexity, or Gemini' },
       { step: '02', title: 'AUTHORITATIVE CITATION', desc: 'AI cites Menara Peninsula with direct URL link' },
       { step: '03', title: 'NEXT-GEN WEBSITE', desc: 'Sub-second landing page delivers luxury experience' },
-      { step: '04', title: 'AI ASSISTANT / RFP', desc: 'Embedded assistant answers & generates proposals' },
-      { step: '05', title: 'DIRECT BOOKING', desc: 'Closed with hotel directly. 0% OTA Commission!' }
+      { step: '04', title: 'DIRECT BOOKING / RFP', desc: 'Direct booking bar & pre-configured AI Assistant slot' },
+      { step: '05', title: 'DIRECT CONVERSION', desc: 'Closed with hotel directly. 0% OTA Commission!' }
     ];
 
     steps.forEach((st, idx) => {
@@ -589,7 +588,7 @@ async function createDeck() {
       });
       slide.addText(st.title, {
         x: xPos + 0.05, y: 2.25, w: 1.45, h: 0.45,
-        fontSize: 9, bold: true, color: TEXT_WHITE, align: 'center', fontFace: 'Helvetica'
+        fontSize: 8.5, bold: true, color: TEXT_WHITE, align: 'center', fontFace: 'Helvetica'
       });
 
       slide.addShape(pres.ShapeType.line, {
@@ -630,12 +629,12 @@ async function createDeck() {
       },
       {
         month: 'MONTH 2 (WEEKS 5 - 8)',
-        title: 'Engine Activation & Sync',
+        title: 'Index Verification & Readiness',
         items: [
-          'Activation of JourneyOn AI Chatbot on website',
+          'Live verification on ChatGPT, Perplexity & Copilot',
           'Interactive MICE & Wedding RFP generator live',
           'Multi-platform reputation & profile synchronization',
-          'Live benchmark testing across ChatGPT & Perplexity',
+          'AI Assistant embed slot & API webhook testing',
           'Staff onboarding for direct inquiry handoffs'
         ]
       },
@@ -769,12 +768,12 @@ async function createDeck() {
       {
         name: 'FRAMEWORK B: NEXT-GEN WEB + AISO',
         sub: 'RECOMMENDED FLAGSHIP',
-        desc: '• Full Next-Gen Website Development (Headless, 95+ Core Web Vitals, luxury UI/UX)\n• Complete Framework A AISO Architecture\n• Embedded JourneyOn 24/7 AI Booking Assistant\n• Interactive MICE & Wedding RFP Generator\n• Reputation Sync & AI Review Assistant\n• Monthly AI Share-of-Voice Tracking\n\nStructure: Turnkey Deployment + Retainer'
+        desc: '• Full Next-Gen Website Development (Headless, 95+ Core Web Vitals, luxury UI/UX)\n• Complete Framework A AISO Architecture\n• Interactive 8-Room Showcase & MICE Layouts\n• Interactive MICE & Wedding RFP Generator\n• AI Booking Assistant Ready-Embed Container\n• Monthly AI Share-of-Voice Tracking\n\nStructure: Turnkey Deployment + Retainer'
       },
       {
-        name: 'FRAMEWORK C: REVENUE PARTNERSHIP',
-        sub: 'Shared-Success Model',
-        desc: '• Full Scope of Framework B included\n• JourneyOn AI WhatsApp Reservation Bot\n• Continuous Conversion Rate Optimization (CRO)\n• Dedicated Review Sentiment Automation\n• Performance-aligned direct revenue sharing\n\nStructure: Subsidized Setup + Success Share\n\n*Details itemized in Commercial Quotation'
+        name: 'FRAMEWORK C: ENTERPRISE FLAGSHIP',
+        sub: 'Multi-Channel Regional Expansion',
+        desc: '• Full Scope of Framework B included\n• Multi-language Localization (EN/ID/CN/AR)\n• 3D Virtual Venue & Floorplan Integrations\n• Advanced Multi-Platform Executive Analytics\n• Dedicated Technical Priority SLA\n\nStructure: Enterprise Deployment + Retainer\n\n*Details itemized in Commercial Quotation'
       }
     ];
 
@@ -822,7 +821,7 @@ async function createDeck() {
       { step: 'STEP 1', title: 'Strategic Endorsement', desc: 'Approve the 90-day Website & AISO Initiative framework for Menara Peninsula Hotel.' },
       { step: 'STEP 2', title: 'Review Commercial Quotation', desc: 'Examine the itemized investment tiers and payment milestones in the accompanying Commercial Quotation document.' },
       { step: 'STEP 3', title: 'Technical Kickoff & Alignment', desc: 'Convene a 1-week alignment session between Menara Peninsula leadership and the JourneyOn technical team.' },
-      { step: 'STEP 4', title: 'Launch, Dominate & Convert', desc: 'Deploy next-gen web platform, index property assets into global LLMs, & track direct conversion growth.' }
+      { step: 'STEP 4', title: 'Launch, Dominate & Convert', desc: 'Deploy modern web architecture, index property assets into global LLMs, & track direct conversion growth.' }
     ];
 
     ctaSteps.forEach((cs, i) => {
@@ -858,7 +857,7 @@ async function createDeck() {
 
   const outputPath = 'PITCH_DECK_MENARA_PENINSULA_AISO.pptx';
   await pres.writeFile({ fileName: outputPath });
-  console.log('Successfully regenerated PPTX without pricing numbers:', outputPath);
+  console.log('Successfully regenerated aligned PPTX:', outputPath);
 }
 
 createDeck().catch(console.error);

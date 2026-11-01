@@ -5,16 +5,16 @@
 ---
 
 ## SLIDE 1: COVER
-- **Title**: DOMINATING THE AI SEARCH & DIRECT BOOKING REVOLUTION
+- **Title**: DOMINATING THE AI SEARCH & DIRECT DISCOVERY REVOLUTION
 - **Subtitle**: Strategic Next-Generation Website Development, GEO (Generative Engine Optimization) & AISO Architecture for Menara Peninsula Hotel Jakarta
 - **Presented by**: JourneyOn Technology & Hospitality Solutions
 - **Target Audience**: General Manager, Director of Sales & Marketing (DOSM), and Board of Management — Menara Peninsula Hotel Jakarta
-- **Tagline**: *"From AI Discovery to Ultra-Fast Direct Conversion — Elevating Experience, Eliminating OTA Commissions."*
+- **Tagline**: *"From Generative AI Discovery to High-Converting Web Architecture — Zero OTA Commissions."*
 
 ---
 
 ## SLIDE 2: THE PARADIGM SHIFT (WHY NOW?)
-### Headline: How Corporate Guests & Event Planners Discover and Book Hotels Has Changed Forever
+### Headline: How Corporate Guests & Event Planners Discover Hotels Has Changed Forever
 - **The Legacy Era (Search Engines & OTAs)**:
   - Corporate guests and travelers typed 2–3 static keywords on Google (*"hotel jakarta barat"*).
   - Online Travel Agencies (OTAs like Traveloka, Agoda, Booking.com) dominated Google SERP, extracting **15% to 20% in hefty commissions** on every transaction from Menara Peninsula.
@@ -38,22 +38,21 @@
   - **Legacy Monolithic Web Stack**: Slower page load speeds and suboptimal Core Web Vitals impact Google search ranking and mobile bounce rates.
   - **Unstructured Data Silos**: Crucial commercial specs (ballroom dimensions, meeting package capacities, wedding amenities) remain trapped in raw text, PDF downloads, or unstructured HTML.
   - **AI Crawler Incompatibility**: Generative AI bots cannot reliably parse real-time rates, room inventory, or venue capacities.
-  - **Friction in Conversion**: Disjointed booking steps send high-intent direct visitors back to third-party OTA portals.
+  - **Conversion Gap**: High-intent direct visitors experience booking friction and default back to third-party OTA portals.
 
 ---
 
-## SLIDE 4: INTRODUCING THE JOURNEYON INTEGRATED SOLUTION
-### Headline: Next-Gen Web Development + Hospitality AI Ecosystem
+## SLIDE 4: INTRODUCING THE JOURNEYON WEB & AISO SOLUTION
+### Headline: Next-Gen Web Development + Generative Search Optimization (GEO)
 - **What is GEO & AISO?**
   - **GEO (Generative Engine Optimization)**: Advanced semantic and technical content structuring that trains generative AI models (ChatGPT, Perplexity, Gemini, Copilot) to cite Menara Peninsula as their primary recommendation.
   - **AISO (AI Search Optimization)**: Real-time search optimization ensuring hotel entities surface instantly with direct pricing and rich citations in conversational search engines.
 - **Zero Ad Spend — 100% Organic Data Equity**:
   - Unlike Google Ads (SEM/PPC) which requires endless daily spend and stops the moment budgets run out, AISO and Next-Gen Web Development build permanent owned digital assets operating 24/7/365.
-- **The JourneyOn Unfair Advantage**:
-  - Traditional web agencies only deliver visual designs without AI indexing.
-  - Generic SEO agencies only write generic blog posts and acquire backlinks.
-  - Standalone chatbot vendors only provide static chat bubbles.
-  - **JourneyOn delivers the full unified cycle**: Modern Ultra-Fast Website $\rightarrow$ AI Search Discovery $\rightarrow$ Seamless Conversational Direct Booking Engine.
+- **Clear Architectural Distinction**:
+  - Traditional agencies only deliver static visual pages without machine indexing.
+  - Generic SEO agencies only write generic blog articles and chase traditional backlinks.
+  - **JourneyOn delivers the complete digital foundation**: Ultra-Fast Luxury Website $\rightarrow$ AI Search Citations $\rightarrow$ Seamless Compatibility Container for JourneyOn Conversational Booking Assistants.
 
 ---
 
@@ -73,8 +72,9 @@
 │       GUEST-FACING EXCELLENCE        │  │         AI & MACHINE READABILITY     │
 │ • Elegant, Luxury Visual Design      │  │ • Native Dynamic JSON-LD Injection    │
 │ • Seamless Room & MICE Showcases     │  │ • Standardized /llms.txt Architecture│
-│ • 3-Step Direct Booking Integration  │  │ • Server-Side Rendering (SSR) for Bots│
+│ • 3-Step Direct Booking Flow         │  │ • Server-Side Rendering (SSR) for Bots│
 │ • Interactive RFP Proposal Wizard    │  │ • Real-Time IndexNow Webhook Protocol │
+│ • AI Assistant Integration Container │  │ • Open Headless API Integration Endpts│
 └──────────────────────────────────────┘  └──────────────────────────────────────┘
 ```
 
@@ -84,6 +84,7 @@
 - **Engineered specifically for Both Humans and AI Crawlers**:
   - High-converting, frictionless booking funnel for hotel guests and corporate planners.
   - Machine-readable architecture: semantic HTML5, native Schema.org structured data, dynamic XML sitemaps, and `/llms.txt` feeds.
+  - Pre-engineered Integration Slot: Ready to seamlessly host the dedicated JourneyOn AI Booking Assistant widget without technical rebuilds.
 
 ---
 
@@ -92,17 +93,17 @@
 
 ```
    ┌────────────────────────────────────────────────────────────────────────┐
-   │                       PILAR 1: DATA INFRASTRUCTURE                     │
+   │                       PILLAR 1: DATA INFRASTRUCTURE                    │
    │  Dynamic JSON-LD Schema (Hotel, Room, MICE Venue, FAQ, Menu) + llms.txt │
    └───────────────────────────────────┬────────────────────────────────────┘
                                        │
    ┌───────────────────────────────────┴────────────────────────────────────┐
-   │                    PILAR 2: DIGITAL FOOTPRINT REPUTATION               │
+   │                    PILLAR 2: DIGITAL FOOTPRINT REPUTATION              │
    │  Multi-platform Entity Consistency: Google Business, TripAdvisor, OTA │
    └───────────────────────────────────┬────────────────────────────────────┘
                                        │
    ┌───────────────────────────────────┴────────────────────────────────────┐
-   │                  PILAR 3: FREE DIRECT PROTOCOLS & INDEXNOW             │
+   │                  PILLAR 3: FREE DIRECT PROTOCOLS & INDEXNOW            │
    │  Google Free Booking Links, Bing IndexNow, Direct Availability Feeds  │
    └────────────────────────────────────────────────────────────────────────┘
 ```
@@ -120,7 +121,7 @@
 ---
 
 ## SLIDE 7: FULL-PROPERTY APPLICATION — ROOMS & CORPORATE STAYS
-### Headline: Driving High-Yield Business Travelers Directly to Your Proprietary Engine
+### Headline: Driving High-Yield Business Travelers Directly to Your Proprietary Platform
 - **Target Audience**: Corporate business executives, embassy & government delegates, airport transit passengers, and concert/sports visitors (GBK Senayan).
 - **AISO Execution for Accommodations**:
   - Detailed individual schemas for all 8 official room categories:
@@ -133,7 +134,7 @@
   - Direct booking incentives highlighted in machine data: Best Rate Guarantee, Complimentary High-Speed WiFi, Airport Transfer Services, and flexible cancellation.
 - **Real-World Conversational Search Scenario**:
   > **Executive Prompt**: *"I need a 4-star business hotel near the Slipi toll gate with a spacious work desk, high-speed WiFi, and fast transit to SCBD."*
-  > **ChatGPT / Perplexity Answer**: *"Menara Peninsula Hotel Jakarta (Jl. Letjen S. Parman Kav. 78, Slipi) is the ideal choice. It offers dedicated Deluxe & Studio business rooms with full ergonomic workstations, 20 minutes from SCBD and 45 minutes from Soekarno-Hatta Airport..."* [Includes Verified Direct Booking Link to menarapeninsula.com].
+  > **ChatGPT / Perplexity Answer**: *"Menara Peninsula Hotel Jakarta (Jl. Letjen S. Parman Kav. 78, Slipi) is the ideal choice. It offers dedicated Deluxe & Studio business rooms with full ergonomic workstations, 20 minutes from SCBD and 45 minutes from Soekarno-Hatta Airport..."* [Includes Verified Direct Link to menarapeninsula.com].
 
 ---
 
@@ -169,11 +170,9 @@ AI provides an authoritative direct citation linking to menarapeninsula.com
 User lands on ultra-fast, luxury-designed, sub-second loading web experience
                            │
                            ▼
-[ 4. JOURNEYON AI ASSISTANT & DIRECT BOOKING ENGINE ]
-The embedded conversational widget assists 24/7:
-• Instant real-time room availability & best direct rates
-• Dynamic corporate MICE proposal calculator & instant RFP generator
-• Interactive wedding package consultation & ballroom site-visit scheduling
+[ 4. SEAMLESS DIRECT BOOKING & RFP / ASSISTANT CONTAINER ]
+Frictionless direct booking bar & interactive RFP proposal generator
+(Native pre-configured container ready for JourneyOn AI Booking Assistant)
                            │
                            ▼
 [ 5. DIRECT CONVERSION — ZERO OTA COMMISSION ]
@@ -189,8 +188,8 @@ Transactions and inquiries are closed directly with the hotel.
 | Timeline | Strategic Focus | Deliverables & Milestones |
 | :--- | :--- | :--- |
 | **Month 1 (Weeks 1–4)** | **Architecture, Web Revamp & Data Foundation** | • Baseline AI visibility & competitor audit (Menara Peninsula vs West Jakarta comps).<br>• Next-gen high performance website deployment / revamp.<br>• Full JSON-LD structured schema injection across all 8 rooms, MICE venues, F&B, and FAQs.<br>• Implementation of AI crawler directives (`robots.txt`) and `/llms.txt`.<br>• Setup of IndexNow API and Google Free Booking Links. |
-| **Month 2 (Weeks 5–8)** | **Engine Activation & Conversational Integration** | • Activation of JourneyOn AI Chatbot & Direct Booking Engine.<br>• Interactive RFP form hookup for corporate meetings & weddings.<br>• Multi-platform reputation consistency sync (Google Business, TripAdvisor, OTAs).<br>• Live query benchmarking across ChatGPT Search, Perplexity, Copilot, and Gemini. |
-| **Month 3 (Weeks 9–12)** | **Review, Performance Scaling & ROI Evaluation** | • Comprehensive AI Share-of-Voice (SoV) and citation growth report.<br>• Analysis of direct room booking volume and banquet inquiries generated.<br>• Measurement of OTA commission savings and return on investment.<br>• Long-term scaling roadmap presented to the Board of Management. |
+| **Month 2 (Weeks 5–8)** | **Search Verification & Integration Readiness** | • Verification of live indexation across ChatGPT Search, Perplexity, Copilot, & Gemini.<br>• Interactive RFP event form hookup for corporate meetings & weddings.<br>• Multi-platform reputation consistency sync (Google Business, TripAdvisor, OTAs).<br>• AI Booking Assistant container readiness & test integration slots.<br>• Staff training on direct web inquiry handling. |
+| **Month 3 (Weeks 9–12)** | **Review, Performance Scaling & ROI Evaluation** | • Comprehensive AI Share-of-Voice (SoV) and citation growth report.<br>• Analysis of direct room booking traffic and banquet inquiries generated.<br>• Measurement of OTA commission savings and return on investment.<br>• Long-term scaling roadmap presented to the Board of Management. |
 
 ---
 
@@ -222,15 +221,17 @@ Transactions and inquiries are closed directly with the hotel.
   - *Core Deliverables*:
     - **Full Next-Generation Website Development / Redesign** (Headless architecture, sub-second load times, luxury custom UI/UX).
     - Complete AISO & GEO infrastructure with continuous updates.
-    - Embedded JourneyOn 24/7 AI Booking Assistant & Instant RFP Generator.
+    - Interactive 8-Room Showcase & MICE Layout Visualizer.
+    - Interactive Corporate Meeting & Wedding RFP Form.
+    - AI Booking Assistant Ready-Embed Container.
     - Cross-platform reputation synchronization & review sentiment monitoring.
     - Monthly dedicated AI Share-of-Voice and competitive benchmark reporting.
   - *Engagement Structure*: Turnkey development deployment paired with continuous discovery retainer.
 
-- **Framework C: Enterprise Revenue Partnership (Shared-Success Model)**
-  - *Strategic Focus*: Aligned commercial growth with integrated omnichannel conversion tools.
-  - *Core Deliverables*: Everything in Framework B plus JourneyOn AI WhatsApp Reservation Bot, dedicated conversion rate optimization (CRO), and direct revenue performance alignment.
-  - *Engagement Structure*: Subsidized development investment paired with performance-aligned success metrics.
+- **Framework C: Enterprise Digital Flagship & Multi-Channel Discovery**
+  - *Strategic Focus*: Advanced multi-lingual digital flagship and regional dominance.
+  - *Core Deliverables*: Everything in Framework B plus multi-language localization (EN/ID/Mandarin/Arabic), 3D virtual floorplan integrations, and advanced executive reputation analytics.
+  - *Engagement Structure*: Enterprise turnkey development paired with dedicated multi-channel retainer.
 
 *(Note: Detailed investment schedules, payment milestones, and commercial terms are itemized separately in the official Commercial Quotation document).*
 
@@ -246,7 +247,7 @@ Transactions and inquiries are closed directly with the hotel.
 3. **Technical Kickoff & Alignment**:
    - Convene a 1-week alignment session between Menara Peninsula's leadership and the JourneyOn technical team.
 4. **Launch, Dominate & Convert**:
-   - Deploy modern web architecture, index property assets into global LLMs, and track direct conversion growth from day one.
+   - Deploy modern web architecture, index property assets into global LLMs, and track direct discovery growth from day one.
 
 ---
 

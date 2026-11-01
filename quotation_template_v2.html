@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Commercial Quotation V2 - Menara Peninsula Hotel Jakarta</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 1.2cm 1.4cm 1.2cm 1.4cm;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1e293b;
+    line-height: 1.4;
+    font-size: 8.5pt;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .page {
+    page-break-after: always;
+    height: 100vh;
+    max-height: 270mm;
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 25px;
+  }
+  .page:last-child {
+    page-break-after: avoid;
+  }
+
+  .doc-header {
+    border-bottom: 2px solid #D4AF37;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .doc-brand {
+    font-size: 15pt;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #0F172A;
+  }
+  .doc-brand span {
+    color: #D4AF37;
+  }
+  .doc-meta {
+    text-align: right;
+    font-size: 8pt;
+    color: #64748b;
+    line-height: 1.35;
+  }
+  .doc-meta strong {
+    color: #0F172A;
+  }
+
+  h1.doc-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16pt;
+    color: #0F172A;
+    margin: 0 0 2px 0;
+    line-height: 1.2;
+  }
+  .doc-subtitle {
+    font-size: 8.5pt;
+    color: #64748b;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 10.5pt;
+    color: #0F172A;
+    border-left: 3.5px solid #D4AF37;
+    padding-left: 8px;
+    margin: 12px 0 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    margin: 0 0 6px 0;
+    color: #334155;
+    text-align: justify;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 8pt;
+    line-height: 1.35;
+  }
+  .meta-box strong {
+    color: #0F172A;
+    display: inline-block;
+    min-width: 80px;
+  }
+
+  .scope-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin: 8px 0;
+  }
+  .scope-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-top: 3px solid #D4AF37;
+    border-radius: 4px;
+    padding: 8px 10px;
+  }
+  .scope-card h4 {
+    margin: 0 0 4px 0;
+    font-size: 8.5pt;
+    color: #0F172A;
+    font-weight: 700;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 3px;
+  }
+  .scope-card ul {
+    margin: 0;
+    padding-left: 12px;
+    font-size: 7.5pt;
+    color: #475569;
+    line-height: 1.35;
+  }
+  .scope-card li {
+    margin-bottom: 3px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 10px 0;
+    font-size: 7.8pt;
+  }
+  th, td {
+    padding: 5px 8px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+  }
+  th {
+    background-color: #0F172A;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+  td.highlight {
+    background-color: #fefce8;
+    font-weight: 600;
+    color: #854d0e;
+  }
+  td.price {
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  .featured-row {
+    background-color: #fef9c3 !important;
+    border: 1.5px solid #D4AF37;
+  }
+
+  .callout {
+    background: #0F172A;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 10px 0;
+    border-left: 4px solid #D4AF37;
+  }
+  .callout h4 {
+    margin: 0 0 4px 0;
+    color: #D4AF37;
+    font-size: 9.5pt;
+    font-weight: 700;
+  }
+  .callout p {
+    margin: 0;
+    color: #e2e8f0;
+    font-size: 8pt;
+    line-height: 1.35;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 8px 0;
+    text-align: center;
+  }
+  .stat-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 6px 4px;
+  }
+  .stat-num {
+    font-size: 11pt;
+    font-weight: 800;
+    color: #D4AF37;
+  }
+  .stat-label {
+    font-size: 7pt;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .deliverable-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #0F172A;
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin-bottom: 6px;
+  }
+  .deliverable-box h4 {
+    margin: 0 0 3px 0;
+    color: #0F172A;
+    font-size: 8.5pt;
+  }
+  .deliverable-box ul {
+    margin: 0;
+    padding-left: 12px;
+    font-size: 7.5pt;
+    color: #475569;
+    line-height: 1.3;
+  }
+  .deliverable-box li {
+    margin-bottom: 2px;
+  }
+
+  .sign-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 15px;
+  }
+  .sign-box {
+    border-top: 1px solid #94a3b8;
+    padding-top: 6px;
+    font-size: 8pt;
+    color: #475569;
+  }
+  .sign-space {
+    height: 45px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 7pt;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-brand">JOURNEY<span>ON</span></div>
+    <div class="doc-meta">
+      <strong>QUOTATION REF:</strong> Q-JO-MPH-2026-V2<br>
+      <strong>DATE:</strong> November 1, 2026<br>
+      <strong>VALIDITY:</strong> 45 Days (Dec 15, 2026)
+    </div>
+  </div>
+
+  <h1 class="doc-title">Commercial Quotation & Scope of Work (V2)</h1>
+  <div class="doc-subtitle">Next-Generation Website Development & Generative Engine Optimization (GEO / AISO) — Streamlined Edition</div>
+
+  <div class="meta-grid">
+    <div class="meta-box">
+      <strong>Client:</strong> Menara Peninsula Hotel Jakarta (Sintesa Group)<br>
+      <strong>Attention:</strong> General Manager & DOSM<br>
+      <strong>Property:</strong> 4-Star Business & Conference Hotel (380 Rooms)
+    </div>
+    <div class="meta-box">
+      <strong>Provider:</strong> PT JourneyOn Hospitality Technologies<br>
+      <strong>Location:</strong> Jl. Letjen S. Parman Kav. 78, Slipi, West Jakarta<br>
+      <strong>Contact:</strong> partnership@journeyon.id | tech@journeyon.id
+    </div>
+  </div>
+
+  <h2>1. Executive Summary & Strategic Objective</h2>
+  <p>
+    This engagement delivers a high-impact, commercially accessible digital presence upgrade for <strong>Menara Peninsula Hotel Jakarta</strong>, purpose-built to recapture direct bookings, monetize high-yield corporate MICE events, and eliminate heavy OTA commission dependencies (18%–20%). The solution bridges <strong>ultra-fast luxury web engineering</strong>, <strong>Generative AI Search Optimization (AISO/GEO)</strong>, and a <strong>seamless integration container</strong> for the standalone JourneyOn AI Booking Assistant.
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat-item"><div class="stat-num">380</div><div class="stat-label">Guest Rooms Mapped</div></div>
+    <div class="stat-item"><div class="stat-num">735 m²</div><div class="stat-label">Cengkeh Ballroom</div></div>
+    <div class="stat-item"><div class="stat-num">&lt;0.8s</div><div class="stat-label">Sub-Second Load Time</div></div>
+    <div class="stat-item"><div class="stat-num">0%</div><div class="stat-label">OTA Direct Commission</div></div>
+  </div>
+
+  <h2>2. Detailed Scope of Work (SOW)</h2>
+  <div class="scope-grid">
+    <div class="scope-card">
+      <h4>PILLAR 1: WEB DEV</h4>
+      <ul>
+        <li>Headless Next.js & Tailwind CSS (95+ Lighthouse score).</li>
+        <li>Full 8-room categories high-resolution visual showcase.</li>
+        <li>MICE venue capacity tables (Kunir, Cengkeh, Dlima, Jasmine).</li>
+        <li>Streamlined corporate meeting & wedding inquiry form.</li>
+        <li>Direct reservation engine booking bar bridge.</li>
+      </ul>
+    </div>
+    <div class="scope-card">
+      <h4>PILLAR 2: GEO & AISO</h4>
+      <ul>
+        <li>Complete Schema.org JSON-LD (Hotel, Rooms, Venues, Dining, FAQ).</li>
+        <li>Global <code>/llms.txt</code> factsheets for ChatGPT, Perplexity, Copilot.</li>
+        <li>Microsoft Bing IndexNow automated webhook push indexing.</li>
+        <li>Google Hotel Center Free Booking Links setup (Zero ad-spend).</li>
+        <li>Cross-platform NAP data & review consistency sync.</li>
+      </ul>
+    </div>
+    <div class="scope-card">
+      <h4>PILLAR 3: INTEGRATION</h4>
+      <ul>
+        <li>Pre-engineered embed slot for JourneyOn AI Booking Assistant.</li>
+        <li>Zero-rebuild API hooks for conversational reservation widgets.</li>
+        <li>Strict separation of concerns to avoid product cannibalization.</li>
+        <li>Seamless booking link parameters & deep-link routing.</li>
+        <li>Complete data portability and open architecture ownership.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Commercial Quotation Ref: Q-JO-MPH-2026-V2</span>
+    <span>Confidential — Menara Peninsula Hotel Jakarta & PT JourneyOn Technologies</span>
+    <span>Page 1 of 3</span>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-brand">JOURNEY<span>ON</span></div>
+    <div class="doc-meta">
+      <strong>COMMERCIAL INVESTMENT SCHEDULE (V2)</strong><br>
+      All amounts in IDR (Excl. 11% PPN)
+    </div>
+  </div>
+
+  <h2>3. Commercial Investment Tiers (Streamlined Pricing)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 32%;">Deliverable / Service Component</th>
+        <th style="width: 22%;">Option A: AISO Essentials (Add-on)</th>
+        <th style="width: 26%;">Option B: Next-Gen Web + AISO (Recommended)</th>
+        <th style="width: 20%;">Option C: Enterprise Flagship</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>New Headless Website Development</strong></td>
+        <td>— (On Existing Web)</td>
+        <td class="highlight"><strong>Included (Full Property)</strong></td>
+        <td>Included (Custom)</td>
+      </tr>
+      <tr>
+        <td><strong>8 Room Categories Showcase & MICE Specs</strong></td>
+        <td>—</td>
+        <td class="highlight"><strong>Included (High-Res)</strong></td>
+        <td>Included (Custom)</td>
+      </tr>
+      <tr>
+        <td><strong>Full Schema.org JSON-LD & /llms.txt Suite</strong></td>
+        <td>Included</td>
+        <td class="highlight"><strong>Included (Continuous)</strong></td>
+        <td>Included (Advanced)</td>
+      </tr>
+      <tr>
+        <td><strong>Bing IndexNow & Google Free Booking Links</strong></td>
+        <td>Included</td>
+        <td class="highlight"><strong>Included</strong></td>
+        <td>Included</td>
+      </tr>
+      <tr>
+        <td><strong>AI Booking Assistant Ready-Embed Container</strong></td>
+        <td>—</td>
+        <td class="highlight"><strong>Included</strong></td>
+        <td>Included</td>
+      </tr>
+      <tr>
+        <td><strong>Multi-Language Localization</strong></td>
+        <td>Single Language</td>
+        <td class="highlight"><strong>EN + Bahasa Indonesia</strong></td>
+        <td>EN, ID, Mandarin, AR</td>
+      </tr>
+      <tr>
+        <td><strong>Executive AI Share-of-Voice Reporting</strong></td>
+        <td>Bi-Annual Benchmark</td>
+        <td class="highlight"><strong>Quarterly Executive Report</strong></td>
+        <td>Monthly Detailed Report</td>
+      </tr>
+      <tr>
+        <td><strong>Technical Uptime SLA & Security</strong></td>
+        <td>Standard (99.5%)</td>
+        <td class="highlight"><strong>99.9% Priority SLA</strong></td>
+        <td>99.95% Enterprise SLA</td>
+      </tr>
+      <tr class="featured-row">
+        <td><strong>ONE-TIME SETUP & DEV FEE</strong></td>
+        <td class="price">IDR 15,000,000</td>
+        <td class="price" style="color: #b45309; font-size: 9pt;">IDR 45,000,000</td>
+        <td class="price">IDR 75,000,000</td>
+      </tr>
+      <tr class="featured-row">
+        <td><strong>MONTHLY ONGOING RETAINER</strong></td>
+        <td class="price">IDR 6,000,000 / mo</td>
+        <td class="price" style="color: #b45309; font-size: 9pt;">IDR 8,500,000 / mo</td>
+        <td class="price">IDR 14,500,000 / mo</td>
+      </tr>
+      <tr class="featured-row">
+        <td><strong>YEAR 1 TOTAL INVESTMENT</strong></td>
+        <td class="price" style="color: #047857;">IDR 87,000,000 / yr</td>
+        <td class="price" style="color: #047857; font-size: 9pt;">IDR 147,000,000 / yr (~150M)</td>
+        <td class="price" style="color: #047857;">IDR 249,000,000 / yr</td>
+      </tr>
+      <tr>
+        <td><strong>DIRECT BOOKING COMMISSION</strong></td>
+        <td><strong>0% (Zero Fee)</strong></td>
+        <td class="highlight"><strong>0% (Zero Fee)</strong></td>
+        <td><strong>0% (Zero Fee)</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>4. Detailed Breakdown of Monthly Retainer Deliverables</h2>
+  <p style="font-size: 7.8pt; margin-bottom: 4px;">
+    The ongoing Monthly Retainer is an active operational growth partnership ensuring Menara Peninsula maintains AI search dominance. It includes four concrete service pillars delivered regularly:
+  </p>
+
+  <div class="deliverable-box">
+    <h4>Deliverable 1: Quarterly "AI Share-of-Voice (SoV) & Competitor Benchmark" Report</h4>
+    <ul>
+      <li>Automated & manual testing across 30+ commercial prompts on ChatGPT, Perplexity, Gemini, and Copilot.</li>
+      <li>Audit of recommendation position (#1 / #2 rank) and direct click-through attribution tracking.</li>
+      <li>Competitor counter-analysis (monitoring comp-set: Pullman Central Park, Ciputra, Santika Premiere).</li>
+    </ul>
+  </div>
+
+  <div class="deliverable-box">
+    <h4>Deliverable 2: Dynamic Machine Data Governance (/llms.txt & Schema Updates)</h4>
+    <ul>
+      <li>Real-time code-level updates to Schema.org and <code>/llms.txt</code> upon new seasonal rate launches or banquet promotions.</li>
+      <li>Instant push webhooks via Bing IndexNow forcing re-indexation in minutes instead of months.</li>
+    </ul>
+  </div>
+
+  <div class="deliverable-box">
+    <h4>Deliverable 3: Google Free Booking Links & Reputation Authority Monitoring</h4>
+    <ul>
+      <li>Continuous management of Google Hotel Center direct price feeds (organic zero-commission placement).</li>
+      <li>Consistency guard for NAP data and review sentiment signals across Google Business Profile, TripAdvisor, & OTAs.</li>
+    </ul>
+  </div>
+
+  <div class="deliverable-box">
+    <h4>Deliverable 4: Agile Marketing Updates & Infrastructure SLA</h4>
+    <ul>
+      <li>Up to 6 hours/month of dedicated webmaster updates (promo flyers, imagery, menus) completed in 24–48 business hours.</li>
+      <li>Continuous monitoring of sub-second page loads (<0.8s), SSL certificates, and 99.9% cloud uptime.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>Commercial Quotation Ref: Q-JO-MPH-2026-V2</span>
+    <span>Confidential — Menara Peninsula Hotel Jakarta & PT JourneyOn Technologies</span>
+    <span>Page 2 of 3</span>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <div class="doc-header">
+    <div class="doc-brand">JOURNEY<span>ON</span></div>
+    <div class="doc-meta">
+      <strong>TERMS & AUTHORIZATION (V2)</strong><br>
+      Execution Milestones & Sign-off
+    </div>
+  </div>
+
+  <h2>5. Commercial ROI & Commission Recapture Logic</h2>
+  <div class="callout">
+    <h4>ANNUAL DIRECT COMMISSION RECAPTURE POTENTIAL (HIGH PAYBACK CASE)</h4>
+    <p>
+      • Average OTA Commission: <strong>18.0%</strong> | Assumed Shifted Room Nights: <strong>150 nights / month</strong> (ADR IDR 800,000 net).<br>
+      • Monthly Shifted Gross Revenue: <strong>IDR 120,000,000</strong> &rarr; <strong>Monthly Commission Saved: ~IDR 21,600,000</strong>.<br>
+      • <strong>Annualized Commission Recaptured: IDR 259,200,000 / year</strong>.<br>
+      • Option B Year 1 Total Investment: <strong>IDR 147,000,000</strong> &rarr; <strong>Net Year 1 Surplus to Hotel: +IDR 112,200,000</strong>.<br>
+      <em>In addition, closing just 1 single Platinum Wedding (IDR 140M) or 2 corporate conferences per year completely self-funds this investment!</em>
+    </p>
+  </div>
+
+  <h2>6. Terms of Payment & Milestones (Option B)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 30%;">Payment Tranche</th>
+        <th style="width: 15%;">Share (%)</th>
+        <th style="width: 25%;">Amount (IDR)</th>
+        <th style="width: 30%;">Deliverable Condition / Trigger</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Tranche 1: Project Initiation (DP)</strong></td>
+        <td><strong>50%</strong></td>
+        <td>IDR 22,500,000</td>
+        <td>Payable upon signing of this Agreement and project kickoff.</td>
+      </tr>
+      <tr>
+        <td><strong>Tranche 2: Staging & Schema Sign-off</strong></td>
+        <td><strong>30%</strong></td>
+        <td>IDR 13,500,000</td>
+        <td>Payable upon completion of staging preview, 8 rooms showcase, & schema validation.</td>
+      </tr>
+      <tr>
+        <td><strong>Tranche 3: Production Go-Live</strong></td>
+        <td><strong>20%</strong></td>
+        <td>IDR 9,000,000</td>
+        <td>Payable upon public deployment, DNS cutover, and IndexNow broadcast.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size: 7.5pt; color: #64748b; margin-top: -4px;">
+    *Monthly Retainer (IDR 8,500,000) commences on the first day of public go-live, billed on the 1st of each calendar month (Net 14-day terms). Minimum initial commitment: 6 months.
+  </p>
+
+  <h2>7. Project Implementation Timeline (5 Weeks to Go-Live)</h2>
+  <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 6px 10px; font-size: 7.5pt; margin-bottom: 10px; line-height: 1.35;">
+    <strong>Weeks 1–2:</strong> Discovery, asset ingestion, headless scaffold & custom luxury UI/UX design.<br>
+    <strong>Weeks 3–4:</strong> Content population (8 rooms, MICE venues, dining), Schema SSR ingestion & AI container setup.<br>
+    <strong>Week 5:</strong> User Acceptance Testing (UAT), security hardening, production cutover & Google/Bing indexing.
+  </div>
+
+  <h2>8. Acceptance & Authorization of Engagement</h2>
+  <p style="font-size: 8pt; margin-bottom: 6px;">
+    By signing below, the authorized representatives acknowledge and approve the scope, deliverables, and commercial schedule.
+  </p>
+
+  <div style="font-size: 8pt; font-weight: 600; margin-bottom: 10px;">
+    Selected Package: &nbsp;&nbsp;
+    [ &nbsp; ] Option A (IDR 15M Setup + 6M/mo &rarr; ~87M/yr) &nbsp;&nbsp;&nbsp;&nbsp;
+    [ <strong>X</strong> ] Option B: Recommended Flagship (IDR 45M Setup + 8.5M/mo &rarr; ~147M/yr) &nbsp;&nbsp;&nbsp;&nbsp;
+    [ &nbsp; ] Option C (IDR 75M Setup + 14.5M/mo &rarr; ~249M/yr)
+  </div>
+
+  <div class="sign-grid">
+    <div class="sign-box">
+      <strong>For and on behalf of:</strong><br>
+      <strong>Menara Peninsula Hotel Jakarta (Sintesa Group)</strong>
+      <div class="sign-space"></div>
+      ___________________________________________<br>
+      <strong>Authorized Signatory</strong><br>
+      Name: ___________________________________<br>
+      Title: General Manager / DOSM<br>
+      Date: ___________________________________
+    </div>
+
+    <div class="sign-box">
+      <strong>For and on behalf of:</strong><br>
+      <strong>PT JourneyOn Hospitality Technologies</strong>
+      <div class="sign-space"></div>
+      ___________________________________________<br>
+      <strong>Authorized Signatory</strong><br>
+      Name: ___________________________________<br>
+      Title: Managing Director / Technology Lead<br>
+      Date: November 1, 2026
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Commercial Quotation Ref: Q-JO-MPH-2026-V2</span>
+    <span>Confidential — Menara Peninsula Hotel Jakarta & PT JourneyOn Technologies</span>
+    <span>Page 3 of 3</span>
+  </div>
+</div>
+
+</body>
+</html>

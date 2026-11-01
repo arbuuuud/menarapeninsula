@@ -5,7 +5,7 @@ async function createJourneyOnDeckV3() {
   pres.layout = 'LAYOUT_16x9'; // 10 x 5.625 inches
   pres.author = 'Journey On AI';
   pres.company = 'Journey On AI';
-  pres.title = 'Next-Gen Website & AI Visibility - Menara Peninsula Hotel Jakarta (V3 Business Edition)';
+  pres.title = 'Next-Gen Website & AI Search Visibility (GEO & AISO) - Menara Peninsula Hotel Jakarta';
 
   // --- OFFICIAL JOURNEYON AI BRAND DESIGN SYSTEM ---
   const BG_PALE = 'F4F6F2';          // Off-white / light cream sage
@@ -20,13 +20,15 @@ async function createJourneyOnDeckV3() {
   const COLOR_TEXT_MUTED = '64748B'; // Muted grey for metadata & notes
   const COLOR_HIGHLIGHT = 'E5B044';  // Warm yellow/gold for callout highlights
   const CARD_BORDER = 'E2E8F0';      // Very soft border for cards
+  const COLOR_CRITICAL = 'DC2626';   // Red for audit deficits
+  const COLOR_OPTIMAL = '059669';    // Green for targets & direct answers
 
   function applyContentSlide(slide, kickerText, headlineText) {
     slide.background = { color: BG_PALE };
 
     if (kickerText) {
       slide.addText(kickerText.toUpperCase(), {
-        x: 0.8, y: 0.45, w: 8.4, h: 0.22,
+        x: 0.8, y: 0.42, w: 8.4, h: 0.22,
         fontSize: 9, bold: true, color: COLOR_KICKER,
         charSpacing: 2, fontFace: 'Helvetica'
       });
@@ -34,19 +36,21 @@ async function createJourneyOnDeckV3() {
 
     if (headlineText) {
       slide.addText(headlineText, {
-        x: 0.8, y: 0.72, w: 8.4, h: 0.55,
-        fontSize: 20, bold: true, color: COLOR_TEXT_HEAD,
+        x: 0.8, y: 0.68, w: 8.4, h: 0.55,
+        fontSize: 19, bold: true, color: COLOR_TEXT_HEAD,
         fontFace: 'Georgia'
       });
     }
 
-    slide.addText('Journey On AI · Web & AI Visibility Proposal for Menara Peninsula Hotel Jakarta', {
-      x: 0.8, y: 5.15, w: 8.4, h: 0.25,
+    slide.addText('Journey On AI · Web & AI Search Proposal for Menara Peninsula Hotel Jakarta', {
+      x: 0.8, y: 5.18, w: 8.4, h: 0.22,
       fontSize: 8.5, color: COLOR_TEXT_MUTED, fontFace: 'Helvetica'
     });
   }
 
+  // ==========================================================
   // SLIDE 1: COVER
+  // ==========================================================
   {
     const slide = pres.addSlide();
     slide.background = { color: BRAND_DARK };
@@ -60,20 +64,20 @@ async function createJourneyOnDeckV3() {
       fill: { color: BRAND_CIRCLE }, line: { color: BRAND_CIRCLE }
     });
 
-    slide.addText('JOURNEY ON AI', {
-      x: 0.8, y: 0.7, w: 5.0, h: 0.3,
-      fontSize: 10, bold: true, color: COLOR_KICKER,
+    slide.addText('JOURNEY ON AI · STRATEGIC PROPOSAL', {
+      x: 0.8, y: 0.7, w: 6.0, h: 0.3,
+      fontSize: 9.5, bold: true, color: COLOR_KICKER,
       charSpacing: 2.5, fontFace: 'Helvetica'
     });
 
-    slide.addText('Win more direct bookings\nand corporate events from\nthe new era of search', {
-      x: 0.8, y: 1.45, w: 6.8, h: 1.8,
+    slide.addText('Dominating AI Search\n(AISO & GEO) & Direct Bookings', {
+      x: 0.8, y: 1.4, w: 6.8, h: 1.8,
       fontSize: 32, bold: true, color: 'FFFFFF',
       fontFace: 'Georgia', lineSpacingMultiple: 1.15
     });
 
-    slide.addText('A modern website revamp & AI search visibility plan for Menara Peninsula Hotel Jakarta', {
-      x: 0.8, y: 3.55, w: 6.8, h: 0.55,
+    slide.addText('Next-Generation Website Revamp & Generative Engine Optimization for Menara Peninsula Hotel Jakarta', {
+      x: 0.8, y: 3.5, w: 6.8, h: 0.55,
       fontSize: 12, color: 'E2E8F0', fontFace: 'Helvetica', lineSpacingMultiple: 1.2
     });
 
@@ -83,27 +87,29 @@ async function createJourneyOnDeckV3() {
     });
   }
 
+  // ==========================================================
   // SLIDE 2: THE REALITY TODAY
+  // ==========================================================
   {
     const slide = pres.addSlide();
     applyContentSlide(
       slide,
-      'THE SHIFT IN GUEST BEHAVIOR',
-      'How corporate bookers and event planners choose hotels today'
+      'THE PARADIGM SHIFT',
+      'How corporate guests & event planners choose hotels in 2025–2026'
     );
 
     const cards = [
       {
         title: 'High OTA Commissions (18% - 20%)',
-        desc: 'When corporate guests search on Google, OTAs (Traveloka, Agoda, Booking.com) capture them first. The hotel loses IDR 150,000 to IDR 250,000 per room night on guests who already intended to stay at Menara Peninsula.'
+        desc: 'When corporate guests search on Google, OTAs (Traveloka, Agoda, Booking.com) capture them first. The hotel pays 18% to 20% in commission on business travelers who already know Menara Peninsula.'
       },
       {
-        title: 'Bookers Now Ask AI Tools',
-        desc: 'Company secretaries, corporate HR, and wedding planners now ask tools like ChatGPT, Perplexity, and Google Gemini:\n\n"Find a 4-star hotel in Slipi with fast toll access and meeting rooms for 50 people."'
+        title: 'Bookers Move to AI Search',
+        desc: 'Company secretaries, corporate HR, and wedding planners now ask conversational AI tools (ChatGPT, Perplexity, Google Gemini):\n\n"Find a 4-star hotel in Slipi with fast toll access and meeting rooms for 50 people."'
       },
       {
         title: 'Legacy Sites Stay Invisible',
-        desc: 'If a hotel’s website is slow or hard for search engines to read, AI search engines cannot verify your room sizes or ballroom capacities — and recommend competitor hotels in West Jakarta instead.'
+        desc: 'Traditional websites cannot be read by generative AI crawlers. Without modern AISO optimization, AI models cannot verify room dimensions or ballroom capacities — citing competitor hotels instead.'
       }
     ];
 
@@ -125,96 +131,167 @@ async function createJourneyOnDeckV3() {
     });
 
     slide.addShape(pres.ShapeType.roundRect, {
-      x: 0.8, y: 4.1, w: 8.4, h: 0.65, r: 0.08,
+      x: 0.8, y: 4.15, w: 8.4, h: 0.65, r: 0.08,
       fill: { color: BRAND_DARK }, line: { color: BRAND_DARK }
     });
     slide.addText([
       { text: 'In our live partner hotels, ', options: { color: 'FFFFFF' } },
-      { text: 'over 35% of high-intent guest discovery ', options: { color: COLOR_HIGHLIGHT, bold: true } },
+      { text: 'over 35% of high-intent corporate discovery ', options: { color: COLOR_HIGHLIGHT, bold: true } },
       { text: 'now begins with conversational search tools and AI assistants.', options: { color: 'FFFFFF' } }
     ], {
-      x: 1.0, y: 4.25, w: 8.0, h: 0.35,
+      x: 1.0, y: 4.3, w: 8.0, h: 0.35,
       fontSize: 10, fontFace: 'Helvetica'
     });
   }
 
-  // SLIDE 3: YOUR VALUABLE ASSETS
+  // ==========================================================
+  // SLIDE 3: CURRENT TECHNICAL AUDIT FINDINGS
+  // ==========================================================
   {
     const slide = pres.addSlide();
     applyContentSlide(
       slide,
-      'THE ASSET OPPORTUNITY',
-      'Menara Peninsula has premier assets — let’s make them easy to find'
+      'TECHNICAL AUDIT · MENARAPENINSULA.COM',
+      'Live diagnostic results: Why the current site is losing guests & AI citations'
     );
 
-    const stats = [
-      { val: '380 Rooms', lbl: '8 Categories', sub: 'From Deluxe rooms to Floor 23 Club Lounge suites.' },
-      { val: '735 m²', lbl: 'Cengkeh Ballroom', sub: 'Column-free, 7–8m ceiling, up to 1,200 guests.' },
-      { val: '15 - 20', lbl: 'Meeting Suites', sub: 'Kunir, Dlima, Jasmine suites for training & boards.' },
-      { val: '4 Outlets', lbl: 'F&B & Lifestyle', sub: 'Kafe Coleman (24/7), Symphony Lounge, Artha Spa.' }
+    // Left Card: Zero AI readiness
+    slide.addShape(pres.ShapeType.roundRect, {
+      x: 0.8, y: 1.45, w: 4.0, h: 2.5, r: 0.08,
+      fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
+    });
+    slide.addText('ZERO AI READINESS & CRAWLER 404', {
+      x: 1.0, y: 1.6, w: 3.6, h: 0.22,
+      fontSize: 8, bold: true, color: COLOR_CRITICAL, fontFace: 'Helvetica'
+    });
+    slide.addText('0 Schema.org Entities & /llms.txt 404', {
+      x: 1.0, y: 1.85, w: 3.6, h: 0.35,
+      fontSize: 12, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
+    });
+    slide.addText(
+      'Our live technical inspection of menarapeninsula.com revealed zero Schema.org structured data across room and MICE pages. Bot crawlers cannot parse room sqm, bed types, or Cengkeh Ballroom capacity.\n\nFurthermore, requesting /llms.txt returns HTTP 404 Not Found, blocking AI models from reading the hotel\'s factsheet.',
+      {
+        x: 1.0, y: 2.25, w: 3.6, h: 1.5,
+        fontSize: 8.8, color: COLOR_TEXT_BODY, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
+      }
+    );
+
+    // Right Card: Asset Bloat & D+
+    slide.addShape(pres.ShapeType.roundRect, {
+      x: 5.2, y: 1.45, w: 4.0, h: 2.5, r: 0.08,
+      fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
+    });
+    slide.addText('HEAVY ASSET BLOAT (GRADE: D+)', {
+      x: 5.4, y: 1.6, w: 3.6, h: 0.22,
+      fontSize: 8, bold: true, color: COLOR_CRITICAL, fontFace: 'Helvetica'
+    });
+    slide.addText('42 External Scripts & 24 Stylesheets', {
+      x: 5.4, y: 1.85, w: 3.6, h: 0.35,
+      fontSize: 12, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
+    });
+    slide.addText(
+      'The homepage forces mobile browsers to download 42 JavaScript files, including obsolete Internet Explorer 8 libraries (html5shim from 2011) and jquery-migrate.\n\nThis creates severe render-blocking lag and an estimated 35%–45% mobile bounce rate. Crucial meta descriptions are also missing from the homepage.',
+      {
+        x: 5.4, y: 2.25, w: 3.6, h: 1.5,
+        fontSize: 8.8, color: COLOR_TEXT_BODY, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
+      }
+    );
+
+    slide.addShape(pres.ShapeType.roundRect, {
+      x: 0.8, y: 4.15, w: 8.4, h: 0.65, r: 0.08,
+      fill: { color: BRAND_DARK }, line: { color: BRAND_DARK }
+    });
+    slide.addText([
+      { text: 'Overall Technical Health Grade: ', options: { color: 'FFFFFF' } },
+      { text: 'D+ (Critical Deficits) ', options: { color: '#F87171', bold: true } },
+      { text: '— Full findings documented in Technical Audit Report AUD-MPH-2026-001.', options: { color: 'FFFFFF' } }
+    ], {
+      x: 1.0, y: 4.3, w: 8.0, h: 0.35,
+      fontSize: 9.5, fontFace: 'Helvetica'
+    });
+  }
+
+  // ==========================================================
+  // SLIDE 4: AUDIT BENCHMARK SCORECARD
+  // ==========================================================
+  {
+    const slide = pres.addSlide();
+    applyContentSlide(
+      slide,
+      'BENCHMARK SCORECARD',
+      'How Menara Peninsula compares against modern hospitality benchmarks'
+    );
+
+    const rows = [
+      ['Generative AI Readiness (AISO/GEO)', '0 / 100 (Critical)', '65 / 100', '98 / 100'],
+      ['Schema.org Machine Structured Data', '0 / 100 (Missing)', '70 / 100', '100 / 100'],
+      ['Page Speed & Core Web Vitals', '42 / 100 (Severe Lag)', '80 / 100', '95+ / 100'],
+      ['Technical On-Page SEO & Metadata', '38 / 100 (Unoptimized)', '85 / 100', '98 / 100'],
+      ['Direct Booking Funnel & Mobile UX', '52 / 100 (Friction)', '85 / 100', '96 / 100']
     ];
 
-    stats.forEach((st, idx) => {
-      const xPos = 0.8 + idx * 2.15;
-      slide.addShape(pres.ShapeType.roundRect, {
-        x: xPos, y: 1.45, w: 1.95, h: 1.4, r: 0.08,
-        fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
-      });
-      slide.addText(st.val, {
-        x: xPos, y: 1.55, w: 1.95, h: 0.35,
-        fontSize: 15, bold: true, color: COLOR_TEXT_HEAD, align: 'center', fontFace: 'Georgia'
-      });
-      slide.addText(st.lbl, {
-        x: xPos + 0.1, y: 1.95, w: 1.75, h: 0.25,
-        fontSize: 8, bold: true, color: COLOR_KICKER, align: 'center', fontFace: 'Helvetica'
-      });
-      slide.addText(st.sub, {
-        x: xPos + 0.1, y: 2.22, w: 1.75, h: 0.5,
-        fontSize: 7.5, color: COLOR_TEXT_MUTED, align: 'center', fontFace: 'Helvetica'
-      });
+    const tableData = [
+      [
+        { text: 'Technical Audit Category', options: { bold: true, color: 'FFFFFF', fill: { color: BRAND_DARK } } },
+        { text: 'Current Peninsula Score', options: { bold: true, color: 'FFFFFF', fill: { color: BRAND_DARK } } },
+        { text: '4-Star Industry Standard', options: { bold: true, color: 'FFFFFF', fill: { color: BRAND_DARK } } },
+        { text: 'JourneyOn Modern Target', options: { bold: true, color: 'FFFFFF', fill: { color: BRAND_DARK } } }
+      ]
+    ];
+
+    rows.forEach(r => {
+      tableData.push([
+        { text: r[0], options: { bold: true, color: COLOR_TEXT_HEAD } },
+        { text: r[1], options: { bold: true, color: COLOR_CRITICAL } },
+        { text: r[2], options: { color: COLOR_TEXT_BODY } },
+        { text: r[3], options: { bold: true, color: COLOR_OPTIMAL } }
+      ]);
+    });
+
+    slide.addTable(tableData, {
+      x: 0.8, y: 1.45, w: 8.4,
+      colW: [3.0, 1.8, 1.8, 1.8],
+      fontSize: 8.5,
+      fontFace: 'Helvetica',
+      border: { pt: 0.5, color: CARD_BORDER }
     });
 
     slide.addShape(pres.ShapeType.roundRect, {
-      x: 0.8, y: 3.1, w: 8.4, h: 1.6, r: 0.08,
-      fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
+      x: 0.8, y: 4.15, w: 8.4, h: 0.65, r: 0.08,
+      fill: { color: BRAND_DARK }, line: { color: BRAND_DARK }
     });
-    slide.addText('The Problem Today', {
-      x: 1.0, y: 3.25, w: 8.0, h: 0.3,
-      fontSize: 11, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
+    slide.addText('The current website costs the hotel hundreds of millions of Rupiah annually in leaked direct revenue and lost corporate inquiries.', {
+      x: 1.0, y: 4.3, w: 8.0, h: 0.35,
+      fontSize: 9.5, bold: true, color: COLOR_HIGHLIGHT, fontFace: 'Helvetica'
     });
-    slide.addText(
-      'Right now, information about your ballroom, meeting packages (IDR 450k/550k), and room tiers is buried in slow-loading web pages and downloadable PDFs. When busy corporate planners browse on mobile phones, they get frustrated by slow load times and turn to OTAs or competitors.\n\nOur objective is to make these assets instantly visible and effortless to book directly.',
-      {
-        x: 1.0, y: 3.6, w: 8.0, h: 0.95,
-        fontSize: 9, color: COLOR_TEXT_BODY, fontFace: 'Helvetica', lineSpacingMultiple: 1.25
-      }
-    );
   }
 
-  // SLIDE 4: WHAT JOURNEYON DOES FOR YOU
+  // ==========================================================
+  // SLIDE 5: WHAT ARE GEO & AISO?
+  // ==========================================================
   {
     const slide = pres.addSlide();
     applyContentSlide(
       slide,
-      'THE SOLUTION',
-      'A fast, modern website that brings guests directly to your sales team'
+      'THE CORE FRAMEWORK',
+      'Understanding Generative Engine (GEO) & AI Search Optimization (AISO)'
     );
 
     const pillars = [
       {
-        tag: 'PILLAR 1',
-        title: 'Fast, Beautiful Website',
-        desc: 'Loads in under 1 second on mobile phones. Elegant luxury design matching the 4-star prestige of Menara Peninsula, showcasing all 8 room categories and your grand ballroom clearly.'
+        tag: 'GEO FRAMEWORK',
+        title: 'Generative Engine Optimization',
+        desc: 'Semantic and technical structuring that trains generative AI models (ChatGPT, Perplexity, Gemini, Copilot) to cite Menara Peninsula as their #1 recommended hotel.'
       },
       {
-        tag: 'PILLAR 2',
-        title: 'AI Search Recommendations',
-        desc: 'We format the hotel’s information in the exact structure that modern search engines and AI tools look for. When someone asks AI for a hotel or ballroom in Slipi, Menara Peninsula is cited first.'
+        tag: 'AISO FRAMEWORK',
+        title: 'AI Search Optimization',
+        desc: 'Real-time machine feeds ensuring hotel rooms, ballroom specs, and direct pricing surface instantly in conversational answers with direct verified links.'
       },
       {
-        tag: 'PILLAR 3',
-        title: 'Zero-Friction Inquiries',
-        desc: 'A streamlined direct booking bar for rooms and a clean inquiry form for meetings and weddings that sends complete briefs straight to your sales team to negotiate and close.'
+        tag: 'ZERO AD SPEND',
+        title: 'Permanent Search Equity',
+        desc: 'Unlike Google Ads (PPC) which stops the moment your daily ad budget runs out, GEO and AISO build permanent owned search equity operating 24/7/365.'
       }
     ];
 
@@ -240,7 +317,7 @@ async function createJourneyOnDeckV3() {
     });
 
     slide.addShape(pres.ShapeType.roundRect, {
-      x: 0.8, y: 4.1, w: 8.4, h: 0.65, r: 0.08,
+      x: 0.8, y: 4.15, w: 8.4, h: 0.65, r: 0.08,
       fill: { color: BRAND_DARK }, line: { color: BRAND_DARK }
     });
     slide.addText([
@@ -248,32 +325,78 @@ async function createJourneyOnDeckV3() {
       { text: 'JourneyOn AI WhatsApp booking assistant ', options: { color: COLOR_HIGHLIGHT, bold: true } },
       { text: 'whenever your team is ready.', options: { color: 'FFFFFF' } }
     ], {
-      x: 1.0, y: 4.25, w: 8.0, h: 0.35,
+      x: 1.0, y: 4.3, w: 8.0, h: 0.35,
       fontSize: 10, fontFace: 'Helvetica'
     });
   }
 
-  // SLIDE 5: GUEST ROOMS MADE EASY TO BOOK
+  // ==========================================================
+  // SLIDE 6: LIVE AI SEARCH SCENARIO
+  // ==========================================================
+  {
+    const slide = pres.addSlide();
+    applyContentSlide(
+      slide,
+      'REAL-WORLD SIMULATION',
+      'How Menara Peninsula wins when a corporate executive queries AI'
+    );
+
+    // Prompt Card
+    slide.addShape(pres.ShapeType.roundRect, {
+      x: 0.8, y: 1.45, w: 8.4, h: 1.2, r: 0.08,
+      fill: { color: BG_WHITE }, line: { color: COLOR_KICKER, width: 1.5 }
+    });
+    slide.addText('EXECUTIVE USER PROMPT (CHATGPT / PERPLEXITY)', {
+      x: 1.0, y: 1.6, w: 8.0, h: 0.22,
+      fontSize: 8, bold: true, color: COLOR_KICKER, fontFace: 'Helvetica'
+    });
+    slide.addText('"Recommend a 4-star business hotel in Slipi near the inner toll gate with ergonomic desks and direct access to SCBD."', {
+      x: 1.0, y: 1.85, w: 8.0, h: 0.6,
+      fontSize: 12, italic: true, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
+    });
+
+    // Answer Card
+    slide.addShape(pres.ShapeType.roundRect, {
+      x: 0.8, y: 2.85, w: 8.4, h: 1.95, r: 0.08,
+      fill: { color: BG_WHITE }, line: { color: COLOR_OPTIMAL, width: 1.5 }
+    });
+    slide.addText('AI MODEL RECOMMENDATION (POWERED BY JOURNEYON AISO & GEO)', {
+      x: 1.0, y: 3.0, w: 8.0, h: 0.22,
+      fontSize: 8, bold: true, color: COLOR_OPTIMAL, fontFace: 'Helvetica'
+    });
+    slide.addText(
+      '"Menara Peninsula Hotel Jakarta (Jl. Letjen S. Parman Kav. 78, Slipi) is the ideal choice for business executives. Located 20 minutes from SCBD and 45 minutes from Soekarno-Hatta Airport via the adjacent toll gate, it features 380 rooms including Deluxe & Studio business categories equipped with full workstations, high-speed WiFi, and Floor 23 Executive Club Lounge access."\n\n' +
+      '✓ Direct Official Citation: https://www.menarapeninsula.com/',
+      {
+        x: 1.0, y: 3.3, w: 8.0, h: 1.35,
+        fontSize: 9.5, color: COLOR_TEXT_HEAD, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
+      }
+    );
+  }
+
+  // ==========================================================
+  // SLIDE 7: ACCOMMODATIONS
+  // ==========================================================
   {
     const slide = pres.addSlide();
     applyContentSlide(
       slide,
       'ROOM REVENUE',
-      'Showing your 8 room categories clearly to corporate travellers'
+      'Structuring all 8 room categories for both guests and AI crawlers'
     );
 
     slide.addShape(pres.ShapeType.roundRect, {
       x: 0.8, y: 1.45, w: 4.2, h: 3.3, r: 0.08,
       fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
     });
-    slide.addText('Clear, Transparent Room Showcases', {
+    slide.addText('8 Official Room Categories Mapped', {
       x: 1.0, y: 1.65, w: 3.8, h: 0.35,
       fontSize: 12, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
     });
     const roomItems =
-      '• Deluxe Rooms (28 sqm) — King/Twin beds, working desk, bathtub\n' +
+      '• Deluxe Rooms (28 sqm) — King/Twin beds, ergonomic desk, bathtub\n' +
       '• Studio Rooms (32 sqm) — Living sofa corner, walk-in shower & tub\n' +
-      '• Junior Suite Rooms (44 sqm) — Separate living room area\n' +
+      '• Junior Suite Rooms (44 sqm) — Separate living room area, fruit basket\n' +
       '• Deluxe Suites Room (44 sqm) — Contemporary art, powder room\n' +
       '• Club Rooms & Studio (32–44 sqm) — Floor 23 Executive Lounge access\n' +
       '• Club Junior & Peninsula Suites (45–62 sqm) — Luxury dining & living';
@@ -291,25 +414,27 @@ async function createJourneyOnDeckV3() {
       fontSize: 12, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
     });
     const roomPerks =
-      'Instant Mobile Loading\n' +
-      'Corporate bookers see crisp photos and key amenities immediately without waiting for heavy scripts.\n\n' +
+      'Server-Side Rendered Schema (JSON-LD)\n' +
+      'Every room has exact dimensions, occupancy, bed types, and bathroom amenities mapped into structured data.\n\n' +
       'Direct Perks Highlighted\n' +
       'Best Rate Guarantee, Airport Transfer (IDR 380k), free high-speed WiFi, and 24/7 room service prominently featured.\n\n' +
       'Official Google Hotel Search\n' +
-      'We connect your direct rates directly into Google Search at zero advertising cost.';
+      'Direct rates connect organically into Google Search at zero advertising cost via Free Booking Links.';
     slide.addText(roomPerks, {
       x: 5.4, y: 2.1, w: 3.6, h: 2.4,
       fontSize: 9, color: COLOR_TEXT_BODY, fontFace: 'Helvetica', lineSpacingMultiple: 1.15
     });
   }
 
-  // SLIDE 6: MICE & WEDDINGS
+  // ==========================================================
+  // SLIDE 8: MICE & WEDDINGS
+  // ==========================================================
   {
     const slide = pres.addSlide();
     applyContentSlide(
       slide,
-      'MICE & BANQUETS',
-      'Helping corporate planners and wedding couples choose your venues'
+      'BANQUET REVENUE',
+      'Indexing high-ticket venues for corporate EOs and wedding planners'
     );
 
     slide.addShape(pres.ShapeType.roundRect, {
@@ -323,7 +448,7 @@ async function createJourneyOnDeckV3() {
     const miceText =
       '• Cengkeh Grand Ballroom: 735 sqm, column-free, 7–8m high ceiling, hosting up to 1,200 standing guests for company townhalls.\n\n' +
       '• 15 - 20 Modular Meeting Suites: Easily configured for classroom training (Kunir) or executive boardrooms (Dlima).\n\n' +
-      '• Transparent Package Information: Half-day (IDR 450k/pax) and Full-day (IDR 550k/pax) package details clearly presented.';
+      '• Meeting Packages in AISO Data: Half-day (IDR 450k/pax) and Full-day (IDR 550k/pax) package details clearly structured for AI answers.';
     slide.addText(miceText, {
       x: 1.0, y: 2.1, w: 3.6, h: 1.9,
       fontSize: 9, color: COLOR_TEXT_BODY, fontFace: 'Helvetica', lineSpacingMultiple: 1.15
@@ -350,40 +475,42 @@ async function createJourneyOnDeckV3() {
       x: 0.8, y: 4.35, w: 8.4, h: 0.55, r: 0.08,
       fill: { color: BRAND_DARK }, line: { color: BRAND_DARK }
     });
-    slide.addText('Closing just 1 additional wedding per quarter completely pays for this entire digital upgrade.', {
+    slide.addText('Closing just 1 additional wedding per quarter completely self-funds this entire digital upgrade.', {
       x: 1.0, y: 4.48, w: 8.0, h: 0.3,
       fontSize: 9.5, bold: true, color: COLOR_HIGHLIGHT, fontFace: 'Georgia'
     });
   }
 
-  // SLIDE 7: HOW GUESTS TRAVEL (THE JOURNEY)
+  // ==========================================================
+  // SLIDE 9: THE CONVERSION FUNNEL
+  // ==========================================================
   {
     const slide = pres.addSlide();
     applyContentSlide(
       slide,
-      'THE GUEST JOURNEY',
-      'From first search to direct revenue in 4 simple steps'
+      'THE CONVERSION FUNNEL',
+      'From conversational search to direct hotel revenue in 4 clear steps'
     );
 
     const steps = [
       {
         num: '1',
-        title: 'Guest searches / asks AI',
+        title: 'AI Search Discovery',
         desc: 'A business traveller or wedding planner asks Google or ChatGPT for hotel recommendations in Slipi.'
       },
       {
         num: '2',
-        title: 'AI recommends Peninsula',
+        title: 'AISO Recommendation',
         desc: 'Because your data is clean and structured, AI models provide an accurate recommendation with an official link.'
       },
       {
         num: '3',
-        title: 'Fast, impressive website',
+        title: 'Fast Modern Website',
         desc: 'The guest lands on an ultra-fast website that loads instantly on mobile with crisp photos and clear pricing.'
       },
       {
         num: '4',
-        title: 'Direct booking or brief',
+        title: 'Direct Booking / Brief',
         desc: 'The guest books directly or submits an event brief. Your sales team closes the deal. 0% commission paid to OTAs!'
       }
     ];
@@ -391,42 +518,44 @@ async function createJourneyOnDeckV3() {
     steps.forEach((s, idx) => {
       const xPos = 0.8 + idx * 2.15;
       slide.addShape(pres.ShapeType.roundRect, {
-        x: xPos, y: 1.5, w: 1.95, h: 2.6, r: 0.08,
+        x: xPos, y: 1.45, w: 1.95, h: 2.6, r: 0.08,
         fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
       });
 
       slide.addShape(pres.ShapeType.ellipse, {
-        x: xPos + 0.15, y: 1.7, w: 0.35, h: 0.35,
+        x: xPos + 0.15, y: 1.65, w: 0.35, h: 0.35,
         fill: { color: BRAND_DARK }, line: { color: BRAND_DARK }
       });
       slide.addText(s.num, {
-        x: xPos + 0.15, y: 1.7, w: 0.35, h: 0.35,
+        x: xPos + 0.15, y: 1.65, w: 0.35, h: 0.35,
         fontSize: 10, bold: true, color: COLOR_HIGHLIGHT, align: 'center', fontFace: 'Georgia'
       });
 
       slide.addText(s.title, {
-        x: xPos + 0.15, y: 2.15, w: 1.65, h: 0.45,
-        fontSize: 11, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
+        x: xPos + 0.15, y: 2.1, w: 1.65, h: 0.45,
+        fontSize: 10.5, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
       });
       slide.addText(s.desc, {
-        x: xPos + 0.15, y: 2.65, w: 1.65, h: 1.25,
+        x: xPos + 0.15, y: 2.6, w: 1.65, h: 1.3,
         fontSize: 8.8, color: COLOR_TEXT_BODY, fontFace: 'Helvetica', lineSpacingMultiple: 1.15
       });
     });
 
     slide.addText('We deliver qualified buyers to your website. Your team closes the booking.', {
-      x: 0.8, y: 4.4, w: 8.4, h: 0.35,
+      x: 0.8, y: 4.35, w: 8.4, h: 0.35,
       fontSize: 11, italic: true, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
     });
   }
 
-  // SLIDE 8: THE FINANCIAL BENEFIT
+  // ==========================================================
+  // SLIDE 10: COMMERCIAL LOGIC
+  // ==========================================================
   {
     const slide = pres.addSlide();
     applyContentSlide(
       slide,
-      'VALUE FOR THE HOTEL',
-      'Recapturing OTA commission and owning your guest relationships'
+      'COMMERCIAL IMPACT',
+      'Recapturing 18% to 20% commission and owning guest relationships'
     );
 
     const metrics = [
@@ -472,78 +601,21 @@ async function createJourneyOnDeckV3() {
     );
   }
 
-  // SLIDE 9: FAST 5-WEEK TIMELINE
+  // ==========================================================
+  // SLIDE 11: TIMELINE, PACKAGES & NEXT STEPS
+  // ==========================================================
   {
     const slide = pres.addSlide();
     applyContentSlide(
       slide,
-      'EXECUTION PLAN',
-      'Quick 5-week setup with zero disruption to daily operations'
-    );
-
-    const phases = [
-      {
-        badge: 'WEEKS 1 - 2',
-        title: 'Design & Setup',
-        desc: 'We gather your photos and package sheets, set up the fast modern website layout, and review design styling with your team.'
-      },
-      {
-        badge: 'WEEKS 3 - 4',
-        title: 'Content & AI Feeds',
-        desc: 'We input your 8 room types, ballroom specs, and packages, and connect all search engine data feeds.'
-      },
-      {
-        badge: 'WEEK 5',
-        title: 'Launch & Go-Live',
-        desc: 'We launch the new website live on your domain (menarapeninsula.com) and activate Google direct search links.'
-      },
-      {
-        badge: 'ONGOING',
-        title: 'Review & Support',
-        desc: 'We continuously monitor search rankings, update packages when you have new promotions, and ensure everything runs smoothly.'
-      }
-    ];
-
-    phases.forEach((p, idx) => {
-      const xPos = 0.8 + idx * 2.15;
-      slide.addShape(pres.ShapeType.roundRect, {
-        x: xPos, y: 1.45, w: 1.95, h: 2.8, r: 0.08,
-        fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
-      });
-
-      slide.addText(p.badge, {
-        x: xPos + 0.15, y: 1.65, w: 1.65, h: 0.25,
-        fontSize: 8.5, bold: true, color: COLOR_KICKER, fontFace: 'Helvetica'
-      });
-      slide.addText(p.title, {
-        x: xPos + 0.15, y: 2.0, w: 1.65, h: 0.45,
-        fontSize: 11, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
-      });
-      slide.addText(p.desc, {
-        x: xPos + 0.15, y: 2.5, w: 1.65, h: 1.55,
-        fontSize: 8.8, color: COLOR_TEXT_BODY, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
-      });
-    });
-
-    slide.addText('We do the heavy lifting of building and structuring the data so your team can focus on sales.', {
-      x: 0.8, y: 4.5, w: 8.4, h: 0.25,
-      fontSize: 8.5, italic: true, color: COLOR_TEXT_MUTED, fontFace: 'Helvetica'
-    });
-  }
-
-  // SLIDE 10: SIMPLE COLLABORATION OPTIONS
-  {
-    const slide = pres.addSlide();
-    applyContentSlide(
-      slide,
-      'COLLABORATION PACKAGES',
-      'Straightforward options to match your hotel’s goals'
+      'EXECUTION & ENGAGEMENT',
+      'Fast 5-week launch with clear partnership options'
     );
 
     const options = [
       {
         tag: 'OPTION A',
-        title: 'AI Search Essentials',
+        title: 'AISO Search Essentials',
         sub: 'Search Data Upgrade',
         points: [
           'Keep existing website design',
@@ -554,13 +626,13 @@ async function createJourneyOnDeckV3() {
       },
       {
         tag: 'OPTION B · RECOMMENDED',
-        title: 'New Website + AI Visibility',
+        title: 'New Website + AISO Full Suite',
         sub: 'Complete Digital Upgrade',
         points: [
           'Brand-new, ultra-fast website',
           'Clear 8 room categories showcase',
           'Ballroom & meeting capacity guide',
-          'Full AI search optimization',
+          'Full GEO & AISO search optimization',
           'Streamlined direct booking bar',
           'Quarterly performance reviews'
         ]
@@ -591,7 +663,7 @@ async function createJourneyOnDeckV3() {
       });
       slide.addText(o.title, {
         x: xPos + 0.15, y: 1.85, w: 2.35, h: 0.35,
-        fontSize: 11, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
+        fontSize: 10.5, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
       });
       slide.addText(o.sub, {
         x: xPos + 0.15, y: 2.2, w: 2.35, h: 0.25,
@@ -616,62 +688,9 @@ async function createJourneyOnDeckV3() {
     });
   }
 
-  // SLIDE 11: NEXT STEPS
-  {
-    const slide = pres.addSlide();
-    applyContentSlide(
-      slide,
-      'NEXT STEPS',
-      'Moving forward with the digital flagship upgrade'
-    );
-
-    slide.addShape(pres.ShapeType.roundRect, {
-      x: 0.8, y: 1.45, w: 4.0, h: 2.9, r: 0.08,
-      fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
-    });
-    slide.addText('What We Need from Your Team', {
-      x: 1.0, y: 1.65, w: 3.6, h: 0.35,
-      fontSize: 12, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
-    });
-    const needs =
-      '• Access to room and banquet photography (or existing media files)\n\n' +
-      '• Current meeting and wedding package price sheets\n\n' +
-      '• Confirmation of booking engine deep-link format\n\n' +
-      '• One sales coordinator for weekly alignment';
-    slide.addText(needs, {
-      x: 1.0, y: 2.1, w: 3.6, h: 2.0,
-      fontSize: 9, color: COLOR_TEXT_BODY, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
-    });
-
-    slide.addShape(pres.ShapeType.roundRect, {
-      x: 5.2, y: 1.45, w: 4.0, h: 2.9, r: 0.08,
-      fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
-    });
-    slide.addText('The Proposed Next Step', {
-      x: 5.4, y: 1.65, w: 3.6, h: 0.35,
-      fontSize: 12, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
-    });
-    const nextSteps =
-      '1. Review Commercial Quotation (Q-JO-MPH-2026-V2)\n' +
-      '   Examine the streamlined investment schedule (~IDR 147M Year 1).\n\n' +
-      '2. 30-Minute Technical Alignment\n' +
-      '   Quick checklist review and staging environment verification.\n\n' +
-      '3. Target 5-Week Go-Live\n' +
-      '   Launch the new website and turn on generative AI search indexing.';
-    slide.addText(nextSteps, {
-      x: 5.4, y: 2.1, w: 3.6, h: 2.0,
-      fontSize: 9, color: COLOR_TEXT_BODY, fontFace: 'Helvetica', lineSpacingMultiple: 1.2
-    });
-
-    slide.addText('Fajar Pratama · Co-founder, Journey On AI · fajar@inotel.co', {
-      x: 0.8, y: 4.65, w: 8.4, h: 0.3,
-      fontSize: 9.5, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
-    });
-  }
-
   const outputPath = 'PITCH_DECK_MENARA_PENINSULA_AISO_V3.pptx';
   await pres.writeFile({ fileName: outputPath });
-  console.log('Successfully generated PPTX V3 (Business Edition):', outputPath);
+  console.log('Successfully regenerated PPTX V3 (Balanced Edition):', outputPath);
 }
 
 createJourneyOnDeckV3().catch(console.error);

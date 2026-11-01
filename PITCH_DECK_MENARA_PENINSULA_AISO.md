@@ -36,8 +36,8 @@
   - **Premier F&B & Lifestyle Hubs**: Kafe Coleman (24/7 all-day dining, 170 seats), Alfresco pool dining, Symphony Lounge, Artha Spa, health club, sauna, and whirlpool.
 - **Critical Technical Friction Points on the Current Website**:
   - **Legacy Monolithic Web Stack**: Slower page load speeds and suboptimal Core Web Vitals impact Google search ranking and mobile bounce rates.
-  - **Unstructured Data Silos**: Crucial commercial specs (ballroom dimensions, meeting package rates at IDR 450k–550k/pax, Platinum Wedding details at IDR 140M) remain trapped in raw text, PDF downloads, or unstructured HTML.
-  - **AI Crawler Incompatibility**: Generative AI bots cannot reliably parse real-time pricing, room inventory, or venue capacities.
+  - **Unstructured Data Silos**: Crucial commercial specs (ballroom dimensions, meeting package capacities, wedding amenities) remain trapped in raw text, PDF downloads, or unstructured HTML.
+  - **AI Crawler Incompatibility**: Generative AI bots cannot reliably parse real-time rates, room inventory, or venue capacities.
   - **Friction in Conversion**: Disjointed booking steps send high-intent direct visitors back to third-party OTA portals.
 
 ---
@@ -130,7 +130,7 @@
     - **Deluxe Suites Room** (44 sqm, living room, Indonesian contemporary art, powder room)
     - **Club Rooms & Club Studio Rooms** (Floor 23 Executive Lounge access)
     - **Club Junior Suites & Club Peninsula Suites** (45–62 sqm luxury sanctuaries)
-  - Direct booking incentives highlighted in machine data: Best Rate Guarantee, Complimentary High-Speed WiFi, Airport Transfer Services (IDR 380,000 net/car), and flexible cancellation.
+  - Direct booking incentives highlighted in machine data: Best Rate Guarantee, Complimentary High-Speed WiFi, Airport Transfer Services, and flexible cancellation.
 - **Real-World Conversational Search Scenario**:
   > **Executive Prompt**: *"I need a 4-star business hotel near the Slipi toll gate with a spacious work desk, high-speed WiFi, and fast transit to SCBD."*
   > **ChatGPT / Perplexity Answer**: *"Menara Peninsula Hotel Jakarta (Jl. Letjen S. Parman Kav. 78, Slipi) is the ideal choice. It offers dedicated Deluxe & Studio business rooms with full ergonomic workstations, 20 minutes from SCBD and 45 minutes from Soekarno-Hatta Airport..."* [Includes Verified Direct Booking Link to menarapeninsula.com].
@@ -143,11 +143,11 @@
 - **AISO Execution for Banquets & Venues**:
   - Full entity indexing of the **Cengkeh Grand Ballroom** (735 sqm, column-free, 7–8m ceiling, up to 1,200 standing capacity).
   - Accurate schema mapping for corporate meeting packages:
-    - **Halfday Meeting Package**: IDR 450,000 net/person (1 coffee break, 1 lunch/dinner, 4-hour venue usage).
-    - **Fullday Meeting Package**: IDR 550,000 net/person (2 coffee breaks, 1 lunch/dinner, 8-hour venue usage).
+    - **Halfday Meeting Package**: Inclusions (1 coffee break with 3 snacks, 1 lunch/dinner, 4-hour venue usage).
+    - **Fullday Meeting Package**: Inclusions (2 coffee breaks with snacks, 1 lunch/dinner, 8-hour venue usage).
   - Dedicated event schema for signature wedding tiers:
-    - **Platinum Wedding Package**: IDR 140,000,000 net (400 buffet orders, Junior Suite + 6 Deluxe rooms, Artha Spa treatment, 1st Anniversary stay).
-    - **Diamond Wedding Package**: IDR 114,000,000 net (300 buffet orders, Junior Suite + 4 Deluxe rooms, 90-min bridal spa).
+    - **Platinum Wedding Package**: 400 buffet orders, Junior Suite + 6 Deluxe rooms, Artha Spa treatment, 1st Anniversary stay voucher.
+    - **Diamond Wedding Package**: 300 buffet orders, Junior Suite + 4 Deluxe rooms, bridal spa treatment, food tasting for 6 persons.
     - **Wedding Blessing & Akad Nikah Package**: Intimate ceremonies with flexible 6-hour venue usage and dedicated bridal suite.
 - **Commercial Outcome**: When corporate executives or wedding couples search for premier venues in West/Central Jakarta, Menara Peninsula surfaces as the definitive top recommendation across all AI search engines.
 
@@ -158,7 +158,7 @@
 
 ```
 [ 1. AI DISCOVERY ] 
-Tamu / Corporate Planner asks on ChatGPT, Perplexity, or Google AI Overviews
+Guest / Corporate Planner asks on ChatGPT, Perplexity, or Google AI Overviews
                            │
                            ▼
 [ 2. TRUSTED CITATION & HYPERLINK ]
@@ -188,57 +188,64 @@ Transactions and inquiries are closed directly with the hotel.
 
 | Timeline | Strategic Focus | Deliverables & Milestones |
 | :--- | :--- | :--- |
-| **Month 1 (Weeks 1–4)** | **Architecture, Web Revamp & Data Foundation** | • Baseline AI visibility & competitor audit (Menara Peninsula vs West Jakarta comps).<br>• Next-gen high-performance website deployment / revamp.<br>• Full JSON-LD structured schema injection across all 8 rooms, MICE venues, F&B, and FAQs.<br>• Implementation of AI crawler directives (`robots.txt`) and `/llms.txt`.<br>• Setup of IndexNow API and Google Free Booking Links. |
+| **Month 1 (Weeks 1–4)** | **Architecture, Web Revamp & Data Foundation** | • Baseline AI visibility & competitor audit (Menara Peninsula vs West Jakarta comps).<br>• Next-gen high performance website deployment / revamp.<br>• Full JSON-LD structured schema injection across all 8 rooms, MICE venues, F&B, and FAQs.<br>• Implementation of AI crawler directives (`robots.txt`) and `/llms.txt`.<br>• Setup of IndexNow API and Google Free Booking Links. |
 | **Month 2 (Weeks 5–8)** | **Engine Activation & Conversational Integration** | • Activation of JourneyOn AI Chatbot & Direct Booking Engine.<br>• Interactive RFP form hookup for corporate meetings & weddings.<br>• Multi-platform reputation consistency sync (Google Business, TripAdvisor, OTAs).<br>• Live query benchmarking across ChatGPT Search, Perplexity, Copilot, and Gemini. |
 | **Month 3 (Weeks 9–12)** | **Review, Performance Scaling & ROI Evaluation** | • Comprehensive AI Share-of-Voice (SoV) and citation growth report.<br>• Analysis of direct room booking volume and banquet inquiries generated.<br>• Measurement of OTA commission savings and return on investment.<br>• Long-term scaling roadmap presented to the Board of Management. |
 
 ---
 
-## SLIDE 11: PROJECTED ROI & BUSINESS IMPACT
-### Headline: Concrete Bottom-Line Growth & Massive Commission Recapture
+## SLIDE 11: VALUE CREATION & COMMERCIAL LOGIC
+### Headline: Unlocking Concrete Bottom-Line Margins & Commission Recapture
 
-- **1. Significant OTA Commission Savings (Direct Channel Shift)**:
-  - Average OTA commission rate: **18%**.
-  - Shifting just **200 room nights per month** to direct booking (at an average rate of IDR 800,000 net/night):
-    - Monthly Direct Room Revenue: **IDR 160,000,000**.
-    - **Direct Monthly Commission Saved: ~IDR 28,800,000**.
-    - **Annualized Commission Recaptured: ~IDR 345,600,000 per year!**
-- **2. High-Ticket MICE & Wedding Conversion**:
-  - Closing just **1 additional Platinum Wedding Package** (IDR 140,000,000) or **2 corporate Fullday Conferences** per quarter completely offsets the digital investment and delivers pure profit margin to the hotel.
-- **3. First-Mover Advantage in Hospitality**:
-  - Establishes Menara Peninsula as the premier tech-forward, AI-dominant hotel destination in Jakarta, outperforming regional competitors who still rely entirely on legacy marketing.
+- **1. Substantial OTA Commission Recapture**:
+  - Current Industry Reality: Online Travel Agencies claim **18% to 20% commission** on gross booking revenue.
+  - Shifting high-intent direct bookings away from OTAs immediately yields a **18%–20% net margin expansion** per room night for the property.
+  - Direct Guest Ownership: Corporate travelers booking directly become owned first-party contacts for repeat corporate business, eliminating recurring customer acquisition costs (CAC).
+- **2. High-Ticket Event Revenue Acceleration**:
+  - Banquet and MICE revenues represent the highest-margin commercial opportunities for the property.
+  - Adding just **1 additional signature wedding** or **a pair of corporate full-day symposiums** per quarter entirely self-funds the entire digital ecosystem upgrade.
+- **3. First-Mover Market Leadership**:
+  - Establishes Menara Peninsula as the premier AI-dominant hotel destination in Jakarta, securing search dominance before regional competitors adapt to the generative search paradigm.
 
 ---
 
-## SLIDE 12: PARTNERSHIP & INVESTMENT TIERS
+## SLIDE 12: PARTNERSHIP FRAMEWORK & SERVICE SCOPE
 ### Headline: Scalable Engagement Models Tailored to Hotel Growth Priorities
 
-- **Tier 1: AISO Essentials (Technical & Indexing Foundation)**
-  - *Best Suited For*: Rapid infrastructure upgrade and automated search indexing.
-  - *Scope*: Full JSON-LD Schema suite, `/llms.txt`, AI-friendly crawler tuning, IndexNow integration, and quarterly AI visibility audits.
-  - *Model*: Fixed Monthly Retainer (Low touch, rapid technical onboarding).
+- **Framework A: AISO Essentials (Technical & Indexing Foundation)**
+  - *Strategic Focus*: Rapid organic discovery upgrade for existing digital infrastructure.
+  - *Core Deliverables*: Full Schema.org JSON-LD suite, `/llms.txt`, crawler directives, IndexNow API, Google Free Booking Links, and quarterly AI Share-of-Voice benchmarking.
+  - *Engagement Structure*: Ongoing technical governance and discovery optimization retainer.
 
-- **Tier 2: Next-Gen Web Development + AISO Full Suite (Recommended for Menara Peninsula)**
-  - *Best Suited For*: Complete full-property digital transformation across Rooms, MICE, Banquets, and F&B.
-  - *Scope*:
-    - **Full Next-Generation Website Development / Redesign** (Sub-second load speed, mobile-first UX, luxury aesthetic).
+- **Framework B: Next-Gen Web Development + AISO Full Suite (Recommended Flagship)**
+  - *Strategic Focus*: Comprehensive full-property digital transformation across Accommodations, MICE, Banquets, and F&B.
+  - *Core Deliverables*:
+    - **Full Next-Generation Website Development / Redesign** (Headless architecture, sub-second load times, luxury custom UI/UX).
     - Complete AISO & GEO infrastructure with continuous updates.
     - Embedded JourneyOn 24/7 AI Booking Assistant & Instant RFP Generator.
-    - Cross-platform review aggregation and sentiment analysis dashboard.
-    - AI-powered review response assistant.
+    - Cross-platform reputation synchronization & review sentiment monitoring.
     - Monthly dedicated AI Share-of-Voice and competitive benchmark reporting.
-  - *Model*: Development + Monthly Retainer / Performance Hybrid.
+  - *Engagement Structure*: Turnkey development deployment paired with continuous discovery retainer.
+
+- **Framework C: Enterprise Revenue Partnership (Shared-Success Model)**
+  - *Strategic Focus*: Aligned commercial growth with integrated omnichannel conversion tools.
+  - *Core Deliverables*: Everything in Framework B plus JourneyOn AI WhatsApp Reservation Bot, dedicated conversion rate optimization (CRO), and direct revenue performance alignment.
+  - *Engagement Structure*: Subsidized development investment paired with performance-aligned success metrics.
+
+*(Note: Detailed investment schedules, payment milestones, and commercial terms are itemized separately in the official Commercial Quotation document).*
 
 ---
 
 ## SLIDE 13: CALL TO ACTION & NEXT STEPS
 ### Headline: Lead the Hospitality AI Revolution with Menara Peninsula & JourneyOn
 
-1. **Strategic Authorization**:
-   - Approve the 90-Day Website & AISO Pilot Initiative for Menara Peninsula Hotel Jakarta.
-2. **Technical Alignment & Discovery**:
-   - 1-week kickoff session between Menara Peninsula's IT/Marketing leadership and the JourneyOn technical team.
-3. **Launch, Dominate & Convert**:
+1. **Strategic Endorsement**:
+   - Approve the 90-Day Website & AISO Initiative framework for Menara Peninsula Hotel Jakarta.
+2. **Review Commercial Quotation**:
+   - Examine the itemized investment tiers and payment schedule in the accompanying Commercial Quotation document.
+3. **Technical Kickoff & Alignment**:
+   - Convene a 1-week alignment session between Menara Peninsula's leadership and the JourneyOn technical team.
+4. **Launch, Dominate & Convert**:
    - Deploy modern web architecture, index property assets into global LLMs, and track direct conversion growth from day one.
 
 ---

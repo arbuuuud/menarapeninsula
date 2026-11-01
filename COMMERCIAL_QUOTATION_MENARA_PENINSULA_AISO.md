@@ -97,7 +97,30 @@ We provide three transparent engagement options tailored to Menara Peninsula Hot
 
 ---
 
-## 4. FINANCIAL COMPARISON & COMMERCIAL VALUE CREATION
+## 4. DETAILED BREAKDOWN OF MONTHLY RETAINER DELIVERABLES
+
+To ensure complete commercial transparency for the General Manager and Financial Controller, the ongoing Monthly Retainer is not a passive hosting fee. It represents a dedicated team of AI engineers and technical specialists delivering four active operational pillars every month:
+
+### Deliverable 1: Monthly "AI Share-of-Voice (SoV) & Competitor Benchmark" Report
+- **Real-World Query Benchmarking**: Monthly automated & manual testing across 30+ high-intent conversational queries on ChatGPT, Perplexity, Google Gemini, and Microsoft Copilot (e.g., *"4-star business hotel in Slipi near Harapan Kita Hospital"*, *"Column-free ballroom for 1,000 pax in West Jakarta"*, *"Corporate full-day meeting package Slipi"*).
+- **Ranking & Citation Analytics**: Tracking whether Menara Peninsula is cited as the #1 or #2 answer, measuring direct referral click-throughs.
+- **Competitor Counter-Analysis**: Tracking digital adjustments made by regional comp-set hotels (Pullman Central Park, Hotel Ciputra, Santika Premiere) to adjust our semantic entity targeting.
+
+### Deliverable 2: Dynamic Machine Data Governance (/llms.txt & Schema Updates)
+- **Ongoing JSON-LD & /llms.txt Synchronization**: When Menara Peninsula launches seasonal promotions (Ramadhan packages, year-end holiday rates, wedding specials), our team updates code-level machine data so AI crawlers ingest accurate, real-time rates.
+- **IndexNow Instant Push Notification**: Instant webhook pings to Microsoft Bing and Copilot crawlers upon every content/rate update, forcing re-indexing within minutes rather than months.
+
+### Deliverable 3: Google Free Booking Links & Reputation Authority Monitoring
+- **Google Hotel Center Direct Price Feed Management**: Continuous verification that Menara Peninsula direct rates display organically on Google Hotel Search and Google Maps without incurring PPC ad costs.
+- **Reputation Consistency Guard**: Monitoring Name, Address, Phone (NAP) and review sentiment signals across Google Business Profile, TripAdvisor, and OTAs to prevent negative algorithmic penalties in generative AI models.
+
+### Deliverable 4: Agile Web Updates & Infrastructure SLA
+- **Dedicated Monthly Webmaster Hours**: Up to 10 hours per month included for marketing content updates (updating banquet flyers, replacing room imagery, publishing new dining menus) completed within 24 business hours.
+- **Performance & Security SLA**: Continuous monitoring of sub-second load times (<0.8s), Core Web Vitals 95+ score, active SSL certificate management, and 99.9% cloud uptime.
+
+---
+
+## 5. FINANCIAL COMPARISON & COMMERCIAL VALUE CREATION
 
 To demonstrate the commercial justification to the Financial Controller and General Manager:
 
@@ -122,7 +145,7 @@ To demonstrate the commercial justification to the Financial Controller and Gene
 
 ---
 
-## 5. TERMS OF PAYMENT & MILESTONES (OPTION B)
+## 6. TERMS OF PAYMENT & MILESTONES (OPTION B)
 
 Payment for **One-Time Setup & Development (IDR 75,000,000)** is structured across three milestone-based tranches:
 
@@ -139,7 +162,7 @@ Payment for **One-Time Setup & Development (IDR 75,000,000)** is structured acro
 
 ---
 
-## 6. PROJECT TIMELINE & IMPLEMENTATION SCHEDULE (6 WEEKS TO GO-LIVE)
+## 7. PROJECT TIMELINE & IMPLEMENTATION SCHEDULE (6 WEEKS TO GO-LIVE)
 
 ```
 Week 1: Discovery, Technical Audit & Digital Asset Ingestion
@@ -152,7 +175,7 @@ Week 6: Production Go-Live, Google Free Booking Links Activation & IndexNow Broa
 
 ---
 
-## 7. SERVICE LEVEL AGREEMENT (SLA) & ROLES MATRIX
+## 8. SERVICE LEVEL AGREEMENT (SLA) & ROLES MATRIX
 
 | Responsibility Area | JourneyOn Responsibility | Menara Peninsula Responsibility |
 | :--- | :--- | :--- |
@@ -163,7 +186,7 @@ Week 6: Production Go-Live, Google Free Booking Links Activation & IndexNow Broa
 
 ---
 
-## 8. ACCEPTANCE & AUTHORIZATION OF ENGAGEMENT
+## 9. ACCEPTANCE & AUTHORIZATION OF ENGAGEMENT
 
 By signing below, the authorized representatives of **Menara Peninsula Hotel Jakarta** and **PT JourneyOn Hospitality Technologies** acknowledge and accept the terms, deliverables, and commercial investment schedule set forth in this quotation.
 

@@ -155,7 +155,6 @@ async function createJourneyOnDeckV3() {
       'Live diagnostic results: Why the current site is losing guests & AI citations'
     );
 
-    // Left Card: Zero AI readiness
     slide.addShape(pres.ShapeType.roundRect, {
       x: 0.8, y: 1.45, w: 4.0, h: 2.5, r: 0.08,
       fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
@@ -176,7 +175,6 @@ async function createJourneyOnDeckV3() {
       }
     );
 
-    // Right Card: Asset Bloat & D+
     slide.addShape(pres.ShapeType.roundRect, {
       x: 5.2, y: 1.45, w: 4.0, h: 2.5, r: 0.08,
       fill: { color: BG_WHITE }, line: { color: CARD_BORDER, width: 1 }
@@ -267,7 +265,90 @@ async function createJourneyOnDeckV3() {
   }
 
   // ==========================================================
-  // SLIDE 5: WHAT ARE GEO & AISO?
+  // SLIDE 5: WHO IS USING GEO & AISO? (GLOBAL ADOPTION & LOCAL VACUUM)
+  // ==========================================================
+  {
+    const slide = pres.addSlide();
+    applyContentSlide(
+      slide,
+      'INDUSTRY ADOPTION & LOCAL GAP',
+      'Proven Global Adoption & The Local Competitor Vacuum'
+    );
+
+    const cards = [
+      {
+        tag: 'GLOBAL PROOF OF IMPACT',
+        tagColor: COLOR_OPTIMAL,
+        title: 'International Luxury Case Studies',
+        isFeatured: false,
+        points: [
+          'Lore Group (Europe & US — Pulitzer Amsterdam): Deployed GEO entity mapping across properties -> +1,867% bookings from AI agents and +1,536% AI referral revenue (2025–2026).',
+          'Point A Hotels (UK Chain): Captured 35,000+ AI impressions in ChatGPT & Google AI Overviews, driving a 72x lift in engaged clicks in 12 weeks.'
+        ]
+      },
+      {
+        tag: 'LOCAL COMPETITORS ASLEEP',
+        tagColor: COLOR_CRITICAL,
+        title: 'Slipi & West Jakarta Competitor Audit',
+        isFeatured: false,
+        points: [
+          'Pullman Central Park: Has basic website schema, but lacks detailed MICE machine feeds. /llms.txt returns generic HTML. Still relies on costly PPC ads.',
+          'Hotel Ciputra Jakarta: Basic WordPress schema only; /llms.txt is 404.',
+          'Santika Premiere Slipi: Dependent on group aggregator; 0 room/ballroom microdata on property page.'
+        ]
+      },
+      {
+        tag: 'STRATEGIC TAKEAWAY',
+        tagColor: COLOR_KICKER,
+        title: 'The Golden First-Mover Window',
+        isFeatured: true,
+        points: [
+          'The Slipi Vacuum: Not a single 4-star competitor in West Jakarta has deployed full GEO or AISO. When AI models look for structured hotel facts in Slipi today, they encounter data silence.',
+          'Immediate Leadership: Deploying now establishes Menara Peninsula as the #1 verified recommendation across ChatGPT and Perplexity before competitors react.'
+        ]
+      }
+    ];
+
+    cards.forEach((c, idx) => {
+      const xPos = 0.8 + idx * 2.9;
+      slide.addShape(pres.ShapeType.roundRect, {
+        x: xPos, y: 1.45, w: 2.65, h: 2.5, r: 0.08,
+        fill: { color: BG_WHITE }, line: { color: c.isFeatured ? BRAND_DARK : CARD_BORDER, width: c.isFeatured ? 2 : 1 }
+      });
+
+      slide.addText(c.tag, {
+        x: xPos + 0.15, y: 1.6, w: 2.35, h: 0.2,
+        fontSize: 7.5, bold: true, color: c.tagColor, fontFace: 'Helvetica'
+      });
+      slide.addText(c.title, {
+        x: xPos + 0.15, y: 1.82, w: 2.35, h: 0.4,
+        fontSize: 10.5, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
+      });
+
+      slide.addShape(pres.ShapeType.line, {
+        x: xPos + 0.15, y: 2.25, w: 2.35, h: 0,
+        line: { color: CARD_BORDER, width: 1 }
+      });
+
+      const bullets = c.points.map(p => `• ${p}`).join('\n\n');
+      slide.addText(bullets, {
+        x: xPos + 0.15, y: 2.35, w: 2.35, h: 1.5,
+        fontSize: 8.2, color: COLOR_TEXT_BODY, fontFace: 'Helvetica', lineSpacingMultiple: 1.15
+      });
+    });
+
+    slide.addShape(pres.ShapeType.roundRect, {
+      x: 0.8, y: 4.15, w: 8.4, h: 0.65, r: 0.08,
+      fill: { color: BRAND_DARK }, line: { color: BRAND_DARK }
+    });
+    slide.addText('First-Mover Advantage: Menara Peninsula has a wide-open window to lock in AI search dominance across West Jakarta.', {
+      x: 1.0, y: 4.3, w: 8.0, h: 0.35,
+      fontSize: 9.5, bold: true, color: COLOR_HIGHLIGHT, fontFace: 'Helvetica'
+    });
+  }
+
+  // ==========================================================
+  // SLIDE 6: WHAT ARE GEO & AISO?
   // ==========================================================
   {
     const slide = pres.addSlide();
@@ -331,7 +412,7 @@ async function createJourneyOnDeckV3() {
   }
 
   // ==========================================================
-  // SLIDE 6: LIVE AI SEARCH SCENARIO
+  // SLIDE 7: LIVE AI SEARCH SCENARIO
   // ==========================================================
   {
     const slide = pres.addSlide();
@@ -341,7 +422,6 @@ async function createJourneyOnDeckV3() {
       'How Menara Peninsula wins when a corporate executive queries AI'
     );
 
-    // Prompt Card
     slide.addShape(pres.ShapeType.roundRect, {
       x: 0.8, y: 1.45, w: 8.4, h: 1.2, r: 0.08,
       fill: { color: BG_WHITE }, line: { color: COLOR_KICKER, width: 1.5 }
@@ -355,7 +435,6 @@ async function createJourneyOnDeckV3() {
       fontSize: 12, italic: true, bold: true, color: COLOR_TEXT_HEAD, fontFace: 'Georgia'
     });
 
-    // Answer Card
     slide.addShape(pres.ShapeType.roundRect, {
       x: 0.8, y: 2.85, w: 8.4, h: 1.95, r: 0.08,
       fill: { color: BG_WHITE }, line: { color: COLOR_OPTIMAL, width: 1.5 }
@@ -375,7 +454,7 @@ async function createJourneyOnDeckV3() {
   }
 
   // ==========================================================
-  // SLIDE 7: ACCOMMODATIONS
+  // SLIDE 8: ACCOMMODATIONS
   // ==========================================================
   {
     const slide = pres.addSlide();
@@ -427,7 +506,7 @@ async function createJourneyOnDeckV3() {
   }
 
   // ==========================================================
-  // SLIDE 8: MICE & WEDDINGS
+  // SLIDE 9: MICE & WEDDINGS
   // ==========================================================
   {
     const slide = pres.addSlide();
@@ -482,7 +561,7 @@ async function createJourneyOnDeckV3() {
   }
 
   // ==========================================================
-  // SLIDE 9: THE CONVERSION FUNNEL
+  // SLIDE 10: THE CONVERSION FUNNEL
   // ==========================================================
   {
     const slide = pres.addSlide();
@@ -548,7 +627,7 @@ async function createJourneyOnDeckV3() {
   }
 
   // ==========================================================
-  // SLIDE 10: COMMERCIAL LOGIC
+  // SLIDE 11: COMMERCIAL LOGIC
   // ==========================================================
   {
     const slide = pres.addSlide();
@@ -602,7 +681,7 @@ async function createJourneyOnDeckV3() {
   }
 
   // ==========================================================
-  // SLIDE 11: TIMELINE, PACKAGES & NEXT STEPS
+  // SLIDE 12: TIMELINE, PACKAGES & NEXT STEPS
   // ==========================================================
   {
     const slide = pres.addSlide();
@@ -690,7 +769,7 @@ async function createJourneyOnDeckV3() {
 
   const outputPath = 'PITCH_DECK_MENARA_PENINSULA_AISO_V3.pptx';
   await pres.writeFile({ fileName: outputPath });
-  console.log('Successfully regenerated PPTX V3 (Balanced Edition):', outputPath);
+  console.log('Successfully regenerated PPTX V3 (12 slides balanced edition):', outputPath);
 }
 
 createJourneyOnDeckV3().catch(console.error);
